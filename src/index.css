@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  border:0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+h1 , h2 , h3 , h4 , h5 , h6{
+  font-size: inherit;
+  font-weight: inherit;
+}
+a{
+  color:inherit;
+  text-decoration: none;
+  display: block;
+}
+p a{
+  display: inline;
+}
+img , picture , video , iframe , svg {
+  display: block;
+  width: 100%;
+  height: initial;
+}
+svg{
+  fill: currentColor;
+}
+form , input , label , select , option , textarea , button{
+  font-size: inherit;
+  font-family: inherit;
+  display: block;
+  background-color: transparent;
+}
+html{
+  scroll-behavior: smooth;
+}
+:root{
+  font-size: 100%;
+}
