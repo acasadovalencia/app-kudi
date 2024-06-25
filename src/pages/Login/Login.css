@@ -1,0 +1,72 @@
+.Login{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Form-wrapper{
+    background-color: var(--bg-c-primary);
+    padding: 2rem;
+}
+.Form-h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.Login-form{
+    padding: 2rem 0;
+    min-width: 15vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.Login-label{
+    margin: 0 0 .3125rem;
+    font-weight: 600;
+}
+.Login-input{
+    background-color: var(--bg-c-secondary);
+    width: 100%;
+    margin: 0 0 1rem;
+    padding: .5rem;
+    border-radius: 2px;
+    font-size: .75rem;
+}
+.Login-submit{
+    background-color: var(--bg-c-tertiary);
+    color: var(--f-c-primary);
+    width: 100%;
+    padding: .5rem 5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.Login-submit:hover{
+    background-color: var(--bg-c-tertiary-h) ;
+}
+.Login-submit:active{
+    background-color: var(--bg-c-secondary);
+    color: var(--bg-c-tertiary);
+}
+.Login-span{
+    color: var(--f-c-tertiary);
+}
+.Login-btn{
+    margin: 8px 0 0;
+    color: var(--f-c-primary);
+    cursor: pointer;
+}
+
+.Login-picture{
+    height: 100%;
+}
+.Login-img{
+    object-fit: cover;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

@@ -60,14 +60,15 @@ export const Login = ()=>{
                     <label htmlFor="user" className="Login-label">Usuario</label>
                     <input type="text" name='user' id='user' className="Login-input" />
                     <label htmlFor="pass" className="Login-label">Contraseña</label>
-                    <input type="text" name='pass' id='pass' className="Login-input" />
+                    <input type="password" name='pass' id='pass' className="Login-input" />
                     <input type="submit" value="Iniciar sesión" className="Login-submit" />
                 </form>
                 <span className="Login-span">¿No tienes cuenta?</span>
                 <button className="Login-btn">Crear usuario</button>
             </div>
             <picture className="Login-picture">
-                <img src="#" alt="Movies mosaic" className="Login-img" />
+                <source srcSet='assets/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
+                <img src="assets/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
             </picture>
         </div>
         </>
