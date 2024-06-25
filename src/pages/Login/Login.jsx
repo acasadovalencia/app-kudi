@@ -58,9 +58,9 @@ export const Login = ()=>{
                 <h2 className="Form-h2 H2">Iniciar sesión</h2>
                 <form ref={form} onSubmit={sendLogin} className="Login-form">
                     <label htmlFor="user" className="Login-label">Usuario</label>
-                    <input type="text" name='user' id='user' className="Login-input" />
+                    <input type="text" name='user' id='user' className="Login-input" required />
                     <label htmlFor="pass" className="Login-label">Contraseña</label>
-                    <input type="password" name='pass' id='pass' className="Login-input" />
+                    <input type="password" name='pass' id='pass' className="Login-input" required />
                     <input type="submit" value="Iniciar sesión" className="Login-submit" />
                 </form>
                 <span className="Login-span">¿No tienes cuenta?</span>
