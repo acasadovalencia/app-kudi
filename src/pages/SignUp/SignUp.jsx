@@ -20,7 +20,7 @@ export const SignUp = ()=>{
 
     // Effects
     useEffect(()=>{
-        if( user ){                                                // Condicional que si usuario es true, vaya a la ruta /kodi                       
+        if( user ){                                                // Condicional que si usuario es true, vaya a la ruta /                       
             navigate('/')
         }
     }, [user])                                                     // El effect se ejecutará cada vez que usuario cambie
