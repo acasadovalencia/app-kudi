@@ -6,19 +6,16 @@
     justify-content: center;
     align-items: center;
 }
-.Form-wrapper:first-child{
-    position: static;
-}
+
 .Form-wrapper{
     background-color: var(--bg-c-primary);
     padding: 2rem;
-    position: absolute;
 }
 .Form-h2{
     font-size: 1.5rem;
     font-weight: 600;
 }
-.Login-form{
+.Signup-form{
     padding: 2rem 0;
     min-width: 15vw;
     display: flex;
@@ -26,39 +23,19 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
-.Login-label{
+.Signup-label{
     margin: 0 0 .3125rem;
     font-weight: 600;
 }
-.Login-input{
+.Signup-input{
     background-color: var(--bg-c-secondary);
     width: 100%;
     padding: .5rem;
     border-radius: 2px;
     font-size: .75rem;
+    margin: 0 0 42px;
 }
-.Login-input.Login-input--error{
-    border: 2px solid var(--f-c-error);
-    outline-color: var(--f-c-error);
-}
-.Error{
-    margin: 0 0 1rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: .25rem;
-    font-style: italic;
-    color: var(--f-c-error);
-    opacity: 0;
-}
-.Login-input--error+.Error{
-    opacity: 1;
-}
-.Error-svg{
-    width: 1.5rem;
-}
-.Login-submit{
+.Signup-submit{
     background-color: var(--bg-c-tertiary);
     color: var(--f-c-primary);
     width: 100%;
@@ -66,19 +43,14 @@
     border-radius: .5rem;
     cursor: pointer;
     transition: background-color .5s ease;
+    margin: 0 0 84px;
 }
-.Login-submit:hover{
+.Signup-submit:hover{
     background-color: var(--bg-c-tertiary-h) ;
 }
-.Login-span{
+.Signup-span{
     color: var(--f-c-tertiary);
 }
-.Login-btn{
-    margin: 8px 0 0;
-    color: var(--f-c-primary);
-    cursor: pointer;
-}
-
 .Login-picture{
     height: 100%;
 }

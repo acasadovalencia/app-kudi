@@ -45,6 +45,7 @@ html{
   --bg-c-tertiary-h: #B188E6;
   --f-c-primary : #fff;
   --f-c-tertiary: #858585;
+  --f-c-error: #E66868;
 }
 body{
   font-family: "Open Sans", sans-serif;
