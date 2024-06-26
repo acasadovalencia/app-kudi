@@ -24,7 +24,7 @@
     align-items: flex-start;
 }
 .Signup-label{
-    margin: 0 0 .3125rem;
+    margin: 1rem 0 .3125rem;
     font-weight: 600;
 }
 .Signup-input{
@@ -33,7 +33,23 @@
     padding: .5rem;
     border-radius: 2px;
     font-size: .75rem;
-    margin: 0 0 42px;
+}
+.Signup-input--error{
+    outline: red;
+    border: 2px solid red;
+}
+.Signup-error{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .25rem;
+    font-style: italic;
+    color: var(--f-c-error);
+    opacity: 0;
+}
+.Signup-error.isActive{
+   opacity: 1;
 }
 .Signup-submit{
     background-color: var(--bg-c-tertiary);
@@ -43,7 +59,8 @@
     border-radius: .5rem;
     cursor: pointer;
     transition: background-color .5s ease;
-    margin: 0 0 84px;
+    align-self: flex-end;
+    margin: 2rem 0 0;
 }
 .Signup-submit:hover{
     background-color: var(--bg-c-tertiary-h) ;

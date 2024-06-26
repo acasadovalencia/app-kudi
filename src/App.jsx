@@ -1,8 +1,8 @@
 // Importaciones
 import './App.css'
-import { Login } from './pages/Login/Login'
-import { SignUp } from './pages/SignUp/SignUp'
-import { Kudi } from './pages/Kudi/Kudi'
+import { Login } from '@pages/Login/Login'
+import { SignUp } from '@pages/SignUp/SignUp'
+import { Kudi } from '@pages/Kudi/Kudi'
 
 import { BrowserRouter , Routes , Route} from 'react-router-dom'
 
