@@ -21,8 +21,8 @@ export const Login = ()=>{
 
     // Effects
     useEffect(()=>{
-        let login = JSON.parse(localStorage.getItem('user'))
-        if( login ){                                                            // Condicional que si login es true, vaya a la ruta /kodi                       
+        let loginLocal = JSON.parse(localStorage.getItem('user'))
+        if( loginLocal ){                                                       // Condicional que si login es true, vaya a la ruta /kodi                       
             navigate('/kudi')
         }
     }, [login])                                                                 // El effect se ejecutará cada vez que login cambie
@@ -51,6 +51,9 @@ export const Login = ()=>{
                 if(data.login){                                                 // Condicional para además de setear el resultado en Login, guardarlo en localStorage
                     setLogin(data.login)                                        // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
                     localStorage.setItem('user' , JSON.stringify({login:true})) // Guardamos un objeto con valor true indicando que el login fué correcto.
+                }
+                else{
+                    setLogin(false)
                 }
             })                     
             .catch(err => console.log(err.message))
