@@ -1,6 +1,17 @@
+import { useNavigate } from 'react-router-dom'
 import './Header.css'
 
 export const Header = ()=>{
+
+    let user = JSON.parse(localStorage.getItem('username'))                         // Guardar el nombre de usuario
+
+    const navigate = useNavigate()
+
+    const logout = ()=>{                                                            
+        localStorage.removeItem('username')                                         // Eliminar el nombre de usuario de localStorage para borarr el nombre
+        localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
+        navigate('/')
+    }
 
     return(
         <>
@@ -25,6 +36,11 @@ export const Header = ()=>{
                         </li>
                     </ul>
                 </nav>
+                <div className="Header-profile Profile">
+                    <span className="Profile-span">{user}</span>
+                    <img src="" alt="" className="Profile-img" />
+                    <button onClick={logout} className='Profile-btn'>Cerrar sesión</button>
+                </div>
             </div>
         </header>
         </>

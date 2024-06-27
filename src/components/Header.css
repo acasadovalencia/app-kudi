@@ -1,0 +1,32 @@
+.Header{
+    width: 100%;
+    background-color: var(--bg-c-primary);
+}
+.Header-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.625rem 3.125rem;
+}
+.Logo-h1{
+    font-size: 2rem;
+}
+.Nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.0625rem;
+}
+.Header-profile{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Profile-btn{
+    color: var(--c-f-primary);
+    cursor: pointer;
+}

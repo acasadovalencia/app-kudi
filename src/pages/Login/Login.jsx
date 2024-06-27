@@ -51,6 +51,7 @@ export const Login = ()=>{
                 if(data.login){                                                 // Condicional para además de setear el resultado en Login, guardarlo en localStorage
                     setLogin(data.login)                                        // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
                     localStorage.setItem('user' , JSON.stringify({login:true})) // Guardamos un objeto con valor true indicando que el login fué correcto.
+                    localStorage.setItem('username' , JSON.stringify(newLogin.username))
                 }
                 else{
                     setLogin(false)

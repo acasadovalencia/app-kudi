@@ -14,7 +14,7 @@ function App() {
   const [ login , setLogin] = useState()  
 
   return (
-    <KudiContext.Provider value={{login , setLogin}}>
+    <KudiContext.Provider value={{login , setLogin }}>
     <BrowserRouter>
     <>
     <Routes>
