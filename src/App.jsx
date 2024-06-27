@@ -3,12 +3,18 @@ import './App.css'
 import { Login } from '@pages/Login/Login'
 import { SignUp } from '@pages/SignUp/SignUp'
 import { Kudi } from '@pages/Kudi/Kudi'
+import { KudiContext } from '../context/Context'
 
+import { useState } from 'react'
 import { BrowserRouter , Routes , Route} from 'react-router-dom'
 
 function App() {
 
+  // States
+  const [ login , setLogin] = useState()  
+
   return (
+    <KudiContext.Provider value={{login , setLogin}}>
     <BrowserRouter>
     <>
     <Routes>
@@ -19,6 +25,7 @@ function App() {
 
     </>
     </BrowserRouter>
+    </KudiContext.Provider>
   )
 }
 

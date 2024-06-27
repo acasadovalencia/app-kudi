@@ -1,54 +1,60 @@
 //Importaciones
 import './Login.css'
 
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { KudiContext } from '../../../context/Context'
 
 export const Login = ()=>{
 
+    // Importacion de contexto
+    const {login , setLogin} = useContext(KudiContext)
+
     // Variables al uso
-    const navigate = useNavigate()                                   // Asociar a una variable al no poderse declarar dentro un Hook en otro Hook.
+    const navigate = useNavigate()                                              // Asociar a una variable al no poderse declarar dentro un Hook en otro Hook.
 
     // Variables de entorno
-    const { VITE_API } = import.meta.env
-
-    // States
-    const [ login , setLogin] = useState()                          
+    const { VITE_API } = import.meta.env     
     
     // Refs
     const form = useRef()
 
     // Effects
     useEffect(()=>{
-
-        if( login ){                                                // Condicional que si login es true, vaya a la ruta /kodi                       
+        let login = JSON.parse(localStorage.getItem('user'))
+        if( login ){                                                            // Condicional que si login es true, vaya a la ruta /kodi                       
             navigate('/kudi')
         }
-    }, [login])                                                     // El effect se ejecutará cada vez que login cambie
+    }, [login])                                                                 // El effect se ejecutará cada vez que login cambie
 
     // Funciones
-    const sendLogin = async (e)=>{                                  // Funcion asíncrona ya que conectará a MongoDB
+    const sendLogin = async (e)=>{                                              // Funcion asíncrona ya que conectará a MongoDB
         e.preventDefault()
 
         const {current: formData} = form
 
-        const newLogin = {                                          // Datos del login introducidos en el form
+        const newLogin = {                                                      // Datos del login introducidos en el form
             username : formData['user'].value,
             password: formData['pass'].value
         }
 
-        let controller = new AbortController()                      // Se usará para cerrar la conexión a Mongo.             
+        let controller = new AbortController()                                  // Se usará para cerrar la conexión a Mongo.             
         let options = {
-            method: 'post',                                         // Método POST para enviar los datos
-            signal: controller.signal,                              // Asociar señal a controller
-            headers: {"Content-type" : "application/json "},        // Tipo de dato enviado por el body         
-            body: JSON.stringify(newLogin)                          // Enviar por el body los nuevos datos que se compararán convertidos a JSON.
+            method: 'post',                                                     // Método POST para enviar los datos
+            signal: controller.signal,                                          // Asociar señal a controller
+            headers: {"Content-type" : "application/json "},                    // Tipo de dato enviado por el body         
+            body: JSON.stringify(newLogin)                                      // Enviar por el body los nuevos datos que se compararán convertidos a JSON.
         }
-        await fetch(`${VITE_API}/login` , options)                  // Petición mediante fetch a la API para el login
+        await fetch(`${VITE_API}/login` , options)                              // Petición mediante fetch a la API para el login
             .then(res => res.json())
-            .then(data => setLogin(data.login))                     // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
+            .then(data => {
+                if(data.login){                                                 // Condicional para además de setear el resultado en Login, guardarlo en localStorage
+                    setLogin(data.login)                                        // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
+                    localStorage.setItem('user' , JSON.stringify({login:true})) // Guardamos un objeto con valor true indicando que el login fué correcto.
+                }
+            })                     
             .catch(err => console.log(err.message))
-            .finally(()=> controller.abort())                       // Desconexión de la API
+            .finally(()=> controller.abort())                                   // Desconexión de la API
     }
 
     return(
