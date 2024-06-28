@@ -35,11 +35,11 @@ export const SignUp = ()=>{
         const {current: formData} = form
 
         if (formData['pass'].value === formData['pass-repeat'].value  ) {   // Si las contraseñas coinciden, realizará el fetch, si no, mostraremos un error
-            setError(true)
-            sendUser()
+            setError(true)                                                  // Si entra en el condicional, cambia el estado de error para que no exista
+            sendUser()                                                      // Se hace el Fetch
         }
-        else{
-            return setError(false)
+        else{                                                               
+            return setError(false)                                          // Si no se cumple el condicional, setea el error en false para mostrarlo
         }
     }
 
@@ -62,10 +62,10 @@ export const SignUp = ()=>{
         await fetch(`${VITE_API}/signup` , options)                  // Petición mediante fetch a la API para el nuevo usuario
             .then(res => res.json())
             .then(data =>{
-                if(data.error){
-                    setUserError(data.error)                             // Setear a Error en el caso de que la petición devuelva el error de doble usuario
+                if(data.error){                                     
+                    setUserError(data.error)                         // Setear a Error en el caso de que la petición devuelva el error de doble usuario
                 } else {
-                    setUserError('')
+                    setUserError('')                                 // Reiniciar variable de error de usuario
                     setUser(data)                                    // Setear a User con el nuevo usuario creado para añadirlo a la bbdd
                 }
             })                           
@@ -109,8 +109,8 @@ export const SignUp = ()=>{
                 <button onClick={()=>navigate('/')} className="Back-btn">Volver</button>
             </div>
             <picture className="Login-picture">
-                <source srcSet='assets/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
-                <img src="assets/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
+                <source srcSet='assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
+                <img src="assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
             </picture>
         </div>
         </>

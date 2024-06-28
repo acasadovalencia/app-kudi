@@ -3,7 +3,7 @@ import './Kudi.css'
 
 import { useEffect } from 'react'
 
-import { Header } from '@components/Header'
+import { Header } from '@components/Header/Header'
 import { useNavigate } from 'react-router-dom'
 
 export const Kudi = () =>{

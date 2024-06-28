@@ -89,8 +89,8 @@ export const Login = ()=>{
                 <button onClick={()=>navigate('/signup')} className="Login-btn">Crear usuario</button>
             </div>
             <picture className="Login-picture">
-                <source srcSet='assets/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
-                <img src="assets/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
+                <source srcSet='assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
+                <img src="assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
             </picture>
         </div>
         </>
