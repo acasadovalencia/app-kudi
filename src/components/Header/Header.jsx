@@ -24,7 +24,7 @@ export const Header = ()=>{
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">
                         <li className="Nav-li">
-                        <NavLink to='/kudi/main'>Inicio</NavLink>
+                        <NavLink to='/kudi'>Inicio</NavLink>
                         </li>
                         <li className="Nav-li">
                             <a href="" className="Nav-a">Categorias</a>

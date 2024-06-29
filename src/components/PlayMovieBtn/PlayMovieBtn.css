@@ -1,0 +1,18 @@
+.Btn-play{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    color: var(--f-c-primary);
+    background-color: var(--bg-c-tertiary);
+    padding: .625rem 1rem;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.Btn-play--svg{
+    width: 1.25rem;
+}
+.Btn-play--svg>path{
+    color: var(--f-c-tertiary);
+}

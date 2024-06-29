@@ -28,7 +28,7 @@ export const Kudi = () =>{
         <>
         <Header/>
         <Routes>
-            <Route path='/main' element={<Main/>}/>
+            <Route path='/' element={<Main/>}/>
             <Route path='movies/*' element={<Movies/>}/>
             <Route path='movies/:_id' element={<Movie/>}/>              
         </Routes>

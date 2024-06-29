@@ -26,7 +26,7 @@ export const Movies = ()=>{
             navigate('/')
         }
         getMovies()
-    }, [])                  // Array vacío para que se ejecute solo al iniciar componente
+    }, [])                                                             // Array vacío para que se ejecute solo al iniciar componente
 
     // Funciones
     const getMovies = async ()=>{
