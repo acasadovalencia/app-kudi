@@ -5,7 +5,8 @@ import { useEffect } from 'react'
 
 import { Header } from '@components/Header/Header'
 import { Movies } from '@pages/Movies/Movies'
-import { Main } from '../Main/Main'
+import { Movie } from '@pages/Movie/Movie'
+import { Main } from '@pages/Main/Main'
 import { Route, Routes , useNavigate } from 'react-router-dom'
 
 export const Kudi = () =>{
@@ -28,7 +29,8 @@ export const Kudi = () =>{
         <Header/>
         <Routes>
             <Route path='/main' element={<Main/>}/>
-            <Route path='movies' element={<Movies/>}/>
+            <Route path='movies/*' element={<Movies/>}/>
+            <Route path='movies/:_id' element={<Movie/>}/>              
         </Routes>
 
         </>

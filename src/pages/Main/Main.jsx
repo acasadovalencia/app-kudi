@@ -5,6 +5,7 @@ export const Main = ()=>{
 
     return(
         <>
+        <h1>Soy Main</h1>
         </>
     )
 }

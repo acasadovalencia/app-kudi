@@ -3,11 +3,14 @@ import './Movies.css'
 
 import { PlayBtn } from '@components/PlayBtn/PlayBtn'
 
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 
 export const Movies = ()=>{
+
+    // Variables
+    const navigate = useNavigate()
 
     // Variables de entorno
     const { VITE_API} = import.meta.env
@@ -17,6 +20,11 @@ export const Movies = ()=>{
 
     // Effects
     useEffect(()=>{
+        let login = JSON.parse(localStorage.getItem('user'))           // Obtener del localStorage el resultado del login
+
+        if(!login){                                                    // Si login no existe o falso, navega a la página de inicio para impedir acceder
+            navigate('/')
+        }
         getMovies()
     }, [])                  // Array vacío para que se ejecute solo al iniciar componente
 
@@ -52,14 +60,15 @@ export const Movies = ()=>{
 
 const GridItem = (props)=>{
 
-    const {title , description , runtime , rating} = props
+    const {_id , title , description , runtime , rating , poster} = props
 
     return(
         <>
         <li className="Section-li Movies-li">
-            <NavLink to='/'>
+            <NavLink to={`/kudi/movies/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture Movies-picture">
-                <img src="./../assets/images/aida.jpg" alt={title} className="Section-img Movies-picture" loading='lazy' width='280' height='150' />
+                <source srcSet={`./../assets/images/${poster.small}.webp`} alt={title} type='image/webp' />
+                <img src={`./../assets/images/${poster.small}.jpg`} alt={title} className="Section-img Movies-picture" loading='lazy' width='280' height='150' />
             </picture>
             <div className="Description-wrapper">
                 <PlayBtn/>
