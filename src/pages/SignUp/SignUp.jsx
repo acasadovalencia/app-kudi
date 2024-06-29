@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 export const SignUp = ()=>{
 
     // Variables al uso
-    const navigate = useNavigate()                                   // Asociar a una variable al no poderse declarar dentro un Hook en otro Hook.
+    const navigate = useNavigate()                                   // Asociar a una variable al no poderse declarar dentro un Hook.
 
     // Variables de entorno
     const { VITE_API } = import.meta.env
@@ -22,7 +22,7 @@ export const SignUp = ()=>{
 
     // Effects
     useEffect(()=>{
-        if( user ){                                                // Condicional que si usuario es true, vaya a la ruta /                       
+        if( user ){                                                // Condicional que si usuario es true, vaya a la ruta / para acceder con ese usuario.                      
             navigate('/')
         }
     }, [user])                                                     // El effect se ejecutará cada vez que usuario cambie
@@ -34,12 +34,12 @@ export const SignUp = ()=>{
 
         const {current: formData} = form
 
-        if (formData['pass'].value === formData['pass-repeat'].value  ) {   // Si las contraseñas coinciden, realizará el fetch, si no, mostraremos un error
+        if (formData['pass'].value === formData['pass-repeat'].value  ) {   // Si las contraseñas coinciden entra en el condicional
             setError(true)                                                  // Si entra en el condicional, cambia el estado de error para que no exista
             sendUser()                                                      // Se hace el Fetch
         }
         else{                                                               
-            return setError(false)                                          // Si no se cumple el condicional, setea el error en false para mostrarlo
+            return setError(false)                                          // Si no se cumple el condicional, setea el error en false para mostrarlo.
         }
     }
 
@@ -57,16 +57,16 @@ export const SignUp = ()=>{
             method: 'post',                                         // Método POST para enviar los datos
             signal: controller.signal,                              // Asociar señal a controller
             headers: {"Content-type" : "application/json "},        // Tipo de dato enviado por el body         
-            body: JSON.stringify(newUser)                           // Enviar por el body los nuevos datos que se compararán convertidos a JSON.
+            body: JSON.stringify(newUser)                           // Enviar por el body los nuevos datos de usuario convertidos a JSON.
         }
-        await fetch(`${VITE_API}/signup` , options)                  // Petición mediante fetch a la API para el nuevo usuario
+        await fetch(`${VITE_API}/signup` , options)                  // Petición mediante fetch a la API para añadir el usuario en el endpoint sing up, donde el post se ejecuta diferente a login.
             .then(res => res.json())
             .then(data =>{
-                if(data.error){                                     
-                    setUserError(data.error)                         // Setear a Error en el caso de que la petición devuelva el error de doble usuario
+                if(data.error){                                      // Condicional para impedir usuarios duplicados. 
+                    setUserError(data.error)                         // Setear a Error en el caso de que la petición devuelva el error de doble usuario y estilar el form
                 } else {
                     setUserError('')                                 // Reiniciar variable de error de usuario
-                    setUser(data)                                    // Setear a User con el nuevo usuario creado para añadirlo a la bbdd
+                    setUser(data)                                    // Setear a User con el nuevo usuario creado para añadirlo a la bbdd porque las contraseñas coinciden
                 }
             })                           
             .catch(err => console.log(err.message))

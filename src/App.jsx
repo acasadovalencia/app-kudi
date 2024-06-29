@@ -14,15 +14,14 @@ function App() {
   const [ login , setLogin] = useState()  
 
   return (
-    <KudiContext.Provider value={{login , setLogin }}>
-    <BrowserRouter>
+    <KudiContext.Provider value={{login , setLogin }}>          // Contexto para compartir con el resto de la APP
+    <BrowserRouter>                                             // Creacion de rutas para navegar por diferentes paginas
     <>
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/kudi' element={<Kudi/>}/>
     </Routes>
-
     </>
     </BrowserRouter>
     </KudiContext.Provider>

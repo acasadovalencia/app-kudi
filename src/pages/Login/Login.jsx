@@ -11,7 +11,7 @@ export const Login = ()=>{
     const {login , setLogin} = useContext(KudiContext)
 
     // Variables al uso
-    const navigate = useNavigate()                                              // Asociar a una variable al no poderse declarar dentro un Hook en otro Hook.
+    const navigate = useNavigate()                                              // Asociar a una variable al no poderse declarar dentro de otro Hook.
 
     // Variables de entorno
     const { VITE_API } = import.meta.env     
@@ -22,7 +22,7 @@ export const Login = ()=>{
     // Effects
     useEffect(()=>{
         let loginLocal = JSON.parse(localStorage.getItem('user'))
-        if( loginLocal ){                                                       // Condicional que si login es true, vaya a la ruta /kodi                       
+        if( loginLocal ){                                                       // Condicional que si login es true, navegue a la ruta /kodi                       
             navigate('/kudi')
         }
     }, [login])                                                                 // El effect se ejecutará cada vez que login cambie
@@ -33,7 +33,7 @@ export const Login = ()=>{
 
         const {current: formData} = form
 
-        const newLogin = {                                                      // Datos del login introducidos en el form
+        const newLogin = {                                                      // Datos del login introducidos en el form guardados en variable
             username : formData['user'].value,
             password: formData['pass'].value
         }
@@ -43,21 +43,21 @@ export const Login = ()=>{
             method: 'post',                                                     // Método POST para enviar los datos
             signal: controller.signal,                                          // Asociar señal a controller
             headers: {"Content-type" : "application/json "},                    // Tipo de dato enviado por el body         
-            body: JSON.stringify(newLogin)                                      // Enviar por el body los nuevos datos que se compararán convertidos a JSON.
+            body: JSON.stringify(newLogin)                                      // Enviar por el body los nuevos datos que se compararán, convertidos a JSON.
         }
-        await fetch(`${VITE_API}/login` , options)                              // Petición mediante fetch a la API para el login
-            .then(res => res.json())
+        await fetch(`${VITE_API}/login` , options)                              // Petición mediante fetch a la API con el endpoint login
+            .then(res => res.json())                                           
             .then(data => {
-                if(data.login){                                                 // Condicional para además de setear el resultado en Login, guardarlo en localStorage
-                    setLogin(data.login)                                        // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
-                    localStorage.setItem('user' , JSON.stringify({login:true})) // Guardamos un objeto con valor true indicando que el login fué correcto.
-                    localStorage.setItem('username' , JSON.stringify(newLogin.username))
+                if(data.login){                                                             // Condicional para además de setear el resultado en Login, guardarlo en localStorage si el login es correcto
+                    setLogin(data.login)                                                    // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
+                    localStorage.setItem('user' , JSON.stringify({login:true}))             // Guardar un objeto con valor true indicando que el login fué correcto.
+                    localStorage.setItem('username' , JSON.stringify(newLogin.username))    // Guardar el nombre del usuario que se loguea para mostrarlo en la APP.
                 }
                 else{
-                    setLogin(false)
+                    setLogin(false)                                                         // Si login no es correcto, setea Login como false.
                 }
             })                     
-            .catch(err => console.log(err.message))
+            .catch(err => console.log(err.message))                             // Capturar error y mostrarlo por consola
             .finally(()=> controller.abort())                                   // Desconexión de la API
     }
 
@@ -86,7 +86,7 @@ export const Login = ()=>{
                     <input type="submit" value="Iniciar sesión" className="Login-submit" />
                 </form>
                 <span className="Login-span">¿No tienes cuenta?</span>
-                <button onClick={()=>navigate('/signup')} className="Login-btn">Crear usuario</button>
+                <button onClick={()=>navigate('/signup')} className="Login-btn">Crear usuario</button>                 
             </div>
             <picture className="Login-picture">
                 <source srcSet='assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />

@@ -3,14 +3,15 @@ import './Header.css'
 
 export const Header = ()=>{
 
-    let user = JSON.parse(localStorage.getItem('username'))                         // Guardar el nombre de usuario
+    let user = JSON.parse(localStorage.getItem('username'))                         // Guardar el nombre de usuario del localStorage para poder mostrarlo
 
     const navigate = useNavigate()
 
-    const logout = ()=>{                                                            
+    // Funcion para salir de la APP y eliminar el localStorage.
+    const logout = ()=>{                                                             
         localStorage.removeItem('username')                                         // Eliminar el nombre de usuario de localStorage para borarr el nombre
         localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
-        navigate('/')
+        navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
 
     return(
