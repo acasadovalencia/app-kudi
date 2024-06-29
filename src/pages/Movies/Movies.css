@@ -57,7 +57,10 @@
 }
 .Movies-h3{
     font-size: 1.0625rem;
-    margin: .625rem 0 .5rem;
+    margin: .5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .Imdb-wrapper{
     display: flex;
