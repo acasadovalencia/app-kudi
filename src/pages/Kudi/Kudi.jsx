@@ -30,6 +30,7 @@ export const Kudi = () =>{
             <Route path='/main' element={<Main/>}/>
             <Route path='movies' element={<Movies/>}/>
         </Routes>
+
         </>
     )
 }

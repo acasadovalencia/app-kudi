@@ -1,0 +1,13 @@
+.Play{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+}
+.Play-svg{
+    width: 3rem;
+}
+.Play-span{
+    font-size: 1.5rem;
+}
