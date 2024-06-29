@@ -18,13 +18,13 @@ export const Header = ()=>{
         <>
         <header className="Header">
             <div className="Header-wrapper">
-                <a href="" className="Header-a Logo">
+                <NavLink to='/'>
                     <h1 className="Logo-h1">KUDI</h1>
-                </a>
+                </NavLink>
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">
                         <li className="Nav-li">
-                            <a href="" className="Nav-a">Inicio</a>
+                        <NavLink to='/'>Inicio</NavLink>
                         </li>
                         <li className="Nav-li">
                             <a href="" className="Nav-a">Categorias</a>
