@@ -5,7 +5,8 @@ import { useEffect } from 'react'
 
 import { Header } from '@components/Header/Header'
 import { Movies } from '@pages/Movies/Movies'
-import { BrowserRouter, Route, Routes , useNavigate } from 'react-router-dom'
+import { Main } from '../Main/Main'
+import { Route, Routes , useNavigate } from 'react-router-dom'
 
 export const Kudi = () =>{
 
@@ -23,15 +24,12 @@ export const Kudi = () =>{
     },[])
 
     return(
-        <BrowserRouter>                                               // Gestion de rutas dentro de la App para navegar entre páginas
         <>
         <Header/>
         <Routes>
             <Route path='/main' element={<Main/>}/>
-            <Route path='/movies' element={<Movies/>}/>
+            <Route path='movies' element={<Movies/>}/>
         </Routes>
-        <Movies/>
         </>
-        </BrowserRouter>
     )
 }

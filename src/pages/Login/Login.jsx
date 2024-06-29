@@ -3,7 +3,7 @@ import './Login.css'
 
 import { useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { KudiContext } from '../../../context/Context'
+import { KudiContext } from '@context/Context'
 
 export const Login = ()=>{
 

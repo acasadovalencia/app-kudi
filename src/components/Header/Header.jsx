@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate , NavLink } from 'react-router-dom'
 import './Header.css'
 
 export const Header = ()=>{
@@ -30,7 +30,7 @@ export const Header = ()=>{
                             <a href="" className="Nav-a">Categorias</a>
                         </li>
                         <li className="Nav-li">
-                            <a href="" className="Nav-a">Películas</a>
+                            <NavLink to='/kudi/movies'>Películas</NavLink>
                         </li>
                         <li className="Nav-li">
                             <a href="" className="Nav-a">Series</a>
