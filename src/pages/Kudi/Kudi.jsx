@@ -11,7 +11,7 @@ import { Route, Routes , useNavigate } from 'react-router-dom'
 
 export const Kudi = () =>{
 
-    const navigate = useNavigate()                                     // Hook pasado por variable para liberar el uso en otros Hooks
+    const navigate = useNavigate()                                     // Hook pasado por variable para liberar su uso en otros Hooks
 
     // Effects
     useEffect(()=>{
