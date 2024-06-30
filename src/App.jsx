@@ -17,7 +17,7 @@ function App() {
 
   return (
     <KudiContext.Provider value={{login , setLogin , movie , setMovie }}>          {/* // Contexto para compartir con el resto de la APP */}
-    <BrowserRouter>                                                               {/* // Creacion de rutas para navegar por diferentes paginas */}
+    <BrowserRouter>                                                                 {/* // Creacion de rutas para navegar por diferentes paginas */}
     <>
     <Routes>
       <Route path='/' element={<Login/>}/>

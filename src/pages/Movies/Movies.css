@@ -1,8 +1,3 @@
-.Section-h2{
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin: 0 0 1.5rem;
-}
 .Movies-ul{
     display: grid;
     grid-template-columns: repeat( auto-fit , minmax(280px , 1fr));

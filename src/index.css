@@ -53,3 +53,12 @@ body{
   font-family: "Open Sans", sans-serif;
   color: var(--f-c-primary)
 }
+.H2{
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.H3{
+  font-size: 18px;
+  font-weight: 700;
+}

@@ -8,8 +8,8 @@ import { PlayMovieBtn } from '@components/PlayMovieBtn/PlayMovieBtn'
 import { FavBtn } from '@components/FavBtn/FavBtn'
 import { LikeBtn } from '@components/LikeBtn/LikeBtn'
 import { DislikeBtn } from '@components/DislikeBtn/DislikeBtn'
-import {KudiContext} from '@context/Context'
-
+import { MainInfo } from '@components/MainInfo/MainInfo'
+import { KudiContext } from '@context/Context'
 
 export const Movie = ()=>{
 
@@ -80,6 +80,7 @@ export const Movie = ()=>{
                 <img src={`./../../assets/images/${movie && movie.length != 0 && movie.poster.medium}.jpg`} alt={movie.title} className="Article-img Movie-img" width='1360' height='766' />
             </picture>    
         </article>
+        <MainInfo/>
         </>
     )
 }
