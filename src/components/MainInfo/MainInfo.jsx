@@ -12,7 +12,7 @@ export const MainInfo = ()=>{
 
     return(
         <>
-        <section className="Section Info">
+        <section id='Info' className="Section Info">
             <h2 className='Section-h2 H2'>Más información</h2>
             <ul className="Info-ul">
                 <li className="Info-li">
@@ -38,7 +38,7 @@ export const MainInfo = ()=>{
                 <li className="Info-li">
                     <h3 className='Info-h3 H3'>Reparto</h3>
                     <ul className="SubInfo-ul">
-                        {movie.length != 0 && movie.cast.map( (eachCast, index) =>                // Se utiliza el index del array como key 
+                        {movie.length != 0 && movie.cast.map( (eachCast, index) =>                         // Se utiliza el index del array como key 
                             <li key={index} className="SubInfo-li">{eachCast}</li>
                         )}
                     </ul>
