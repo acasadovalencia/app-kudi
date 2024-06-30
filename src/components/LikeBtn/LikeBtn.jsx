@@ -1,6 +1,9 @@
+// Importaciones
 import './LikeBtn.css'
 
 export const LikeBtn = ()=>{
+
+    // Contexto
 
     return(
         <>
