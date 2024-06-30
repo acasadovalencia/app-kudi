@@ -44,6 +44,10 @@ export const MainInfo = ()=>{
                     </ul>
                 </li>
                 <li className="Info-li">
+                    <h3 className='Info-h3 H3'>Año de lanzamiento</h3>
+                    <span className="Info-span">{movie.release}</span>
+                </li>
+                <li className="Info-li">
                     <h3 className='Info-h3 H3'>Estudio</h3>
                     <span className="Info-span">{movie.company}</span>
                 </li>
