@@ -50,7 +50,7 @@ export const Movies = ()=>{
             <ul className="Section-ul Movies-ul">
                 {movies.length == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
                 {movies.length != 1 && movies.map( eachMovie =>                 
-                    <GridItem key={eachMovie._id} {...eachMovie}/>                             
+                    <MoviesLi key={eachMovie._id} {...eachMovie}/>                             
                 )}
             </ul>
         </section>
@@ -58,7 +58,7 @@ export const Movies = ()=>{
     )
 }
 
-const GridItem = (props)=>{
+const MoviesLi = (props)=>{
 
     const {_id , title , description , runtime , rating , poster} = props
 

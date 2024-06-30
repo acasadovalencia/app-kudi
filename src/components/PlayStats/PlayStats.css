@@ -1,0 +1,26 @@
+.Play-stats{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 100%;
+}
+.Svg-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.Svg-wrapper::after{
+    content: "";
+    display: flex;
+    width: 90%;
+    height: 2px;
+    background-color: white;
+}
+.Play-stats--svg{
+    width: 2rem;
+}
+.Char-disabled{
+    color: var(--f-c-cuaternary);
+}

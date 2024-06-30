@@ -8,6 +8,7 @@ import { Movies } from '@pages/Movies/Movies'
 import { Movie } from '@pages/Movie/Movie'
 import { Main } from '@pages/Main/Main'
 import { Route, Routes , useNavigate } from 'react-router-dom'
+import { Play } from '@pages/Play/Play'
 
 export const Kudi = () =>{
 
@@ -30,7 +31,8 @@ export const Kudi = () =>{
         <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='movies/*' element={<Movies/>}/>
-            <Route path='movies/:_id' element={<Movie/>}/>              
+            <Route path='movies/:_id' element={<Movie/>}/>
+            <Route path='movies/:_id/play' element={<Play/>}/>              
         </Routes>
 
         </>

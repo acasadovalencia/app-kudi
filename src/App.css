@@ -1,0 +1,14 @@
+.Small-btn{
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--bg-c-secondary);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.Small-btn--svg{
+    width: 1rem;
+}

@@ -11,11 +11,13 @@ import { BrowserRouter , Routes , Route} from 'react-router-dom'
 function App() {
 
   // States
-  const [ login , setLogin] = useState()  
+  const [ login , setLogin] = useState()
+  const [ movie , setMovie] = useState([])
+  
 
   return (
-    <KudiContext.Provider value={{login , setLogin }}>          {/* // Contexto para compartir con el resto de la APP */}
-    <BrowserRouter>                                             {/* // Creacion de rutas para navegar por diferentes paginas */}
+    <KudiContext.Provider value={{login , setLogin , movie , setMovie }}>          {/* // Contexto para compartir con el resto de la APP */}
+    <BrowserRouter>                                                               {/* // Creacion de rutas para navegar por diferentes paginas */}
     <>
     <Routes>
       <Route path='/' element={<Login/>}/>

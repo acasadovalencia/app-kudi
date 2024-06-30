@@ -64,6 +64,13 @@
 .Genre-li:last-child::after{
     display: none;
 }
+.Btn-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
 .Article-picture{
     height: 100%;
     position: absolute;
@@ -73,6 +80,7 @@
 }
 .Movie-img{
     height: 100%;
+    width: 100%;
     object-fit: cover;
     filter: brightness(0.6);
     

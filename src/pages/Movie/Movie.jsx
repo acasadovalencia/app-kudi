@@ -2,21 +2,26 @@
 import './Movie.css'
 
 import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+
 import { PlayMovieBtn } from '@components/PlayMovieBtn/PlayMovieBtn'
+import { FavBtn } from '@components/FavBtn/FavBtn'
+import { LikeBtn } from '@components/LikeBtn/LikeBtn'
+import { DislikeBtn } from '@components/DislikeBtn/DislikeBtn'
+import {KudiContext} from '@context/Context'
 
 
 export const Movie = ()=>{
 
         const {_id} = useParams()                                          // Extraemos el _id de los params configurados en la ruta para hacer el fetch al item pulsado.
 
+        // Contexto 
+        const { movie , setMovie} = useContext(KudiContext)
+
         const navigate = useNavigate()
 
         // Variables de entorno
         const { VITE_API} = import.meta.env
-
-        // States
-        const [ movie , setMovie] = useState([])
     
         // Effects
         useEffect(()=>{
@@ -44,7 +49,6 @@ export const Movie = ()=>{
     
         }
     
-
     return(
         <>
         <article className="Article Movie">
@@ -64,7 +68,12 @@ export const Movie = ()=>{
                         <li key={index} className="Genre-li">{eachGenre}</li>
                     )}
                 </ul>
-                <PlayMovieBtn/>
+                <div className="Btn-wrapper">
+                    <PlayMovieBtn/>
+                    <FavBtn />
+                    <LikeBtn />
+                    <DislikeBtn />
+                </div>
             </div>
             <picture className="Article-picture Movie-picture">
                 <source srcSet={`./../../assets/images/${movie && movie.length != 0 && movie.poster.medium}.webp`} alt={movie.title} type='image/webp' />
