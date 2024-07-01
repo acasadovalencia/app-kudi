@@ -1,18 +1,39 @@
 // Importaciones
 import './Kudi.css'
 
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
+import { Route, Routes , useNavigate } from 'react-router-dom'
 
 import { Header } from '@components/Header/Header'
 import { Movies } from '@pages/Movies/Movies'
 import { Movie } from '@pages/Movie/Movie'
 import { Main } from '@pages/Main/Main'
-import { Route, Routes , useNavigate } from 'react-router-dom'
 import { Play } from '@pages/Play/Play'
+import { KudiContext } from '@context/Context'
 
 export const Kudi = () =>{
 
+    const { users , setUsers } = useContext( KudiContext )
+
     const navigate = useNavigate()                                     // Hook pasado por variable para liberar su uso en otros Hooks
+
+    // Variables de entorno
+    const { VITE_API} = import.meta.env
+
+    // Fetch
+    const getUsers = async ()=>{
+            let controller = new AbortController()
+            let options = {
+                method : 'get',                         // Método GET porque se piden datos
+                signal: controller.signal
+            }
+            await fetch(`${VITE_API}/users` , options) // Fetch al endpoint /movie para obtener los datos
+            .then(res => res.json())
+            .then( data => setUsers(data))             // Setear datos de la respuesta a movies
+            .catch( err => console.log(err.message))    // Capturar y mostrar error
+            .finally(()=> controller.abort())           // Abortar conexión con API
+            
+    }
 
     // Effects
     useEffect(()=>{
@@ -22,6 +43,7 @@ export const Kudi = () =>{
         if(!login){                                                    // Si login no existe o falso, navega a la página de inicio para impedir acceder
             navigate('/')
         }
+        getUsers()
 
     },[])
 
