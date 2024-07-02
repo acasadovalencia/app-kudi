@@ -50,6 +50,7 @@ export const Login = ()=>{
                     setLogin(data.login)                                                    // Setear a Login con el resultado del login (data.login) y no con el objeto (data)
                     localStorage.setItem('user' , JSON.stringify({login:true}))             // Guardar un objeto con valor true indicando que el login fué correcto.
                     localStorage.setItem('username' , JSON.stringify(newLogin.username))    // Guardar el nombre del usuario que se loguea para mostrarlo en la APP.
+                    navigate('/kudi')
                 }
                 else{
                     setLogin(false)                                                         // Si login no es correcto, setea Login como false.

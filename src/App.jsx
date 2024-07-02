@@ -18,8 +18,6 @@ function App() {
   // Variables de entorno
   const { VITE_API} = import.meta.env
 
-
-
   // Fetch
   const getUsers = async ()=>{
           let controller = new AbortController()
