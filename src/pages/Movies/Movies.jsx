@@ -2,18 +2,18 @@
 import './Movies.css'
 
 import { PlayBtn } from '@components/PlayBtn/PlayBtn'
+import { KudiContext } from '@context/Context'
 
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useContext } from 'react'
 
 
 export const Movies = ()=>{
 
-    // Variables
-    const navigate = useNavigate()
+    const { VITE_API } = useContext( KudiContext )
 
-    // Variables de entorno
-    const { VITE_API} = import.meta.env
+    // Variables al uso
+    const navigate = useNavigate()
 
     // States
     const [ movies , setMovies] = useState([])

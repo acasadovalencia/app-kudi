@@ -8,16 +8,23 @@
     align-items: center;
     border-radius: .5rem;
     cursor: pointer;
+    transition: background-color .5s ease;
+    opacity: 1;
+    pointer-events: all;
+}
+.Small-btn:hover{
+    background-color:var(--bg-c-tertiary-h);
 }
 .Small-btn--svg{
     width: 1.5rem;
 }
 .Disabled-btn .Fav-svg>path:first-child{
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 .Fav-btn .Fav-svg > path:last-child{
-    display: none;
-}
+    opacity: 0;
+    pointer-events: none;}
 .Disabled-btn > .Fav-svg > path:last-child{
-    display: block;
-}
+    opacity: 1;
+    pointer-events: all;}

@@ -35,7 +35,7 @@ function App() {
   
 
   return (
-    <KudiContext.Provider value={{login , setLogin , movie , setMovie , users , setUsers , getUsers}}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers}}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>                                                                 {/* // Creacion de rutas para navegar por diferentes paginas */}
     <>
     <Routes>

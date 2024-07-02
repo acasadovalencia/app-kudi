@@ -1,16 +1,17 @@
 //Importaciones
 import './SignUp.css'
 
-import { useEffect, useRef, useState } from 'react'
+import { KudiContext } from '@context/Context'
+
+import { useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export const SignUp = ()=>{
+    // Contexto
+    const { VITE_API } = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()                                   // Asociar a una variable al no poderse declarar dentro un Hook.
-
-    // Variables de entorno
-    const { VITE_API } = import.meta.env
 
     // States
     const [ user , setUser] = useState()
@@ -43,7 +44,7 @@ export const SignUp = ()=>{
         }
     }
 
-    const sendUser = async ()=>{                                  // Funcion asíncrona ya que conectará a MongoDB
+    const sendUser = async ()=>{                                            // Funcion asíncrona ya que conectará a MongoDB
 
         const {current: formData} = form
 

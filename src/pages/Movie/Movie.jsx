@@ -1,28 +1,24 @@
 // Importaciones
 import './Movie.css'
 
-import { useNavigate, useParams } from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react'
-
 import { PlayMovieBtn } from '@components/PlayMovieBtn/PlayMovieBtn'
 import { FavBtn } from '@components/FavBtn/FavBtn'
-import { LikeBtn } from '@components/LikeBtn/LikeBtn'
-import { DislikeBtn } from '@components/DislikeBtn/DislikeBtn'
 import { MainInfo } from '@components/MainInfo/MainInfo'
 import { KudiContext } from '@context/Context'
 
+import { useNavigate, useParams } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+
 export const Movie = ()=>{
 
+        // Params
         const {_id} = useParams()                                          // Extraemos el _id de los params configurados en la ruta para hacer el fetch al item pulsado.
-        
 
         // Contexto 
-        const { movie , setMovie} = useContext(KudiContext)
+        const { VITE_API , movie , setMovie} = useContext(KudiContext)
 
-        const navigate = useNavigate()
-
-        // Variables de entorno
-        const { VITE_API} = import.meta.env
+        // Variables al uso
+        const navigate = useNavigate()                                    // Asignamos el hook a una variables para usarlo en otro hook
     
         // Effects
         useEffect(()=>{
@@ -50,7 +46,7 @@ export const Movie = ()=>{
     
         }
 
-        const scrollToInfo = () => {                                                    // Función para hacer scroll hasta Info
+        const scrollToInfo = () => {                                       // Función para hacer scroll hasta Info
             document.getElementById('Info').scrollIntoView({ behavior: 'smooth' })
         }
     
@@ -69,7 +65,7 @@ export const Movie = ()=>{
                 </div>
                 <p className="Article-paragraph">{movie.description}</p>
                 <ul className="Article-ul Genre-ul">
-                    {!movie && !movie.genre && movie.genre.length == 0 && <li>No hay generos</li>}
+                    {!movie && !movie.genre && movie.genre.length == 0 && <li>-</li>}
                     {movie && movie.genre && movie.genre.length != 0 && movie.genre.map( (eachGenre , index) =>                 // Al ser array, se utiliza el index como key para iterar sobre los elementos del array
                         <li key={index} className="Genre-li">{eachGenre}</li>
                     )}
@@ -77,8 +73,6 @@ export const Movie = ()=>{
                 <div className="Btn-wrapper">
                     <PlayMovieBtn/>
                     <FavBtn />
-                    <LikeBtn />
-                    <DislikeBtn />
                 </div>
             </div>
             <picture className="Article-picture Movie-picture">

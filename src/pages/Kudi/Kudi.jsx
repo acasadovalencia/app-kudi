@@ -1,9 +1,6 @@
 // Importaciones
 import './Kudi.css'
 
-import { useContext, useEffect } from 'react'
-import { Route, Routes , useNavigate } from 'react-router-dom'
-
 import { Header } from '@components/Header/Header'
 import { Movies } from '@pages/Movies/Movies'
 import { Movie } from '@pages/Movie/Movie'
@@ -11,10 +8,15 @@ import { Main } from '@pages/Main/Main'
 import { Play } from '@pages/Play/Play'
 import { KudiContext } from '@context/Context'
 
+import { useContext, useEffect } from 'react'
+import { Route, Routes , useNavigate } from 'react-router-dom'
+
+
 export const Kudi = () =>{
+    // Contexto
+    const { getUsers } = useContext( KudiContext )
 
-    const { users , setUsers , getUsers } = useContext( KudiContext )
-
+    // Variables al uso
     const navigate = useNavigate()                                     // Hook pasado por variable para liberar su uso en otros Hooks
 
     // Effects

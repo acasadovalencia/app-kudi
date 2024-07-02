@@ -1,20 +1,18 @@
 //Importaciones
 import './Login.css'
 
+import { KudiContext } from '@context/Context'
+
 import { useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { KudiContext } from '@context/Context'
 
 export const Login = ()=>{
 
-    // Importacion de contexto
-    const {login , setLogin} = useContext(KudiContext)
+    // Contexto
+    const { VITE_API , login , setLogin} = useContext(KudiContext)
 
     // Variables al uso
     const navigate = useNavigate()                                              // Asociar a una variable al no poderse declarar dentro de otro Hook.
-
-    // Variables de entorno
-    const { VITE_API } = import.meta.env     
     
     // Refs
     const form = useRef()

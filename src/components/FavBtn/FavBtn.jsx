@@ -6,20 +6,22 @@ import { useParams } from 'react-router-dom'
 import { KudiContext } from '@context/Context'
 
 export const FavBtn = ()=>{
-    
-    // Variables de entorno
-    const { VITE_API} = import.meta.env
 
+    // Contexto
+    const { VITE_API , users , setUsers , movie } = useContext(KudiContext)
+
+    // Params
     const { _id } = useParams()
 
-    const { users , setUsers , movie } = useContext(KudiContext)
+    // States
+    const [ isFav , setIsFav] = useState(false)
 
+    // Variables al uso
     let user = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
 
     const userLogged = users.find(eachUser => eachUser.username === user)           // Buscar el usuario logueado entre los usuarios de la bbdd
 
-    const [ isFav , setIsFav] = useState(false)
-
+    // Effects
     useEffect(()=>{
         if( userLogged && userLogged.movies_favs){                                  // Doble comprobación para asegurar que existe movies_favs y no de error al recargar página
             setIsFav(userLogged.movies_favs.some(fav => fav._id === _id))
@@ -27,7 +29,7 @@ export const FavBtn = ()=>{
 
     }, [users , userLogged])                                                                     // Se ejecuta cada vez que users cambia (al añadir un elemento vuelve a comprobar)
 
-    
+    // Funciones
     const saveFav = async ()=>{
 
         if(!isFav){
