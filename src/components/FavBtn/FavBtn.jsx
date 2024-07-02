@@ -1,6 +1,7 @@
 import './FavBtn.css'
 
-import { useContext } from 'react'
+import { useContext  } from 'react'
+import { useParams } from 'react-router-dom'
 
 import { KudiContext } from '@context/Context'
 
@@ -8,6 +9,8 @@ export const FavBtn = ()=>{
     
     // Variables de entorno
     const { VITE_API} = import.meta.env
+
+    const { _id } = useParams()
 
     const { users , setUsers , movie } = useContext(KudiContext)
 
@@ -34,7 +37,6 @@ export const FavBtn = ()=>{
         .then(data => setUsers(data))                             
         .catch(err => console.log(err.message))                     
         .finally(()=> controller.abort())                           
-        console.log(newFav)
     }
 
     return(

@@ -14,6 +14,7 @@ import { KudiContext } from '@context/Context'
 export const Movie = ()=>{
 
         const {_id} = useParams()                                          // Extraemos el _id de los params configurados en la ruta para hacer el fetch al item pulsado.
+        
 
         // Contexto 
         const { movie , setMovie} = useContext(KudiContext)
