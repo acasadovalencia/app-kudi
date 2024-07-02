@@ -27,13 +27,13 @@ export const Header = ()=>{
                         <NavLink to='/kudi'>Inicio</NavLink>
                         </li>
                         <li className="Nav-li">
-                            <a href="" className="Nav-a">Categorias</a>
+                        <NavLink to='/kudi'>Categorías</NavLink>
                         </li>
                         <li className="Nav-li">
                             <NavLink to='/kudi/movies'>Películas</NavLink>
                         </li>
                         <li className="Nav-li">
-                            <a href="" className="Nav-a">Series</a>
+                        <NavLink to='/kudi'>Series</NavLink>
                         </li>
                     </ul>
                 </nav>

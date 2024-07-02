@@ -5,18 +5,20 @@ import { SignUp } from '@pages/SignUp/SignUp'
 import { Kudi } from '@pages/Kudi/Kudi'
 import { KudiContext } from '@context/Context'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter , Routes , Route} from 'react-router-dom'
 
 function App() {
-
-  // Variables de entorno
-  const { VITE_API} = import.meta.env
-
   // States
   const [ login , setLogin] = useState()
   const [ movie , setMovie] = useState([])
   const [ users , setUsers] = useState([])
+  const [ user , setUser] = useState([])
+
+  // Variables de entorno
+  const { VITE_API} = import.meta.env
+
+
 
   // Fetch
   const getUsers = async ()=>{
@@ -32,10 +34,9 @@ function App() {
           .finally(()=> controller.abort())           // Abortar conexión con API
           
   }
-  
 
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers}}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers , user , setUser }}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>                                                                 {/* // Creacion de rutas para navegar por diferentes paginas */}
     <>
     <Routes>
