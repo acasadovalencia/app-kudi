@@ -13,27 +13,9 @@ import { KudiContext } from '@context/Context'
 
 export const Kudi = () =>{
 
-    const { users , setUsers } = useContext( KudiContext )
+    const { users , setUsers , getUsers } = useContext( KudiContext )
 
     const navigate = useNavigate()                                     // Hook pasado por variable para liberar su uso en otros Hooks
-
-    // Variables de entorno
-    const { VITE_API} = import.meta.env
-
-    // Fetch
-    const getUsers = async ()=>{
-            let controller = new AbortController()
-            let options = {
-                method : 'get',                         // Método GET porque se piden datos
-                signal: controller.signal
-            }
-            await fetch(`${VITE_API}/users` , options) // Fetch al endpoint /movie para obtener los datos
-            .then(res => res.json())
-            .then( data => setUsers(data))             // Setear datos de la respuesta a movies
-            .catch( err => console.log(err.message))    // Capturar y mostrar error
-            .finally(()=> controller.abort())           // Abortar conexión con API
-            
-    }
 
     // Effects
     useEffect(()=>{

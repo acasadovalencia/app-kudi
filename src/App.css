@@ -10,5 +10,14 @@
     cursor: pointer;
 }
 .Small-btn--svg{
-    width: 1rem;
+    width: 1.5rem;
+}
+.Disabled-btn .Fav-svg>path:first-child{
+    display: none;
+}
+.Fav-btn .Fav-svg > path:last-child{
+    display: none;
+}
+.Disabled-btn > .Fav-svg > path:last-child{
+    display: block;
 }
