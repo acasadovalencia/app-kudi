@@ -35,6 +35,9 @@ export const Header = ()=>{
                         <li className="Nav-li">
                         <NavLink to='/kudi'>Series</NavLink>
                         </li>
+                        <li className="Nav-li">
+                        <NavLink to={`/kudi/favlist`}>Mi lista</NavLink>
+                        </li>
                     </ul>
                 </nav>
                 <div className="Header-profile Profile">
