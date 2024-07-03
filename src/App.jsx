@@ -14,6 +14,8 @@ function App() {
   const [ movie , setMovie] = useState([])
   const [ users , setUsers] = useState([])
   const [ user , setUser] = useState([])
+  const [ currentUser , setCurrentUser ] = useState(null)
+
 
   // Variables de entorno
   const { VITE_API} = import.meta.env
@@ -34,7 +36,7 @@ function App() {
   }
 
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers , user , setUser }}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers , user , setUser , currentUser , setCurrentUser }}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>                                                                 {/* // Creacion de rutas para navegar por diferentes paginas */}
     <>
     <Routes>
