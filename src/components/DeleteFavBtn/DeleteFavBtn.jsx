@@ -1,56 +1,28 @@
-import './FavBtn.css'
+import './DeleteFavBtn.css'
 
 import { useContext, useEffect, useState  } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { KudiContext } from '@context/Context'
 
-export const FavBtn = ()=>{
+export const DeleteFavBtn = (props)=>{
+    
+    const {_id} = props
 
     // Contexto
     const { VITE_API , users , setUsers , movie } = useContext(KudiContext)
 
-    // Params
-    const { _id } = useParams()
 
     // States
-    const [ isFav , setIsFav] = useState(false)
 
     let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
     const userLogged = users.find(eachUser => eachUser.username === username)           // Buscar el usuario logueado entre los usuarios de la bbdd    
 
 
-    // Effects
-    useEffect(()=>{
-        if( userLogged && userLogged.movies_favs){                                  // Doble comprobación para asegurar que existe movies_favs y no de error al recargar página
-            setIsFav(userLogged.movies_favs.some(fav => fav._id === _id))
-        }
-
-    }, [users , userLogged])                                                                     // Se ejecuta cada vez que users cambia (al añadir un elemento vuelve a comprobar)
 
     // Funciones
-    const saveFav = async ()=>{
+    const deleteFav = async ()=>{
 
-        if(!isFav){
-            const newFav = {                                                            // Crear el nuevo objeto con los datos a incluir
-                id: userLogged._id,                                                     // Necesario el id para que la API seleccione el item a modificar
-                movies_favs: [...userLogged.movies_favs , movie]
-            }
-    
-            let controller = new AbortController()                      
-            let options = {                                             
-                method: 'put',                                          // Metodo PUT para actualizar el elemento
-                signal: controller.signal,                              
-                body: JSON.stringify(newFav),                           // Enviar por el body el objeto con los datos actualizados
-                headers: {"Content-type" : "application/json"}          
-            }
-            await fetch(`${VITE_API}/users` , options)                
-            .then(res => res.json())                                    
-            .then(data => setUsers(data))                             
-            .catch(err => console.log(err.message))                     
-            .finally(()=> controller.abort()) 
-
-        } else if(isFav){
             let controller = new AbortController()                                              // Crear controller del fetch
             let options = {                                                                     // Crear options del fetch
                 method: 'delete',                                                               // Usar metodo delete porque eliminamos un elemento
@@ -61,15 +33,15 @@ export const FavBtn = ()=>{
             .then(data => setUsers(data))                                                       // Asignar los datos a alumnos
             .catch(err => console.log(err.message))                                             // Capturar el error y enviarlo por cosola
             .finally( ()=> controller.abort() )                                                 // Abortar la conexión a la API
-            }
+            
         }  
 
     return(
         <>
-        <button onClick={saveFav} className={`Fav-btn Small-btn ${isFav ? `Disabled-btn` : ``}`} title='Añadir a la lista'>
-            <svg className='Fav-svg Small-btn--svg' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 6.85708H9.14286V-6.10352e-05H6.85714V6.85708H0V9.1428H6.85714V15.9999H9.14286V9.1428H16V6.85708Z" fill="black"/>
-                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" stroke="black" strokeWidth=".8" fill="black"/>
+        <button onClick={deleteFav} className={`DeleteFav-btn Small-btn`} title='Añadir a la lista'>
+            <svg className="Delete-btn Small-btn--svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
             </svg>
         </button>
         </>
