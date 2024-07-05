@@ -1,8 +1,8 @@
-import './BackBtn.css'
+import './BackPageBtn.css'
 
 import { useNavigate } from 'react-router-dom'
 
-export const BackBtn = ()=>{
+export const BackPageBtn = ()=>{
     
     const navigate = useNavigate()
 
