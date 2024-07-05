@@ -7,7 +7,10 @@ export const Header = ()=>{
 
     let user = JSON.parse(localStorage.getItem('username'))                         // Guardar el nombre de usuario del localStorage para poder mostrarlo
 
-    const navigate = useNavigate()
+    const navigate = useNavigate()                                                  // Asociar el hook useNavigate a una constante para que se pueda usar en otros Hooks
+
+    const currentPage = useLocation()                                               // Guardamos en que punto del Router está la página para estilos de CSS
+
 
     // Funcion para salir de la APP y eliminar el localStorage.
     const logout = ()=>{                                                             
@@ -16,7 +19,6 @@ export const Header = ()=>{
         navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
 
-    const currentPage = useLocation()
 
     return(
         <>
@@ -27,7 +29,7 @@ export const Header = ()=>{
                 </NavLink>
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">
-                        <li className={`Nav-li ${currentPage.pathname == '/kudi' ? `CurrentPage` : ``}`}>
+                        <li className={`Nav-li ${currentPage.pathname == '/kudi' ? `CurrentPage` : ``}`}>                       {/* Incluimos una clase o no, según el nombre del path de la route */}
                         <NavLink to='/kudi'>Inicio</NavLink>
                         </li>
                         <li className="Nav-li">
