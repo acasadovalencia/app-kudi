@@ -26,6 +26,9 @@
 .Nav-li:hover{
     color: var(--f-c-tertiary);
 }
+.CurrentPage{
+    color: var(--bg-c-tertiary-h);
+}
 .Header-profile{
     display: flex;
     flex-flow: row nowrap;

@@ -1,5 +1,7 @@
-import { useNavigate , NavLink } from 'react-router-dom'
 import './Header.css'
+
+import { useNavigate , NavLink, useLocation } from 'react-router-dom'
+
 
 export const Header = ()=>{
 
@@ -14,6 +16,8 @@ export const Header = ()=>{
         navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
 
+    const currentPage = useLocation()
+
     return(
         <>
         <header className="Header">
@@ -23,19 +27,19 @@ export const Header = ()=>{
                 </NavLink>
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">
-                        <li className="Nav-li">
+                        <li className={`Nav-li ${currentPage.pathname == '/kudi' ? `CurrentPage` : ``}`}>
                         <NavLink to='/kudi'>Inicio</NavLink>
                         </li>
                         <li className="Nav-li">
                         <NavLink to='/kudi'>Categorías</NavLink>
                         </li>
-                        <li className="Nav-li">
+                        <li className={`Nav-li ${currentPage.pathname.includes('/kudi/movies') ? `CurrentPage` : ``}`}>
                             <NavLink to='/kudi/movies'>Películas</NavLink>
                         </li>
                         <li className="Nav-li">
                         <NavLink to='/kudi'>Series</NavLink>
                         </li>
-                        <li className="Nav-li">
+                        <li className={`Nav-li ${currentPage.pathname == '/kudi/favlist' ? `CurrentPage` : ``}`}>
                         <NavLink to={`/kudi/favlist`}>Mi lista</NavLink>
                         </li>
                     </ul>
