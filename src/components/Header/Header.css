@@ -20,6 +20,12 @@
     gap: 1.5rem;
     font-size: 1.0625rem;
 }
+.Nav-li{
+    transition: color .5s ease;
+}
+.Nav-li:hover{
+    color: var(--f-c-tertiary);
+}
 .Header-profile{
     display: flex;
     flex-flow: row nowrap;

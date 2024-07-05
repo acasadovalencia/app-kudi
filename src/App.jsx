@@ -16,7 +16,6 @@ function App() {
   const [ user , setUser] = useState([])
   const [ currentUser , setCurrentUser ] = useState(null)
 
-
   // Variables de entorno
   const { VITE_API} = import.meta.env
 

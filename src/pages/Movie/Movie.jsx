@@ -4,7 +4,7 @@ import './Movie.css'
 import { PlayMovieBtn } from '@components/PlayMovieBtn/PlayMovieBtn'
 import { FavBtn } from '@components/FavBtn/FavBtn'
 import { MainInfo } from '@components/MainInfo/MainInfo'
-import { BackPageBtn } from '@components/BackBtn/BackBtn'
+import { BackPageBtn } from '@components/BackPageBtn/BackPageBtn'
 import { KudiContext } from '@context/Context'
 
 import { useNavigate, useParams } from 'react-router-dom'
