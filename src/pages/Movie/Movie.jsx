@@ -1,7 +1,7 @@
 // Importaciones
 import './Movie.css'
 
-import { PlayMovieBtn } from '@components/PlayMovieBtn/PlayMovieBtn'
+import { StartBtn } from '@components/StartBtn/StartBtn'
 import { FavMovieBtn } from '@components/FavMovieBtn/FavMovieBtn'
 import { MovieInfo } from '@components/MovieInfo/MovieInfo'
 import { BackPageBtn } from '@components/BackPageBtn/BackPageBtn'
@@ -72,7 +72,7 @@ export const Movie = ()=>{
                     )}
                 </ul>
                 <div className="Btn-wrapper">
-                    <PlayMovieBtn/>
+                    <StartBtn/>
                     <FavMovieBtn />
                 </div>
             </div>

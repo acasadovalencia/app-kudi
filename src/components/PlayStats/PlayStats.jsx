@@ -4,11 +4,15 @@ import './PlayStats.css'
 import { KudiContext } from '@context/Context'
 
 import { useContext, useEffect , useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export const PlayStats = ()=>{
 
+    const currentPage = useLocation()                                               // Guardamos en que punto del Router está la página para utilizar movies o tvshows dependiendo de la pagina
+
+
     // Contextos
-    const { movie } = useContext( KudiContext )
+    const { movie , tvshow } = useContext( KudiContext )
 
     // State
     const [formatTime , setFormatTime] = useState('')
@@ -18,17 +22,26 @@ export const PlayStats = ()=>{
 
         const formatNum = (num) => String(num).padStart(2 , '0')   // Funcion para insertar un segundo digito (0) si es menos de 2. El num sera el resultado de cada conversion de minutos a formato hora
 
-        let hours = formatNum(Math.floor(movie.runtime / 60))      // Obtener cuantas  horas son X minutos dentro de la función que formatea el número
-        let minutes = formatNum(movie.runtime % 60 )               // Obtener cuantos minutos restan a la división anterior dentro de la función que formatea el número
+        let hours = formatNum(Math.floor(runtime / 60))      // Obtener cuantas  horas son X minutos dentro de la función que formatea el número
+        let minutes = formatNum(runtime % 60 )               // Obtener cuantos minutos restan a la división anterior dentro de la función que formatea el número
         let seconds = formatNum(0)                                 // 0 al no disponer de segundos
         
         return `${hours}:${minutes}:${seconds}`                    // Devuelve cada valor formateado
     }
 
     useEffect(()=>{
-        const time = minConverter(movie.runtime)
+        let runtime
+        if(currentPage.pathname.includes('kudi/movies')){
+            runtime = movie.runtime
+        } else if(currentPage.pathname.includes('kudi/tvshows')){
+            runtime = tvshow.runtime
+        } else {
+            runtime = 0
+        }
+        
+        const time = minConverter(runtime)
         setFormatTime(time)
-    }, [])
+    }, [currentPage.pathname , movie.runtime , tvshow.runtime])
 
 
     return(

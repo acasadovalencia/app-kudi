@@ -1,14 +1,14 @@
 // Importaciones
 import './TvShow.css'
 
-import { PlayMovieBtn } from '@components/PlayMovieBtn/PlayMovieBtn'
+import { StartBtn } from '@components/StartBtn/StartBtn'
 import { TvShowInfo } from '@components/TvShowInfo/TvShowInfo'
 import { BackPageBtn } from '@components/BackPageBtn/BackPageBtn'
+import { FavTvshowBtn } from '@components/FavTvshowBtn/FavTvshowBtn'
 import { KudiContext } from '@context/Context'
 
 import { useNavigate, useParams } from 'react-router-dom'
 import { useContext, useEffect } from 'react'
-import { FavTvshowBtn } from '../../components/FavTvshowBtn/FavTvshowBtn'
 
 export const TvShow = ()=>{
 
@@ -74,7 +74,7 @@ export const TvShow = ()=>{
                     )}
                 </ul>
                 <div className="Btn-wrapper">
-                    <PlayMovieBtn/>
+                    <StartBtn/>
                     <FavTvshowBtn/>
                 </div>
             </div>

@@ -45,15 +45,17 @@ export const TvShows = ()=>{
 
     return(
         <>
-        <section className="Section Movies">
-            <h2 className="Section-h2 H2">Peliculas</h2>
-            <ul className="Section-ul Movies-ul">
-                {tvshows.length == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
-                {tvshows.length != 1 && tvshows.map( eachMovie =>                 
-                    <TvShowsLi key={eachMovie._id} {...eachMovie}/>                             
-                )}
-            </ul>
-        </section>
+        <main className="Main">
+            <section className="Section Movies">
+                <h2 className="Section-h2 H2">Peliculas</h2>
+                <ul className="Section-ul Movies-ul">
+                    {tvshows.length == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                    {tvshows.length != 1 && tvshows.map( eachMovie =>                 
+                        <TvShowsLi key={eachMovie._id} {...eachMovie}/>                             
+                    )}
+                </ul>
+            </section>
+        </main>
         </>
     )
 }
