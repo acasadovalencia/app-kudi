@@ -25,7 +25,7 @@ export const Header = ()=>{
         <header className="Header">
             <div className="Header-wrapper">
                 <NavLink to='/'>
-                    <h1 className="Logo-h1">KUDI</h1>
+                    <h1 className="Logo-h1">Kudi</h1>
                 </NavLink>
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">

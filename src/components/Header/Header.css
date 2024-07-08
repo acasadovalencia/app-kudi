@@ -11,6 +11,8 @@
 }
 .Logo-h1{
     font-size: 2rem;
+    font-family:"Back to Black Bold Demo";
+    color: var(--f-c-tertiary);
 }
 .Nav{
     display: flex;
