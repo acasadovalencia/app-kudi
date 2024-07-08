@@ -32,8 +32,8 @@ export const Header = ()=>{
                         <li className={`Nav-li ${currentPage.pathname == '/kudi' ? `CurrentPage` : ``}`}>                       {/* Incluimos una clase o no, según el nombre del path de la route */}
                         <NavLink to='/kudi'>Inicio</NavLink>
                         </li>
-                        <li className="Nav-li">
-                        <NavLink to='/kudi'>Categorías</NavLink>
+                        <li className={`Nav-li ${currentPage.pathname.includes('/kudi/categories') ? `CurrentPage` : ``}`}>
+                        <NavLink to='/kudi/categories'>Categorías</NavLink>
                         </li>
                         <li className={`Nav-li ${currentPage.pathname.includes('/kudi/movies') ? `CurrentPage` : ``}`}>
                             <NavLink to='/kudi/movies'>Películas</NavLink>

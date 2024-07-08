@@ -9,6 +9,7 @@ import { TvShow } from '@pages/TvShow/TvShow'
 import { Main } from '@pages/Main/Main'
 import { Play } from '@pages/Play/Play'
 import { FavList } from '@pages/FavList/FavList'
+import { Categories } from '@pages/Categories/Categories'
 import { KudiContext } from '@context/Context'
 
 import { useContext, useEffect } from 'react'
@@ -46,7 +47,8 @@ export const Kudi = () =>{
             <Route path='tvshows/*' element={<TvShows/>}/>
             <Route path='tvshows/:_id' element={<TvShow/>}/>
             <Route path='tvshows/:_id/play' element={<Play/>}/>
-            <Route path='favlist/*' element={<FavList/>}/>              
+            <Route path='favlist/*' element={<FavList/>}/>
+            <Route path='categories/*' element={<Categories/>}/>              
         </Routes>
 
         </>

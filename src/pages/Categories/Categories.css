@@ -6,7 +6,6 @@
 }
 .Type-btn{
     color: var(--f-c-primary);
-    font-weight: 600;
     background-color: var(--bg-c-cuaternary);
     padding: 1rem 1.5rem;
     border-radius: .5rem;
