@@ -5,6 +5,7 @@ import { Header } from '@components/Header/Header'
 import { Movies } from '@pages/Movies/Movies'
 import { Movie } from '@pages/Movie/Movie'
 import { TvShows } from '@pages/TvShows/TvShows'
+import { TvShow } from '@pages/TvShow/TvShow'
 import { Main } from '@pages/Main/Main'
 import { Play } from '@pages/Play/Play'
 import { FavList } from '@pages/FavList/FavList'
@@ -43,6 +44,7 @@ export const Kudi = () =>{
             <Route path='movies/:_id' element={<Movie/>}/>
             <Route path='movies/:_id/play' element={<Play/>}/>
             <Route path='tvshows/*' element={<TvShows/>}/>
+            <Route path='tvshows/:_id' element={<TvShow/>}/>
             <Route path='favlist/*' element={<FavList/>}/>              
         </Routes>
 

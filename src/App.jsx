@@ -12,6 +12,7 @@ function App() {
   // States
   const [ login , setLogin] = useState()
   const [ movie , setMovie] = useState([])
+  const [ tvshow , setTvshow] = useState([])
   const [ users , setUsers] = useState([])
   const [ user , setUser] = useState([])
   const [ currentUser , setCurrentUser ] = useState(null)
@@ -35,7 +36,7 @@ function App() {
   }
 
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers , user , setUser , currentUser , setCurrentUser }}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movie , setMovie , users , setUsers , getUsers , user , setUser , currentUser , setCurrentUser , tvshow , setTvshow }}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>                                                                 {/* // Creacion de rutas para navegar por diferentes paginas */}
     <>
     <Routes>

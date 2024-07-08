@@ -1,11 +1,11 @@
 // Importaciones
-import './MainInfo.css'
+import './MovieInfo.css'
 
 import { useContext } from 'react'
 
 import { KudiContext } from '@context/Context'
 
-export const MainInfo = ()=>{
+export const MovieInfo = ()=>{
 
     // Contexto 
     const { movie , setMovie} = useContext(KudiContext)

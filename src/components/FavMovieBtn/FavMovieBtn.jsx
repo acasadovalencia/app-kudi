@@ -1,11 +1,11 @@
-import './FavBtn.css'
+import './FavMovieBtn.css'
 
 import { useContext, useEffect, useState  } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { KudiContext } from '@context/Context'
 
-export const FavBtn = ()=>{
+export const FavMovieBtn = ()=>{
 
     // Contexto
     const { VITE_API , users , setUsers , movie } = useContext(KudiContext)
