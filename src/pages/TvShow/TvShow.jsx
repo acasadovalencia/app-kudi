@@ -8,6 +8,7 @@ import { KudiContext } from '@context/Context'
 
 import { useNavigate, useParams } from 'react-router-dom'
 import { useContext, useEffect } from 'react'
+import { FavTvshowBtn } from '../../components/FavTvshowBtn/FavTvshowBtn'
 
 export const TvShow = ()=>{
 
@@ -62,6 +63,8 @@ export const TvShow = ()=>{
                         <span className="Article-span">{tvshow.rating}</span>                   
                     </div>
                     <span className="Article-span">{tvshow.runtime} min</span>
+                    <span className="Article-span">{tvshow.episodes} episodios</span>
+
                 </div>
                 <p className="Article-paragraph">{tvshow.description}</p>
                 <ul className="Article-ul Genre-ul">
@@ -72,6 +75,7 @@ export const TvShow = ()=>{
                 </ul>
                 <div className="Btn-wrapper">
                     <PlayMovieBtn/>
+                    <FavTvshowBtn/>
                 </div>
             </div>
             <picture className="Article-picture Movie-picture">
