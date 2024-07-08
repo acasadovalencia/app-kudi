@@ -1,0 +1,12 @@
+.Favs-ul{
+    display: grid;
+    grid-template-columns: repeat( auto-fit , minmax(280px , 1fr));
+    gap: 2rem;
+
+}
+.Favs-li{
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: transform .3s ease;
+    position: relative;
+}

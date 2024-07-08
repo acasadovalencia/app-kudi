@@ -2,7 +2,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 3;
+    z-index: 6;
     opacity: 0;
     pointer-events: none;
     transition: opacity .5s ease , background-color .5s ease;
