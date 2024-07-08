@@ -14,7 +14,7 @@
         const { VITE_API , user , setUser , users , setCurrentUser , movies , tvshows } = useContext( KudiContext )
 
         const { category } = useParams()
-
+        
 
         return(
             <>
