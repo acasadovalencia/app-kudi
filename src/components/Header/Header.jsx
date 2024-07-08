@@ -38,8 +38,8 @@ export const Header = ()=>{
                         <li className={`Nav-li ${currentPage.pathname.includes('/kudi/movies') ? `CurrentPage` : ``}`}>
                             <NavLink to='/kudi/movies'>Películas</NavLink>
                         </li>
-                        <li className="Nav-li">
-                        <NavLink to='/kudi'>Series</NavLink>
+                        <li className={`Nav-li ${currentPage.pathname.includes('/kudi/tvshows') ? `CurrentPage` : ``}`}>
+                        <NavLink to='/kudi/tvshows'>Series</NavLink>
                         </li>
                         <li className={`Nav-li ${currentPage.pathname == '/kudi/favlist' ? `CurrentPage` : ``}`}>
                         <NavLink to={`/kudi/favlist`}>Mi lista</NavLink>
