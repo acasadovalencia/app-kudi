@@ -60,7 +60,11 @@
                 <h2 className="Section-h2 H2">Categorías</h2>
                 <ul className="Section-ul Categories-ul">
                     {categories.length != 0 && categories.map((eachCategory , index) => 
-                        <li key={index}>{eachCategory.normalize("NFD").replace(/[\u0300-\u036f]/g, "")}</li>
+                        <li key={index}>
+                            <NavLink to={`/kudi/categories/${eachCategory}`}> 
+                            {eachCategory}
+                            </NavLink>
+                        </li>
                     )}
                 </ul>
             </section>
