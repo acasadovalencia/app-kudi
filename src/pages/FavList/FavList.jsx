@@ -48,7 +48,8 @@ export const FavList = ()=>{
 
     return(
         <>
-        <section className="Section Movies">
+        <main className="Main">
+        <section className="Section Favs">
             <h2 className="Section-h2 H2">Peliculas en mi lista</h2>
             <ul className="Section-ul Movies-ul">
                 {user && user.movies_favs && user.movies_favs.length  == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
@@ -57,6 +58,16 @@ export const FavList = ()=>{
                 )}
             </ul>
         </section>
+        <section className="Section Favs">
+            <h2 className="Section-h2 H2">Series en mi lista</h2>
+            <ul className="Section-ul Movies-ul">
+                {user && user.tvshows_favs && user.tvshows_favs.length  == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                {user && user.tvshows_favs && user.tvshows_favs.length != 0 && user.tvshows_favs.map( eachTvshow =>                 
+                    <MoviesLi key={eachTvshow._id} {...eachTvshow}/>                             
+                )}
+            </ul>
+        </section>
+        </main>
         </>
     )
 }
