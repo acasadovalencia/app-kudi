@@ -1,5 +1,10 @@
 .Category-ul{
-    display: grid;
-    grid-template-columns: repeat( auto-fit , minmax(280px , 1fr));
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
     gap: 2rem;
+}
+.Category-span{
+    text-transform: capitalize;
 }

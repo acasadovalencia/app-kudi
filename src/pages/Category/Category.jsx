@@ -40,7 +40,7 @@ import { MoviesLi } from '../../components/MoviesLi/MoviesLi'
             <>
             <main className="Main">
             <section className="Section Category">
-                <h2 className="Section-h2 H2">{category}</h2>
+                <h2 className="Section-h2 H2">Películas de género <span className="Category-span">{category}</span></h2>
                 <ul className="Section-ul Category-ul">
                     {moviesFiltered.length != 0 && moviesFiltered.map( eachMovie => 
                         <MoviesLi key={eachMovie._id} {...eachMovie}/>

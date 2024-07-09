@@ -28,12 +28,12 @@ export const TvShows = ()=>{
     return(
         <>
         <main className="Main">
-            <section className="Section Movies">
+            <section className="Section Tvshows">
                 <h2 className="Section-h2 H2">Series</h2>
-                <ul className="Section-ul Movies-ul">
+                <ul className="Section-ul Tvshows-ul">
                     {tvshows.length == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
-                    {tvshows.length != 1 && tvshows.map( eachMovie =>                 
-                        <TvShowsLi key={eachMovie._id} {...eachMovie}/>                             
+                    {tvshows.length != 1 && tvshows.map( eachTvshow =>                 
+                        <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>                             
                     )}
                 </ul>
             </section>
