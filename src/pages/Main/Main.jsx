@@ -45,12 +45,12 @@ export const Main = ()=>{
     }
 
     const getMoviesInitials = ()=>{
-        const initial = movies && movies.slice(0 , 10)
+        const initial = movies && movies.slice(0 , 9)
         setMoviesInitials(initial)
     }
 
     const getTvshowsInitials = ()=>{
-        const initial = tvshows && tvshows.slice(0 , 10)
+        const initial = tvshows && tvshows.slice(0 , 9)
         setTvShowsInitials(initial)
     }
 
