@@ -5,7 +5,7 @@ import { SignUp } from '@pages/SignUp/SignUp'
 import { Kudi } from '@pages/Kudi/Kudi'
 import { KudiContext } from '@context/Context'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { BrowserRouter , Routes , Route} from 'react-router-dom'
 
 function App() {

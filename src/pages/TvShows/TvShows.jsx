@@ -4,8 +4,8 @@ import './TvShows.css'
 import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
 import { KudiContext } from '@context/Context'
 
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useEffect, useState , useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useEffect , useContext } from 'react'
 
 
 export const TvShows = ()=>{
