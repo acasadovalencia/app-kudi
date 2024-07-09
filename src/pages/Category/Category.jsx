@@ -10,9 +10,10 @@
 
 
     export const Category = ()=>{
-
+        //Contexto
         const { movies , getMovies , tvshows , getTvshows } = useContext( KudiContext )
 
+        //States
         const [ moviesFiltered , setMoviesFiltered] = useState([])
         const [ tvShowsFiltered , setTvShowsFiltered] = useState([])
 
@@ -28,10 +29,9 @@
         useEffect(()=>{
             getMoviesFiltered()                             // Obtener el array de peliculas filtradas en un effect que se ejecutará cuando movies cambie, esperando a ejecutarse a que movies tenga contenido
             getTvshowsFiltered()
-            console.log
         }, [movies , tvshows])
 
-
+        // Funciones
         const getMoviesFiltered = ()=>{
             const filter = movies && movies.filter(eachMovie => eachMovie.genre.includes(category) )
             setMoviesFiltered(filter)
