@@ -10,16 +10,16 @@ import { BrowserRouter , Routes , Route} from 'react-router-dom'
 
 function App() {
   // States
-  const [ login , setLogin] = useState()
-  const [ movies , setMovies] = useState([])
-  const [ movie , setMovie] = useState([])
-  const [ tvshows , setTvshows] = useState([])
-  const [ tvshow , setTvshow] = useState([])
-  const [ users , setUsers] = useState([])
-  const [ user , setUser] = useState([])
+  const [ login , setLogin ] = useState()
+  const [ movies , setMovies ] = useState([])
+  const [ movie , setMovie ] = useState([])
+  const [ tvshows , setTvshows ] = useState([])
+  const [ tvshow , setTvshow ] = useState([])
+  const [ users , setUsers]  = useState([])
+  const [ user , setUser ] = useState([])
   const [ currentUser , setCurrentUser ] = useState(null)
-  const [categories , setCategories] = useState([])
-  const [type , setType ] = useState('all')
+  const [ categories , setCategories ] = useState([])
+  const [ type , setType ] = useState('all')
 
   // Variables de entorno
   const { VITE_API} = import.meta.env
