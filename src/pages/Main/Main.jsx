@@ -64,8 +64,8 @@ export const Main = ()=>{
                 {moviesLatest.length != 0 && moviesLatest.map( eachMovie => 
                     <MoviesLi key={eachMovie._id} {...eachMovie}/>
                 )}
-                {tvShowsLatest.length != 0 && tvShowsLatest.map( eachTvshows => 
-                    <TvShowsLi key={eachTvshows._id} {...eachTvshows}/>
+                {tvShowsLatest.length != 0 && tvShowsLatest.map( eachTvshow => 
+                    <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>
                 )}
             </ul>
         </section>
@@ -91,8 +91,8 @@ export const Main = ()=>{
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Series</h2>
             <ul className="Section-ul Category-ul">
-                {tvShowsInitials.length != 0 && tvShowsInitials.map( eachTvshows => 
-                    <TvShowsLi key={eachTvshows._id} {...eachTvshows}/>
+                {tvShowsInitials.length != 0 && tvShowsInitials.map( eachTvshow => 
+                    <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>
                 )}
                 <li className='Categories-li'>
                     <NavLink to={`/kudi/tvshows`}> 
