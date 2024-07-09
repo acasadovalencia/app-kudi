@@ -29,6 +29,7 @@ export const TvShow = ()=>{
                 navigate('/')
             }
             getTvshow()
+            window.scrollTo(0, 0);                                         // Para comenzar siempre desde el principio al cargar el componente
         }, [])                                                             // Array vacío para que se ejecute solo al iniciar componente
     
         // Funciones
