@@ -21,7 +21,7 @@
 .Categories-li:hover .Categories-img{
     opacity: .4;
 }
-.Span-wrapper{
+.Span-wrapper--categories{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
