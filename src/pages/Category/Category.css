@@ -1,37 +1,5 @@
-.Type-wrapper{
-    padding: 1.5rem 2.5rem;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 1rem;
-}
-.Type-btn{
-    color: var(--f-c-primary);
-    background-color: var(--bg-c-cuaternary);
-    padding: 1rem 1.5rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: background-color .5 ease;
-}
-.Type-btn.isActive{
-    background-color: var(--bg-c-tertiary-h);
-}
-.Type-btn:hover{
-    background-color: var(--bg-c-tertiary-h);
-}
-.Favs{
-    display: none;
-}
-.Favs.isActive{
-    display: block;
-}
-.Favs-ul{
+.Category-ul{
     display: grid;
-    grid-template-columns: repeat( auto-fit , minmax(280px , max-content));
+    grid-template-columns: repeat( auto-fit , minmax(280px , 1fr));
     gap: 2rem;
-}
-.Favs-li{
-    border-radius: .25rem;
-    cursor: pointer;
-    transition: transform .3s ease;
-    position: relative;
 }
