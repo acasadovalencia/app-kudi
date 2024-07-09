@@ -11,12 +11,10 @@
     export const FavList = ()=>{
 
         // Contexto
-        const { user , getUser , users , setCurrentUser } = useContext( KudiContext )
+        const { user , getUser , users , setCurrentUser , type , setType } = useContext( KudiContext )
 
         // Variables al uso
         const navigate = useNavigate()
-
-        const [type , setType ] = useState('all')
             
         // Effects
         useEffect(()=>{

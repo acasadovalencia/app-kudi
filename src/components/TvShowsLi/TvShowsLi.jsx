@@ -16,8 +16,8 @@ export const TvShowsLi = (props)=>{
         <li className="Section-li Tvshows-li">
             <NavLink to={`/kudi/tvshows/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture Tvshows-picture">
-                <source srcSet={`./../assets/images/${poster.small}.webp`} alt={title} type='image/webp' />
-                <img src={`./../assets/images/${poster.small}.jpg`} alt={title} className="Section-img Tvshows-picture" loading='lazy' width='280' height='150' />
+                <source srcSet={`/assets/images/${poster.small}.webp`} alt={title} type='image/webp' />
+                <img src={`/assets/images/${poster.small}.jpg`} alt={title} className="Section-img Tvshows-picture" loading='lazy' width='280' height='150' />
             </picture>
             <div className="Description-wrapper">
                 <PlayBtn/>
