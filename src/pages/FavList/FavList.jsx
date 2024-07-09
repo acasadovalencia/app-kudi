@@ -1,20 +1,17 @@
     import './FavList.css'
 
     import { KudiContext } from '@context/Context'
-    import { PlayBtn } from '@components/PlayBtn/PlayBtn'
-    import { DeleteFavMovieBtn } from '@components/DeleteFavMovieBtn/DeleteFavMovieBtn'
-    import { DeleteFavTvshowBtn } from '@components/DeleteFavTvshowBtn/DeleteFavTvshowBtn'
     import { MoviesLi } from '@components/MoviesLi/MoviesLi'
     import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
 
-
     import { useContext , useState , useEffect } from 'react'
-    import { useNavigate , NavLink } from 'react-router-dom'
+    import { useNavigate } from 'react-router-dom'
 
 
     export const FavList = ()=>{
 
-        const { VITE_API , user , setUser , users , setCurrentUser } = useContext( KudiContext )
+        // Contexto
+        const { user , getUser , users , setCurrentUser } = useContext( KudiContext )
 
         // Variables al uso
         const navigate = useNavigate()
@@ -35,22 +32,8 @@
                     getUser(loggedUser._id)                                                           // Pasar a la función del fetch por parámetros el id del usuario logueado
                 }
             }
-        }, [users , setCurrentUser , navigate])                                                       // Renovar cuando los elementos cambien
+        }, [users , setCurrentUser , navigate])                                                       // Renovar cuando cualquiera de estos elementos cambie
         
-        // Funciones
-        const getUser = async (id)=>{
-            let controller = new AbortController()
-            let options = {
-                method : 'get',                                                                       // Método GET porque se piden datos
-                signal: controller.signal
-            }
-                await fetch(`${VITE_API}/user/id/${id}` , options)                                   // Fetch al endpoint /user/id/:id para obtener los datos de un usuario 
-                .then(res => res.json())
-                .then( data => setUser(data))                                                        // Guardar datos de la respuesta a user
-                .catch( err => console.log(err.message))                                             // Capturar y mostrar error
-                .finally(()=> controller.abort())                                                    // Abortar conexión con API
-        }
-
 
         return(
             <>

@@ -1,9 +1,6 @@
     import './Categories.css'
 
     import { KudiContext } from '@context/Context'
-    import { PlayBtn } from '@components/PlayBtn/PlayBtn'
-    import { DeleteFavMovieBtn } from '@components/DeleteFavMovieBtn/DeleteFavMovieBtn'
-    import { DeleteFavTvshowBtn } from '@components/DeleteFavTvshowBtn/DeleteFavTvshowBtn'
 
     import { useContext , useState , useEffect } from 'react'
     import { useNavigate , NavLink } from 'react-router-dom'
@@ -11,12 +8,10 @@
 
     export const Categories = ()=>{
 
-        const { VITE_API , user , setUser , users , setCurrentUser , movies , tvshows } = useContext( KudiContext )
+        const { users , setCurrentUser , getCategories , categories } = useContext( KudiContext )
 
         // Variables al uso
         const navigate = useNavigate()
-
-        const [categories , setCategories] = useState([])
 
             
         // Effects
@@ -37,22 +32,8 @@
         useEffect(()=>{
             getCategories()
         }, [])
-
-        // Funciones
-        const getCategories = async ()=>{
-            let controller = new AbortController()
-            let options = {
-                method : 'get',                         // Método GET porque se piden datos
-                signal: controller.signal
-            }
-            await fetch(`${VITE_API}/categories` , options) // Fetch al endpoint /movie para obtener los datos
-            .then(res => res.json())
-            .then( data => setCategories(data))             // Setear datos de la respuesta a movies
-            .catch( err => console.log(err.message))    // Capturar y mostrar error
-            .finally(()=> controller.abort())           // Abortar conexión con API
-
-        }
-
+       
+        
         return(
             <>
             <main className="Main">

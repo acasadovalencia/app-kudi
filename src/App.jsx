@@ -18,6 +18,7 @@ function App() {
   const [ users , setUsers] = useState([])
   const [ user , setUser] = useState([])
   const [ currentUser , setCurrentUser ] = useState(null)
+  const [categories , setCategories] = useState([])
 
   // Variables de entorno
   const { VITE_API} = import.meta.env
@@ -63,11 +64,38 @@ function App() {
     .catch( err => console.log(err.message))    // Capturar y mostrar error
     .finally(()=> controller.abort())           // Abortar conexión con API
 
-}
+  }
+
+  const getUser = async (id)=>{
+    let controller = new AbortController()
+    let options = {
+        method : 'get',                                                                       // Método GET porque se piden datos
+        signal: controller.signal
+    }
+        await fetch(`${VITE_API}/user/id/${id}` , options)                                   // Fetch al endpoint /user/id/:id para obtener los datos de un usuario 
+        .then(res => res.json())
+        .then( data => setUser(data))                                                        // Guardar datos de la respuesta a user
+        .catch( err => console.log(err.message))                                             // Capturar y mostrar error
+        .finally(()=> controller.abort())                                                    // Abortar conexión con API
+  }
+
+  const getCategories = async ()=>{
+    let controller = new AbortController()
+    let options = {
+        method : 'get',                         // Método GET porque se piden datos
+        signal: controller.signal
+    }
+    await fetch(`${VITE_API}/categories` , options) // Fetch al endpoint /movie para obtener los datos
+    .then(res => res.json())
+    .then( data => setCategories(data))             // Setear datos de la respuesta a movies
+    .catch( err => console.log(err.message))    // Capturar y mostrar error
+    .finally(()=> controller.abort())           // Abortar conexión con API
+
+  }
 
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows }}>          {/* // Contexto para compartir con el resto de la APP */}
-    <BrowserRouter>                                                                 {/* // Creacion de rutas para navegar por diferentes paginas */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories}}>          {/* // Contexto para compartir con el resto de la APP */}
+    <BrowserRouter>
     <>
     <Routes>
       <Route path='/' element={<Login/>}/>
