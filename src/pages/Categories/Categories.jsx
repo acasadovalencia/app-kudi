@@ -2,7 +2,7 @@
 
     import { KudiContext } from '@context/Context'
 
-    import { useContext , useState , useEffect } from 'react'
+    import { useContext , useEffect } from 'react'
     import { useNavigate , NavLink } from 'react-router-dom'
 
 
@@ -30,7 +30,7 @@
         }, [users , setCurrentUser , navigate])                                                       // Renovar cuando los elementos cambien
         
         useEffect(()=>{
-            getCategories()
+            getCategories()                                                                           // Obtener categorías al iniciar componente
         }, [])
        
         
