@@ -85,12 +85,12 @@ export const Main = ()=>{
                 </ul>
                 <ul className="Carrousel-container--btns">
                 {moviesLatest.length != 0 && moviesLatest.map( eachMovie => 
-                    <li className="Carrousel-li">
+                    <li key={eachMovie._id} className="Carrousel-li">
                         <button className="Carrousel-btn">0</button>
                     </li>
                     )}
-                {tvShowsLatest.length != 0 && tvShowsLatest.map( eachMovie => 
-                    <li className="Carrousel-li">
+                {tvShowsLatest.length != 0 && tvShowsLatest.map( eachTvshow => 
+                    <li key={eachTvshow._id} className="Carrousel-li">
                         <button className="Carrousel-btn">0</button>
                     </li>
                     )}   

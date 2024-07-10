@@ -1,24 +1,24 @@
-.Movies-li{
+.Tvshows-li{
     border-radius: .25rem;
     cursor: pointer;
     transition: transform .3s ease;
     position: relative;
 }
-.Movies-li:hover{
+.Tvshows-li:hover{
     transform: scale(1.1);
 }
-.Movies-picture{
+.Tvshows-picture{
     height: 100%;
     border-radius: .25rem;
     transition: filter .3s ease;
 }
-.Movies-img{
+.Tvshows-img{
     height: 100%;
 }
-.Movies-li:hover .Movies-picture{
+.Tvshows-li:hover .Tvshows-picture{
     filter: brightness(0.6);
 }
-.Movies-li:hover .Description-wrapper{
+.Tvshows-li:hover .Description-wrapper{
     opacity: 1;
     pointer-events: all;
 }
@@ -35,7 +35,7 @@
     transform-origin: bottom;
     transition: transform .6s ease;
 }
-.Movies-li:hover .Description-wrapper{
+.Tvshows-li:hover .Description-wrapper{
     transform: rotateX(0);
 }
 .Title-wrapper{
@@ -45,7 +45,7 @@
     align-items: center;
     gap: 2rem;
 }
-.Movies-h3{
+.Tvshows-h3{
     font-size: 1.0625rem;
     margin: .5rem 0;
     white-space: nowrap;
@@ -65,10 +65,10 @@
     z-index: 2;
     color: var(--f-c-secondary);
 }
-.Movies-span{
+.Tvshows-span{
     font-weight: 300;
 }
-.Movies-paragraph{
+.Tvshows-paragraph{
     margin: .5rem 0 0;
     white-space: nowrap;
     overflow: hidden;
