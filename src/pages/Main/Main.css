@@ -1,5 +1,4 @@
 .Latest{
-    height: 100vh;
     overflow-x: hidden;
 }
 .Carrousel-container{
@@ -20,8 +19,13 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 .Carrousel-btn{
-    background-color: white;
+    width: .5rem;
+    height: .5rem;
+    margin: 1rem 0 0;
+    background-color: var(--f-c-cuaternary);
+    border-radius: 50%;
+    cursor: pointer;
 }
