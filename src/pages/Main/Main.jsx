@@ -3,6 +3,9 @@ import './Main.css'
 import { KudiContext } from '@context/Context'
 import { MoviesLi } from '@components/MoviesLi/MoviesLi'
 import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
+import { MoviesLiLarge } from '@components/MoviesLiLarge/MoviesLiLarge'
+import { TvShowsLiLarge } from '@components/TvShowsLiLarge/TvShowsLiLarge'
+
 
 import { useContext , useState , useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -11,7 +14,7 @@ import { NavLink } from 'react-router-dom'
 
 export const Main = ()=>{
     //Contexto
-    const { movies , getMovies , tvshows , getTvshows } = useContext( KudiContext )
+    const { movies , getMovies , tvshows , getTvshows , getUsers } = useContext( KudiContext )
 
     //States
     const [ moviesLatest , setMoviesLatest] = useState([])
@@ -21,6 +24,17 @@ export const Main = ()=>{
 
 
     //Effects
+    useEffect(()=>{
+
+        let login = JSON.parse(localStorage.getItem('user'))           // Obtener del localStorage el resultado del login
+
+        if(!login){                                                    // Si login no existe o falso, navega a la página de inicio para impedir acceder
+            navigate('/')
+        }
+        getUsers()
+
+    },[])
+
     useEffect(()=>{                                         
         getMovies()                                     // Obtener las peliculas y series en un effect sin depedenccias para guardarlas cuando se cree el componente
         getTvshows()
@@ -58,35 +72,49 @@ export const Main = ()=>{
     return(
         <>
         <main className="Main">
-        <section className="Section Lastest">
+        <section className="Section Latest">
             <h2 className="Section-h2 H2">Novedades</h2>
-            <ul className="Section-ul Category-ul">
+            <div className="Carrousel-container--latest">
+                <ul className="Section-ul Category-ul Category-ul--latest">
+                    {moviesLatest.length != 0 && moviesLatest.map( eachMovie => 
+                        <MoviesLiLarge key={eachMovie._id} {...eachMovie}/>
+                    )}
+                    {tvShowsLatest.length != 0 && tvShowsLatest.map( eachTvshow => 
+                        <TvShowsLiLarge key={eachTvshow._id} {...eachTvshow}/>
+                    )}
+                </ul>
+                <ul className="Carrousel-container--btns">
                 {moviesLatest.length != 0 && moviesLatest.map( eachMovie => 
-                    <MoviesLi key={eachMovie._id} {...eachMovie}/>
-                )}
-                {tvShowsLatest.length != 0 && tvShowsLatest.map( eachTvshow => 
-                    <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>
-                )}
-            </ul>
+                    <li className="Carrousel-li">
+                        <button className="Carrousel-btn">0</button>
+                    </li>
+                    )}
+                {tvShowsLatest.length != 0 && tvShowsLatest.map( eachMovie => 
+                    <li className="Carrousel-li">
+                        <button className="Carrousel-btn">0</button>
+                    </li>
+                    )}   
+                </ul>
+            </div>
         </section>
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Peliculas</h2>
-            <ul className="Section-ul Category-ul">
-                {moviesInitials.length != 0 && moviesInitials.map( eachMovie => 
-                    <MoviesLi key={eachMovie._id} {...eachMovie}/>
-                )}
-                <li className='Categories-li'>
-                    <NavLink to={`/kudi/movies`}> 
-                    <picture className="Categories-picture">
-                        <source srcSet="/assets/images/more-bg-280x153.webp" type='image/webp' />
-                        <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Categories-img" width={250} height={153} />
-                    </picture>
-                    <div className="Span-wrapper--categories">
-                        <span className="Categories-span">Ver más</span>
-                    </div>
-                    </NavLink>
-                </li>
-            </ul>
+                <ul className="Section-ul Category-ul Category-ul--initials">
+                    {moviesInitials.length != 0 && moviesInitials.map( eachMovie => 
+                        <MoviesLi key={eachMovie._id} {...eachMovie}/>
+                    )}
+                    <li className='Categories-li'>
+                        <NavLink to={`/kudi/movies`}> 
+                        <picture className="Categories-picture">
+                            <source srcSet="/assets/images/more-bg-280x153.webp" type='image/webp' />
+                            <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Categories-img" width={250} height={153} />
+                        </picture>
+                        <div className="Span-wrapper--categories">
+                            <span className="Categories-span">Ver más</span>
+                        </div>
+                        </NavLink>
+                    </li>
+                </ul>
         </section>
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Series</h2>
