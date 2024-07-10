@@ -16,7 +16,7 @@ export const TvShowsLiLarge = (props)=>{
     return(
         <>
         <li className="Section-li TvshowsLarge-li">
-            <NavLink to={`/kudi/movies/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
+            <NavLink to={`/kudi/tvshows/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture TvshowsLarge-picture">
                 <source srcSet={`/assets/images/${poster.large}.webp`} alt={title} type='image/webp' />
                 <img src={`/assets/images/${poster.large}.jpg`} alt={title} className="Section-img TvshowsLarge-img" loading='lazy' />

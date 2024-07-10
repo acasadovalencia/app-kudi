@@ -109,12 +109,12 @@ export const Main = ()=>{
                 <ul className="Carrousel-btns">
                 {moviesLatest.length != 0 && moviesLatest.map( (eachMovie , index ) => 
                     <li key={eachMovie._id} className="Carrousel-li">
-                        <button onClick={()=>selectSlide(index)} className="Carrousel-btn"></button>                        {/* Se utiliza el index para hacer el translate*/}
+                        <button onClick={()=>selectSlide(index)} className={`Carrousel-btn ${slide == index ? `isActive` : ``}`}></button>                        {/* Se utiliza el index para hacer el translate*/}
                     </li>
                     )}
                 {tvShowsLatest.length != 0 && tvShowsLatest.map( (eachTvshow , index) => 
                     <li key={eachTvshow._id} className="Carrousel-li">
-                        <button onClick={()=>selectSlide(index + moviesLatest.length)} className="Carrousel-btn"></button>  {/* Al ser 2 maps diferentes y repetirse los index, se suma a index las posiciones que pueda tener el map anterior para continuar la numeracion */}
+                        <button onClick={()=>selectSlide(index + moviesLatest.length)} className={`Carrousel-btn ${slide == index + moviesLatest.length ? `isActive` : ``}`}></button>  {/* Al ser 2 maps diferentes y repetirse los index, se suma a index las posiciones que pueda tener el map anterior para continuar la numeracion */}
                     </li>
                     )}   
                 </ul>
