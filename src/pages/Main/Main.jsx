@@ -123,18 +123,18 @@ export const Main = ()=>{
         </section>
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Peliculas</h2>
-                <ul className="Section-ul Category-ul Category-ul--initials">
+                <ul className="Section-ul Initials-ul">
                     {moviesInitials.length != 0 && moviesInitials.map( eachMovie => 
                         <MoviesLi key={eachMovie._id} {...eachMovie}/>
                     )}
-                    <li className='Categories-li'>
+                    <li className='Initials-li'>
                         <NavLink to={`/kudi/movies`}> 
-                        <picture className="Categories-picture">
+                        <picture className="Initials-picture">
                             <source srcSet="/assets/images/more-bg-280x153.webp" type='image/webp' />
-                            <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Categories-img" width={250} height={153} />
+                            <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Initials-img" width={250} height={153} />
                         </picture>
-                        <div className="Span-wrapper--categories">
-                            <span className="Categories-span">Ver más</span>
+                        <div className="Span-wrapper--initials">
+                            <span className="Initials-span">Ver más</span>
                         </div>
                         </NavLink>
                     </li>
@@ -142,18 +142,18 @@ export const Main = ()=>{
         </section>
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Series</h2>
-            <ul className="Section-ul Category-ul">
+            <ul className="Section-ul Initials-ul">
                 {tvShowsInitials.length != 0 && tvShowsInitials.map( eachTvshow => 
                     <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>
                 )}
-                <li className='Categories-li'>
+                <li className='Initials-li'>
                     <NavLink to={`/kudi/tvshows`}> 
-                    <picture className="Categories-picture">
+                    <picture className="Initials-picture">
                         <source srcSet="/assets/images/more-bg-280x153.webp" type='image/webp' />
-                        <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Categories-img" width={250} height={153} />
+                        <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Initials-img" width={250} height={153} />
                     </picture>
-                    <div className="Span-wrapper--categories">
-                        <span className="Categories-span">Ver más</span>
+                    <div className="Span-wrapper--initials">
+                        <span className="Initials-span">Ver más</span>
                     </div>
                     </NavLink>
                 </li>
