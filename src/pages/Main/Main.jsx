@@ -27,19 +27,21 @@ export const Main = ()=>{
     //Effects
     useEffect(()=>{
 
-        let login = JSON.parse(localStorage.getItem('user'))           // Obtener del localStorage el resultado del login
+        let login = JSON.parse(localStorage.getItem('user'))            // Obtener del localStorage el resultado del login
 
-        if(!login){                                                    // Si login no existe o falso, navega a la página de inicio para impedir acceder
+        if(!login){                                                     // Si login no existe o falso, navega a la página de inicio para impedir acceder
             navigate('/')
         }
         getUsers()
-
-    },[])
-
-    useEffect(()=>{                                         
-        getMovies()                                     // Obtener las peliculas y series en un effect sin depedenccias para guardarlas cuando se cree el componente
+        getMovies()                                                     // Obtener las peliculas y series en un effect sin depedenccias para guardarlas cuando se cree el componente
         getTvshows()
-    }, [])
+        const interval = setInterval(() => {                            // Crear intervalo para repetir el avance de imagen cada 5 segundos
+            setSlide((slide) => (slide >= 5 ? 0 : slide + 1));          // Se utiliza slide para pasar a la función su valor, se comprueba si es >=5 y si lo es, comienza de nuevo y si no lo es, incrementa en 1. El valor se setea en slide
+        }, 5000);
+
+        
+        return () => clearInterval(interval);                           // Quitar intervalo al eliminar componente
+    },[])
 
     useEffect(()=>{
         getMoviesLatest()                             // Obtener los diferentes arrays de peliculas y series filtradas en un effect que se ejecutará cuando movies cambie, esperando a ejecutarse a que movies y tvshows tengan contenido
@@ -71,7 +73,6 @@ export const Main = ()=>{
 
     const nextSlide = ()=>{                                // Pase de imagenes
         setSlide( slide + 1)
-
         if(slide >= 5){
             setSlide(0)
         }
