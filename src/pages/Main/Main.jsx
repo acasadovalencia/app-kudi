@@ -69,7 +69,7 @@ export const Main = ()=>{
         setTvShowsInitials(initial)
     }
 
-    const nextSlide = ()=>{
+    const nextSlide = ()=>{                                // Pase de imagenes
         setSlide( slide + 1)
 
         if(slide >= 5){
@@ -78,7 +78,7 @@ export const Main = ()=>{
 
     }
 
-    const prevSlide = ()=>{
+    const prevSlide = ()=>{                                // Vuelta de imagenes
         setSlide( slide - 1)
 
         if(slide <= 0){
@@ -87,7 +87,7 @@ export const Main = ()=>{
 
     }
 
-    const selectSlide = (index)=>{
+    const selectSlide = (index)=>{                      // Selección de imagen
         setSlide(index)
     }
 

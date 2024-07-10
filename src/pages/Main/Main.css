@@ -1,19 +1,18 @@
+.Latest{
+    height: 100vh;
+}
 .Carrousel-container{
     width: 100%;
     overflow-x: hidden;
 }
-
 .Carrousel-ul{
     width: 600%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     transition: transform 1.5s ease;
 }
-
-
-
 .Carrousel-btns{
     display: flex;
     flex-flow: row nowrap;

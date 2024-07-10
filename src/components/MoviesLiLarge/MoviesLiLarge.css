@@ -1,56 +1,32 @@
-.Movies-li{
-    border-radius: .25rem;
+.MoviesLarge-li{
     cursor: pointer;
-    transition: transform .3s ease;
     position: relative;
 }
-.Movies-li:hover{
-    transform: scale(1.1);
-}
-.Movies-picture{
+.MoviesLarge-img{
+    border-radius: .5rem;
     height: 100%;
-    border-radius: .25rem;
-    transition: filter .3s ease;
+    width: 100%;
+    object-fit: cover;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(0,0,0,0) 100%);
+    opacity: .6;
 }
-.Movies-img{
-    height: 100%;
-}
-.Movies-li:hover .Movies-picture{
-    filter: brightness(0.6);
-}
-.Movies-li:hover .Description-wrapper{
-    opacity: 1;
-    pointer-events: all;
-}
-.Description-wrapper{
+.DescriptionLatest-wrapper{
     padding: 1rem;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
-    transform: rotateX(90deg);
-    transform-origin: bottom;
-    transition: transform .6s ease;
 }
-.Movies-li:hover .Description-wrapper{
-    transform: rotateX(0);
-}
-.Title-wrapper{
+.TitleLarge-wrapper{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: center;
-    gap: 2rem;
-}
-.Movies-h3{
-    font-size: 1.0625rem;
+    align-items: flex-start;}
+.MoviesLarge-h3{
+    font-size: 50px;
+    font-weight: 600;
     margin: .5rem 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 .Imdb-wrapper{
     display: flex;
@@ -59,19 +35,18 @@
     align-items: center;
     gap: .5rem;
     font-weight: 600;
+    margin: 0 0 .5rem;
 }
 .Imdb-icon{
     width: 2rem;
     z-index: 2;
     color: var(--f-c-secondary);
 }
-.Movies-span{
+.MoviesLarge-span{
     font-weight: 300;
 }
-.Movies-paragraph{
-    margin: .5rem 0 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.MoviesLarge-paragraph{
+    margin: .5rem 0 2rem;
     font-size: .875rem;
+    width: 50%;
 }
