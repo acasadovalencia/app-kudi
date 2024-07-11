@@ -1,9 +1,9 @@
+// Importaciones
 import './DeleteFavTvshowBtn.css'
 
-import { useContext, useEffect, useState  } from 'react'
-import { useParams } from 'react-router-dom'
-
 import { KudiContext } from '@context/Context'
+
+import { useContext  } from 'react'
 
 export const DeleteFavTvshowBtn = (props)=>{
     
@@ -12,13 +12,9 @@ export const DeleteFavTvshowBtn = (props)=>{
     // Contexto
     const { VITE_API , users , setUsers , movie } = useContext(KudiContext)
 
-
     // States
-
     let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
     const userLogged = users.find(eachUser => eachUser.username === username)           // Buscar el usuario logueado entre los usuarios de la bbdd    
-
-
 
     // Funciones
     const deleteFav = async ()=>{

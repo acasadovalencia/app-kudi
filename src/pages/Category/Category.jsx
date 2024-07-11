@@ -1,3 +1,4 @@
+    //Importaciones
     import './Category.css'
 
     import { KudiContext } from '@context/Context'
@@ -6,7 +7,6 @@
 
     import { useContext , useState , useEffect } from 'react'
     import { useParams } from 'react-router-dom'
-
 
 
     export const Category = ()=>{
@@ -41,7 +41,6 @@
             const filter = tvshows && tvshows.filter(eachtvshows => eachtvshows.genre.includes(category) )
             setTvShowsFiltered(filter)
         }
-
 
         return(
             <>

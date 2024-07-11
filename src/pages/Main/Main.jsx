@@ -1,3 +1,4 @@
+//Importaciones
 import './Main.css'
 
 import { KudiContext } from '@context/Context'
@@ -6,8 +7,8 @@ import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
 import { MoviesLiLarge } from '@components/MoviesLiLarge/MoviesLiLarge'
 import { TvShowsLiLarge } from '@components/TvShowsLiLarge/TvShowsLiLarge'
 
-
 import { useContext , useState , useEffect } from 'react'
+
 import { NavLink } from 'react-router-dom'
 
 
@@ -39,16 +40,15 @@ export const Main = ()=>{
             setSlide((slide) => (slide >= 5 ? 0 : slide + 1));          // Se utiliza slide para pasar a la función su valor, se comprueba si es >=5 y si lo es, comienza de nuevo y si no lo es, incrementa en 1. El valor se setea en slide
         }, 5000);
 
-        
         return () => clearInterval(interval);                           // Quitar intervalo al eliminar componente
     },[])
 
     useEffect(()=>{
-        getMoviesLatest()                             // Obtener los diferentes arrays de peliculas y series filtradas en un effect que se ejecutará cuando movies cambie, esperando a ejecutarse a que movies y tvshows tengan contenido
+        getMoviesLatest()                                               // Obtener los diferentes arrays de peliculas y series filtradas en un effect que se ejecutará cuando movies cambie, esperando a ejecutarse a que movies y tvshows tengan contenido
         getTvshowsLatest()
         getMoviesInitials()
         getTvshowsInitials()
-    }, [movies , tvshows])
+    }, [movies , tvshows])                                             
 
     // Funciones
     const getMoviesLatest = ()=>{
@@ -76,7 +76,6 @@ export const Main = ()=>{
         if(slide >= 5){
             setSlide(0)
         }
-
     }
 
     const prevSlide = ()=>{                                // Vuelta de imagenes
@@ -85,13 +84,11 @@ export const Main = ()=>{
         if(slide <= 0){
             setSlide(5)
         }
-
     }
 
     const selectSlide = (index)=>{                      // Selección de imagen
         setSlide(index)
     }
-
 
     return(
         <>

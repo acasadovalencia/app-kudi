@@ -1,11 +1,12 @@
 // Importaciones
 import './Play.css'
-import { CloseBtn } from '../../components/CloseBtn/CloseBtn'
-import { useContext, useEffect, useState } from 'react'
+
+import { CloseBtn } from '@components/CloseBtn/CloseBtn'
 import { KudiContext } from '@context/Context'
 import { PlayStats } from '@components/PlayStats/PlayStats'
 
 import { useLocation } from 'react-router-dom'
+import { useContext, useEffect, useState } from 'react'
 
 export const Play = ()=>{
 
@@ -15,7 +16,7 @@ export const Play = ()=>{
 
     const currentPage = useLocation()                                               // Guardamos en que punto del Router está la página para utilizar movies o tvshows dependiendo de la pagina
  
-    
+    //Effects
     useEffect(()=>{
         let currentTitle
         if(currentPage.pathname.includes('/kudi/movies')){                          // Condicional para que si en la url se posiciona como movies, guarde el titulo de la pelicula

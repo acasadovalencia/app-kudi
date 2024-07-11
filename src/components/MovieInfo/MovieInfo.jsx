@@ -8,7 +8,7 @@ import { KudiContext } from '@context/Context'
 export const MovieInfo = ()=>{
 
     // Contexto 
-    const { movie , setMovie} = useContext(KudiContext)
+    const { movie } = useContext(KudiContext)
 
     return(
         <>

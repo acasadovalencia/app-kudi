@@ -1,10 +1,11 @@
+    // Importaciones
     import './FavList.css'
 
     import { KudiContext } from '@context/Context'
     import { MoviesLi } from '@components/MoviesLi/MoviesLi'
     import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
 
-    import { useContext , useState , useEffect } from 'react'
+    import { useContext , useEffect } from 'react'
     import { useNavigate } from 'react-router-dom'
 
 
@@ -32,7 +33,6 @@
             }
         }, [users , setCurrentUser , navigate])                                                       // Renovar cuando cualquiera de estos elementos cambie
         
-
         return(
             <>
             <main className="Main">

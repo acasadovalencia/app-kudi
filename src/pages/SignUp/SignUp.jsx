@@ -26,8 +26,7 @@ export const SignUp = ()=>{
         if( user ){                                                // Condicional que si usuario es true, vaya a la ruta / para acceder con ese usuario.                      
             navigate('/')
         }
-    }, [user])                                                     // El effect se ejecutará cada vez que usuario cambie
-                                                     
+    }, [user])                                                     // El effect se ejecutará cada vez que usuario cambie                                 
 
     // Funciones
     const handleSubmit = (e) => {                                           // Funcion para controlar la creación del usuario sólo si las contraseñas coinciden.
@@ -110,8 +109,8 @@ export const SignUp = ()=>{
                 <button onClick={()=>navigate('/')} className="Back-btn">Volver</button>
             </div>
             <picture className="Login-picture">
-                <source srcSet='assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
-                <img src="assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
+                <source srcSet='/assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
+                <img src="/assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
             </picture>
         </div>
         </>

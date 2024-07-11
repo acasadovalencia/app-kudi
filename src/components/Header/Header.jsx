@@ -1,3 +1,4 @@
+// Importaciones
 import './Header.css'
 
 import { useNavigate , NavLink, useLocation } from 'react-router-dom'
@@ -9,8 +10,7 @@ export const Header = ()=>{
 
     const navigate = useNavigate()                                                  // Asociar el hook useNavigate a una constante para que se pueda usar en otros Hooks
 
-    const currentPage = useLocation()                                               // Guardamos en que punto del Router está la página para estilos de CSS
-
+    const currentPage = useLocation()                                               // Guardamos en que punto del Router donde está la página para usar en estilos de CSS
 
     // Funcion para salir de la APP y eliminar el localStorage.
     const logout = ()=>{                                                             
@@ -18,7 +18,6 @@ export const Header = ()=>{
         localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
         navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
-
 
     return(
         <>

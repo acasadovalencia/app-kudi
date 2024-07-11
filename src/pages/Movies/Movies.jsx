@@ -9,7 +9,8 @@ import { useEffect , useContext } from 'react'
 
 export const Movies = ()=>{
 
-    const { VITE_API , movies , setMovies , getMovies } = useContext( KudiContext )
+    //Contexto
+    const { movies , getMovies } = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()

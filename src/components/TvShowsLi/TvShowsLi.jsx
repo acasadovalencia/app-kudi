@@ -6,7 +6,6 @@ import { PlayBtn } from '@components/PlayBtn/PlayBtn'
 import { NavLink } from 'react-router-dom'
 
 
-
 export const TvShowsLi = (props)=>{
 
     const {_id , title , description , runtime , rating , poster} = props

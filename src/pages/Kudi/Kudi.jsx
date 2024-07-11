@@ -51,7 +51,6 @@ export const Kudi = () =>{
             <Route path='favlist/*' element={<FavList/>}/>
             <Route path='categories/*' element={<Categories/>}/>    
             <Route path='categories/:category' element={<Category/>}/>              
-          
         </Routes>
 
         </>

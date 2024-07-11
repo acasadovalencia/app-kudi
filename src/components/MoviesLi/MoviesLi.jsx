@@ -2,13 +2,11 @@
 import './MoviesLi.css'
 
 import { PlayBtn } from '@components/PlayBtn/PlayBtn'
-import { KudiContext } from '@context/Context'
 
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useEffect , useContext } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const MoviesLi = (props)=>{
-
+    
     const {_id , title , description , runtime , rating , poster} = props
 
     return(
@@ -16,8 +14,8 @@ export const MoviesLi = (props)=>{
         <li className="Section-li Movies-li">
             <NavLink to={`/kudi/movies/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture Movies-picture">
-                <source srcSet={`./../../assets/images/${poster.small}.webp`} alt={title} type='image/webp' />
-                <img src={`./../../assets/images/${poster.small}.jpg`} alt={title} className="Section-img Movies-picture" loading='lazy' width='280' height='150' />
+                <source srcSet={`/assets/images/${poster.small}.webp`} alt={title} type='image/webp' />
+                <img src={`/assets/images/${poster.small}.jpg`} alt={title} className="Section-img Movies-picture" loading='lazy' width='280' height='150' />
             </picture>
             <div className="Description-wrapper">
                 <PlayBtn/>

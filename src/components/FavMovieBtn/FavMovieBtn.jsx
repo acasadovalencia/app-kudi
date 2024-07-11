@@ -19,7 +19,6 @@ export const FavMovieBtn = ()=>{
     let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
     const userLogged = users.find(eachUser => eachUser.username === username)           // Buscar el usuario logueado entre los usuarios de la bbdd    
 
-
     // Effects
     useEffect(()=>{
         if( userLogged && userLogged.movies_favs){                                  // Doble comprobación para asegurar que existe movies_favs y no de error al recargar página

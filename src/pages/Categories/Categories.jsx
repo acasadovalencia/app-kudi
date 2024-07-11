@@ -1,3 +1,4 @@
+    // Importaciones
     import './Categories.css'
 
     import { KudiContext } from '@context/Context'
@@ -8,6 +9,7 @@
 
     export const Categories = ()=>{
 
+        // Contexto
         const { users , setCurrentUser , getCategories , categories } = useContext( KudiContext )
 
         // Variables al uso

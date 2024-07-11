@@ -1,3 +1,4 @@
+// Importaciones
 import './CloseBtn.css'
 
 import { useNavigate } from 'react-router-dom'

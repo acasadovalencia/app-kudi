@@ -13,7 +13,7 @@ import { useContext, useEffect } from 'react'
 export const Movie = ()=>{
 
         // Params
-        const {_id} = useParams()                                          // Extraemos el _id de los params configurados en la ruta para hacer el fetch al item pulsado.
+        const {_id} = useParams()                                          // Extrae el _id de los params configurados en la ruta para hacer el fetch al item pulsado.
 
         // Contexto 
         const { VITE_API , movie , setMovie} = useContext(KudiContext)
@@ -48,7 +48,7 @@ export const Movie = ()=>{
     
         }
 
-        const scrollToInfo = () => {                                       // Función para hacer scroll hasta Info
+        const scrollToInfo = () => {                                                    // Función para hacer scroll hasta Info
             document.getElementById('Info').scrollIntoView({ behavior: 'smooth' })
         }
     
@@ -78,8 +78,8 @@ export const Movie = ()=>{
                 </div>
             </div>
             <picture className="Article-picture Movie-picture">
-                <source srcSet={`./../../assets/images/${movie && movie.length != 0 && movie.poster.medium}.webp`} alt={movie.title} type='image/webp' />
-                <img src={`./../../assets/images/${movie && movie.length != 0 && movie.poster.medium}.jpg`} alt={movie.title} className="Article-img Movie-img" width='1360' height='766' />
+                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.webp`} alt={movie.title} type='image/webp' />
+                <img src={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.jpg`} alt={movie.title} className="Article-img Movie-img" width='1360' height='766' />
             </picture>
             <div className="Info-chevron">
                 <svg className='Chevron-svg' onClick={scrollToInfo} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
