@@ -1,6 +1,7 @@
 // Importaciones
 import './Header.css'
 
+import { useState } from 'react'
 import { useNavigate , NavLink, useLocation } from 'react-router-dom'
 
 
@@ -16,15 +17,25 @@ export const Header = ()=>{
     const logout = ()=>{                                                             
         localStorage.removeItem('username')                                         // Eliminar el nombre de usuario de localStorage para borarr el nombre
         localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
+        closeMenu()
         navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
     return(
         <>
         <header className="Header">
             <div className="Header-wrapper">
                 <NavLink to='/kudi'>
-                    <h1 className="Logo-h1">kudi</h1>
+                    <h1 className="Logo-h1">kudi </h1>
                 </NavLink>
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">
@@ -45,11 +56,26 @@ export const Header = ()=>{
                         </li>
                     </ul>
                 </nav>
-                <div className="Header-profile Profile">
+                <div onClick={toggleMenu} className={`Header-profile Profile ${isMenuOpen && `isOpen`}`}>
+                    <svg className="Profile-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg> 
                     <span className="Profile-span">{user}</span>
-                    <img src="" alt="" className="Profile-img" />
-                    <button onClick={logout} className='Profile-btn'>Cerrar sesión</button>
                 </div>
+            </div>
+            <div className={`Profile-menu ${isMenuOpen && `isOpen`}` }>
+                <h2 className='Profile-h2 H2'>Mi cuenta</h2>
+                <ul className="Profile-ul">
+                <li className="Profile-li">
+                        <button onClick={closeMenu} className='Profile-btn'>Modificar usuario</button>
+                    </li>
+                    <li className="Profile-li">
+                        <button onClick={logout} className='Profile-btn'>Cerrar sesión</button>
+                    </li>
+                    <li className="Profile-li">
+                        <button className='Profile-btn'>Eliminar usuario</button>
+                    </li>
+                </ul>
             </div>
         </header>
         </>

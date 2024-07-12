@@ -4,13 +4,16 @@
 }
 .Header-wrapper{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1.625rem 3.125rem;
+    padding: 1.625rem 2.5rem;
+    position: relative;
+    z-index: 3;
+    background-color: var(--bg-c-primary);
 }
 .Logo-h1{
-    font-size: 2rem;
+    font-size: 32px;
     font-family:"Back to Black Bold Demo";
     color: var(--f-c-tertiary);
 }
@@ -19,8 +22,8 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    font-size: 1.0625rem;
+    gap: 24px;
+    font-size: 17px;
 }
 .Nav-li{
     transition: color .5s ease;
@@ -36,8 +39,57 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: background-color .5s ease;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+.Header-profile.isOpen{
+    background-color:var(--bg-c-submenu);
+}
+.Profile-svg{
+    width: 1.5rem;
+    color: var(--bg-c-tertiary);
+}
+.Profile-menu{
+    position: absolute;
+    top: 5.5938rem;
+    right: 2.5rem;
+    background-color: var(--bg-c-submenu);
+    padding: 2.5rem 2rem;
+    z-index: 1;
+    border-radius: .5rem;
+    overflow: hidden;
+    transform: translateY(-100%);
+    transition: transform .5s ease , opacity 1s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.Profile-menu.isOpen{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+.Profile-span .Profile-menu.isOpen {
+    background-color:var(--bg-c-submenu);
+
+}
+.Profile-h2.H2{
+    font-size: 19.2px;
+}
+.Profile-ul{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
 }
 .Profile-btn{
-    color: var(--c-f-primary);
     cursor: pointer;
+    color: var(--f-c-primary);
+}
+.Profile-li:last-child .Profile-btn{
+    color: var(--f-c-error);
+    font-weight: 500;
 }
