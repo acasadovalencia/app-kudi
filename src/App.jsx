@@ -6,7 +6,7 @@ import { Kudi } from '@pages/Kudi/Kudi'
 import { KudiContext } from '@context/Context'
 
 import { useState } from 'react'
-import { BrowserRouter , Routes , Route} from 'react-router-dom'
+import { BrowserRouter , Routes , Route } from 'react-router-dom'
 
 function App() {
   // States
@@ -20,9 +20,13 @@ function App() {
   const [ currentUser , setCurrentUser ] = useState(null)
   const [ categories , setCategories ] = useState([])
   const [ type , setType ] = useState('all')
+  const [ isMenuOpen, setIsMenuOpen ] = useState(false)
+  const [ deleteAlert , setDeleteAlert ] = useState(false)
+  
 
   // Variables de entorno
   const { VITE_API} = import.meta.env
+  
 
   // Fetchs
   const getUsers = async ()=>{
@@ -94,8 +98,18 @@ function App() {
 
   }
 
+ 
+
+const closeMenu = () => {
+  setIsMenuOpen(false)
+}
+const openAlert = () =>{
+  setDeleteAlert(true)
+  setIsMenuOpen(false)
+}
+
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType}}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen , closeMenu , openAlert }}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>
     <>
     <Routes>

@@ -1,41 +1,36 @@
 // Importaciones
 import './Header.css'
 
-import { useState } from 'react'
+import { KudiContext } from '@context/Context'
+import { ModalAlert } from '@components/ModalAlert/ModalAlert'
+
+import { useState , useContext } from 'react'
 import { useNavigate , NavLink, useLocation } from 'react-router-dom'
+import { ProfileMenu } from '../ProfileMenu/ProfileMenu'
 
 
 export const Header = ()=>{
 
     let user = JSON.parse(localStorage.getItem('username'))                         // Guardar el nombre de usuario del localStorage para poder mostrarlo
 
-    const navigate = useNavigate()                                                  // Asociar el hook useNavigate a una constante para que se pueda usar en otros Hooks
+    // Variables al uso
 
     const currentPage = useLocation()                                               // Guardamos en que punto del Router donde está la página para usar en estilos de CSS
 
-    // Funcion para salir de la APP y eliminar el localStorage.
-    const logout = ()=>{                                                             
-        localStorage.removeItem('username')                                         // Eliminar el nombre de usuario de localStorage para borarr el nombre
-        localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
-        closeMenu()
-        navigate('/')                                                               // Vuelve a la página inicial para hacer el login
-    }
+    // Contexto
+    const { deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen } = useContext( KudiContext )
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    // Funciones
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
+        setIsMenuOpen(!isMenuOpen)
+    }
 
     return(
         <>
         <header className="Header">
             <div className="Header-wrapper">
                 <NavLink to='/kudi'>
-                    <h1 className="Logo-h1">kudi </h1>
+                    <h1 className="Logo-h1">kudi</h1>
                 </NavLink>
                 <nav className="Header-nav">
                     <ul className="Header-ul Nav">
@@ -63,20 +58,8 @@ export const Header = ()=>{
                     <span className="Profile-span">{user}</span>
                 </div>
             </div>
-            <div className={`Profile-menu ${isMenuOpen && `isOpen`}` }>
-                <h2 className='Profile-h2 H2'>Mi cuenta</h2>
-                <ul className="Profile-ul">
-                <li className="Profile-li">
-                        <button onClick={closeMenu} className='Profile-btn'>Modificar usuario</button>
-                    </li>
-                    <li className="Profile-li">
-                        <button onClick={logout} className='Profile-btn'>Cerrar sesión</button>
-                    </li>
-                    <li className="Profile-li">
-                        <button className='Profile-btn'>Eliminar usuario</button>
-                    </li>
-                </ul>
-            </div>
+            <ProfileMenu/>
+            <ModalAlert/>
         </header>
         </>
     )

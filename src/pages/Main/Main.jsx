@@ -37,10 +37,10 @@ export const Main = ()=>{
         getMovies()                                                     // Obtener las peliculas y series en un effect sin depedenccias para guardarlas cuando se cree el componente
         getTvshows()
         const interval = setInterval(() => {                            // Crear intervalo para repetir el avance de imagen cada 5 segundos
-            setSlide((slide) => (slide >= 5 ? 0 : slide + 1));          // Se utiliza slide para pasar a la función su valor, se comprueba si es >=5 y si lo es, comienza de nuevo y si no lo es, incrementa en 1. El valor se setea en slide
-        }, 5000);
+            setSlide((slide) => (slide >= 5 ? 0 : slide + 1))           // Se utiliza slide para pasar a la función su valor, se comprueba si es >=5 y si lo es, comienza de nuevo y si no lo es, incrementa en 1. El valor se setea en slide
+        }, 5000)
 
-        return () => clearInterval(interval);                           // Quitar intervalo al eliminar componente
+        return () => clearInterval(interval)                           // Quitar intervalo al eliminar componente
     },[])
 
     useEffect(()=>{
