@@ -8,7 +8,7 @@ import { useContext } from 'react'
 export const ModalAlert = ()=>{
 
     // Contexto
-    const { deleteAlert , setDeleteAlert , closeMenu , openAlert  } = useContext( KudiContext )
+    const { deleteAlert , setDeleteAlert } = useContext( KudiContext )
     
     const closeAlert = () =>{
         setDeleteAlert(false)

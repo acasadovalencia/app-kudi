@@ -18,7 +18,7 @@ export const Header = ()=>{
     const currentPage = useLocation()                                               // Guardamos en que punto del Router donde está la página para usar en estilos de CSS
 
     // Contexto
-    const { deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen } = useContext( KudiContext )
+    const { isMenuOpen, setIsMenuOpen } = useContext( KudiContext )
 
     // Funciones
     const toggleMenu = () => {

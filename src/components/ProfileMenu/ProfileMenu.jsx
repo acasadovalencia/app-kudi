@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 export const ProfileMenu = ()=>{
 
     // Contexto
-    const { setDeleteAlert , isMenuOpen, setIsMenuOpen , closeMenu , openAlert  } = useContext( KudiContext )
+    const { isMenuOpen , closeMenu , openAlert  } = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()
