@@ -98,15 +98,15 @@ function App() {
 
   }
 
- 
-
-const closeMenu = () => {
-  setIsMenuOpen(false)
-}
-const openAlert = () =>{
-  setDeleteAlert(true)
-  setIsMenuOpen(false)
-}
+  // Funciones
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+  
+  const openAlert = () =>{
+    setDeleteAlert(true)
+    setIsMenuOpen(false)
+  }
 
   return (
     <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen , closeMenu , openAlert }}>          {/* // Contexto para compartir con el resto de la APP */}

@@ -4,8 +4,8 @@ import './Header.css'
 import { KudiContext } from '@context/Context'
 import { ModalAlert } from '@components/ModalAlert/ModalAlert'
 
-import { useState , useContext } from 'react'
-import { useNavigate , NavLink, useLocation } from 'react-router-dom'
+import { useContext } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import { ProfileMenu } from '../ProfileMenu/ProfileMenu'
 
 

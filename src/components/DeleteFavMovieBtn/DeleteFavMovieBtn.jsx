@@ -25,7 +25,7 @@ export const DeleteFavMovieBtn = (props)=>{
             }
             await fetch(`${VITE_API}/users/${userLogged._id}/fav_movies/${_id}` , options)       // Fetch a la url utilizando el id de usuario y el id de las props del Li donde está el botón
             .then(res => res.json())                                                            // Transformar la respuesta
-            .then(data => setUsers(data))                                                       // Asignar los datos a alumnos
+            .then(data => setUsers(data))                                                       // Asignar los datos a usuarios
             .catch(err => console.log(err.message))                                             // Capturar el error y enviarlo por cosola
             .finally( ()=> controller.abort() )                                                 // Abortar la conexión a la API
         }  
