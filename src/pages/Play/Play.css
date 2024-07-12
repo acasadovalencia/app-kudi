@@ -11,6 +11,7 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: flex-start;
+    z-index: 3;
 }
 .Play-page--span{
   font-size: 2rem;

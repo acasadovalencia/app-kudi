@@ -28,7 +28,6 @@ export const DeleteFavMovieBtn = (props)=>{
             .then(data => setUsers(data))                                                       // Asignar los datos a alumnos
             .catch(err => console.log(err.message))                                             // Capturar el error y enviarlo por cosola
             .finally( ()=> controller.abort() )                                                 // Abortar la conexión a la API
-            
         }  
 
     return(

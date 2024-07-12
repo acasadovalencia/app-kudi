@@ -2,17 +2,24 @@
 import './TvShowsLi.css'
 
 import { PlayBtn } from '@components/PlayBtn/PlayBtn'
+import { DeleteFavTvshowBtn } from '@components/DeleteFavTvshowBtn/DeleteFavTvshowBtn'
 
-import { NavLink } from 'react-router-dom'
+
+import { NavLink , useLocation } from 'react-router-dom'
 
 
 export const TvShowsLi = (props)=>{
 
     const {_id , title , description , runtime , rating , poster} = props
+    
+    const currentPage = useLocation()
 
     return(
         <>
         <li className="Section-li Tvshows-li">
+            { currentPage.pathname == '/kudi/favlist' && 
+            <DeleteFavTvshowBtn _id={_id}/>
+            }
             <NavLink to={`/kudi/tvshows/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture Tvshows-picture">
                 <source srcSet={`/assets/images/${poster.small}.webp`} alt={title} type='image/webp' />

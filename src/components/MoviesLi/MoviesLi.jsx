@@ -2,16 +2,22 @@
 import './MoviesLi.css'
 
 import { PlayBtn } from '@components/PlayBtn/PlayBtn'
+import { DeleteFavMovieBtn } from '@components/DeleteFavMovieBtn/DeleteFavMovieBtn'
 
-import { NavLink } from 'react-router-dom'
+import { NavLink , useLocation } from 'react-router-dom'
 
 export const MoviesLi = (props)=>{
     
     const {_id , title , description , runtime , rating , poster} = props
 
+    const currentPage = useLocation()
+
     return(
         <>
         <li className="Section-li Movies-li">
+            { currentPage.pathname == '/kudi/favlist' && 
+            <DeleteFavMovieBtn _id={_id}/>
+            }
             <NavLink to={`/kudi/movies/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture Movies-picture">
                 <source srcSet={`/assets/images/${poster.small}.webp`} alt={title} type='image/webp' />

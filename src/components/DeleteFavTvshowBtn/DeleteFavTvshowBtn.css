@@ -14,7 +14,7 @@
 .DeleteFav-btn:hover{
     background-color: var(--f-c-error);
 }
-.Movies-li:hover .DeleteFav-btn{
+.Tvshows-li:hover .DeleteFav-btn{
     opacity: 1;
     pointer-events: all;
 }
