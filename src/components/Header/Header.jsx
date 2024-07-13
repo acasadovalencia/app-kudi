@@ -36,6 +36,7 @@ export const Header = ()=>{
     
     const searchElements = (e) =>{
         e.preventDefault()
+        setIsSearchOpen(false)
         navigate('/kudi/search')
     }
     
