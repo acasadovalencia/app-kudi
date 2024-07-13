@@ -19,12 +19,16 @@ export const Header = ()=>{
     const currentPage = useLocation()                                               // Guardamos en que punto del Router donde está la página para usar en estilos de CSS
 
     // Contexto
-    const { isMenuOpen, setIsMenuOpen , setModifyModal , modifyModal } = useContext( KudiContext )
+    const { isMenuOpen, setIsMenuOpen , setModifyModal , modifyModal , isSearchOpen, setIsSearchOpen} = useContext( KudiContext )
 
     // Funciones
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
         setModifyModal(false)
+    }
+
+    const toggleSearch = () =>{
+        setIsSearchOpen(!isSearchOpen)
     }
 
     return(
@@ -52,11 +56,17 @@ export const Header = ()=>{
                         <NavLink to={`/kudi/favlist`}>Mi lista</NavLink>
                         </li>
                         <li className="Nav-li">
-                        <button className="Search-btn">
+                        <button onClick={toggleSearch} className={`Search-btn ${isSearchOpen ? `isActive` : ``}`}>
                             <svg className='Search-svg' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                             </svg>
                         </button>
+                        </li>
+                        <li className={`Nav-li ${isSearchOpen ? `isOpen` : ``}`}>
+                            <form className='Nav-form'>
+                                <label className='Nav-label' htmlFor="search"></label>
+                                <input className='Nav-input' type="text" name='search' id='search' placeholder='Busca una película o serie' />
+                            </form>
                         </li>
                     </ul>
                 </nav>

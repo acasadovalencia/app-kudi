@@ -21,6 +21,7 @@ function App() {
   const [ categories , setCategories ] = useState([])
   const [ type , setType ] = useState('all')
   const [ isMenuOpen, setIsMenuOpen ] = useState(false)
+  const [ isSearchOpen, setIsSearchOpen ] = useState(false)
   const [ deleteAlert , setDeleteAlert ] = useState(false)
   const [ modifyModal , setModifyModal ] = useState(false)
   const [ error , setError] = useState(true)
@@ -123,7 +124,7 @@ function App() {
   }
 
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen , closeMenu , openAlert , modifyModal , setModifyModal , openModify , closeModify , error , setError , userError , setUserError}}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, isSearchOpen, setIsSearchOpen , setIsMenuOpen , closeMenu , openAlert , modifyModal , setModifyModal , openModify , closeModify , error , setError , userError , setUserError}}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>
     <>
     <Routes>

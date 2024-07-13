@@ -21,11 +21,12 @@
 }
 .Nav{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     gap: 24px;
     font-size: 17px;
+    position: relative;
 }
 .Nav-li{
     transition: color .5s ease;
@@ -33,6 +34,12 @@
 }
 .Nav-li:hover{
     color: var(--f-c-tertiary);
+}
+.Nav-li:last-child{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
 }
 .CurrentPage{
     color: var(--bg-c-tertiary-h);
@@ -42,6 +49,9 @@
 }
 .Search-btn:hover .Search-svg{
     color: var(--f-c-tertiary);
+}
+.Search-btn.isActive .Search-svg{
+    color: var(--f-c-tertiary-h);
 }
 .Search-svg{
     color: var(--f-c-primary);
@@ -61,8 +71,27 @@
 .Header-profile.isOpen{
     background-color:var(--bg-c-submenu);
 }
-
 .Profile-svg{
     width: 1.5rem;
     color: var(--bg-c-tertiary);
+}
+.Nav-li>.Nav-form{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+.Nav-li.isOpen>.Nav-form{
+    opacity: 1;
+    pointer-events: all;
+}
+.Nav-label{
+    opacity: 1;
+    pointer-events: all;
+}
+.Nav-input{
+    background-color: var(--bg-c-secondary);
+    width: 100%;
+    padding: .5rem;
+    border-radius: 2px;
+    font-size: .75rem;
 }

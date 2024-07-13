@@ -54,6 +54,7 @@ html{
   --f-c-primary : #fff;
   --f-c-secondary : #000;
   --f-c-tertiary: #9C27F7;
+  --f-c-tertiary-h: #B188E6;
   --f-c-cuaternary: #858585;
   --f-c-error: #E66868;
 }
