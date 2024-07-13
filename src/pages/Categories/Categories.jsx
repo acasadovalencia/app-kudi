@@ -2,6 +2,7 @@
     import './Categories.css'
 
     import { KudiContext } from '@context/Context'
+    import { Loader } from '@components/Loader/Loader'
 
     import { useContext , useEffect } from 'react'
     import { useNavigate , NavLink } from 'react-router-dom'
@@ -42,6 +43,9 @@
                 <section className="Section Categories">
                     <h2 className="Section-h2 H2">Categorías</h2>
                     <ul className="Section-ul Categories-ul">
+                        {categories.length == 0 && 
+                            <Loader/>
+                        }
                         {categories.length != 0 && categories.map((eachCategory , index) => 
                             <li className='Categories-li' key={index}>
                                 <NavLink to={`/kudi/categories/${eachCategory}`}> 
