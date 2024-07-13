@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 export const SignUp = ()=>{
     // Contexto
-    const { VITE_API } = useContext( KudiContext )
+    const { VITE_API , setLogin } = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()                                   // Asociar a una variable al no poderse declarar dentro un Hook.
@@ -27,6 +27,10 @@ export const SignUp = ()=>{
             navigate('/')
         }
     }, [user])                                                     // El effect se ejecutará cada vez que usuario cambie                                 
+
+    useEffect(()=>{
+        setLogin()                                                 // Setear el login vacío (como en el inicio) para que al volver a la pagina de Login, el error en el formulario no aparezca
+    })
 
     // Funciones
     const handleSubmit = (e) => {                                           // Funcion para controlar la creación del usuario sólo si las contraseñas coinciden.

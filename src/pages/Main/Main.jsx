@@ -9,13 +9,17 @@ import { TvShowsLiLarge } from '@components/TvShowsLiLarge/TvShowsLiLarge'
 
 import { useContext , useState , useEffect } from 'react'
 
-import { NavLink } from 'react-router-dom'
+import { NavLink , useNavigate } from 'react-router-dom'
 
 
 
 export const Main = ()=>{
     //Contexto
     const { movies , getMovies , tvshows , getTvshows , getUsers } = useContext( KudiContext )
+
+    // Variables al uso
+    const navigate = useNavigate()                                              // Asociar a una variable al no poderse declarar dentro de otro Hook.
+
 
     //States
     const [ moviesLatest , setMoviesLatest] = useState([])
