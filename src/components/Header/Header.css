@@ -2,6 +2,7 @@
     width: 100%;
     background-color: var(--bg-c-primary);
     position: relative;
+    z-index: 2;
 }
 .Header-wrapper{
     display: flex;
@@ -9,8 +10,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.625rem 2.5rem;
-    z-index: 3;
     background-color: var(--bg-c-primary);
+    position: relative;
+    z-index: 3;
 }
 .Logo-h1{
     font-size: 32px;
@@ -27,12 +29,23 @@
 }
 .Nav-li{
     transition: color .5s ease;
+    cursor: pointer;
 }
 .Nav-li:hover{
     color: var(--f-c-tertiary);
 }
 .CurrentPage{
     color: var(--bg-c-tertiary-h);
+}
+.Search-btn{
+    cursor: pointer;
+}
+.Search-btn:hover .Search-svg{
+    color: var(--f-c-tertiary);
+}
+.Search-svg{
+    color: var(--f-c-primary);
+    transition: color .5s ease;
 }
 .Header-profile{
     display: flex;
@@ -48,6 +61,7 @@
 .Header-profile.isOpen{
     background-color:var(--bg-c-submenu);
 }
+
 .Profile-svg{
     width: 1.5rem;
     color: var(--bg-c-tertiary);

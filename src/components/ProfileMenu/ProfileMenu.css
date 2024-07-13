@@ -1,12 +1,12 @@
 .Profile-menu{
     position: absolute;
-    top: 5.5938rem;
+    top: 5.75rem;
     right: 2.5rem;
     background-color: var(--bg-c-submenu);
     padding: 2.5rem 2rem;
     z-index: 1;
     border-radius: .5rem;
-    transform: translateY(-100%);
+    transform: translateY(-150%);
     transition: transform .5s ease , opacity 1s ease;
     opacity: 0;
     pointer-events: none;
