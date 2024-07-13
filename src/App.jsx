@@ -33,7 +33,7 @@ function App() {
   // Variables de entorno
   const { VITE_API} = import.meta.env
 
-  
+
   // Fetchs
   const getUsers = async ()=>{
           let controller = new AbortController()
@@ -118,6 +118,7 @@ function App() {
     setModifyModal(true)
     setUserError(false)
   }
+  
   const closeModify = (e)=>{                    // Utilizo el evento porque al tener el botón en el formulario, ejecuta un evento y da error en los inputs vacios
     e.preventDefault()                          // Prevenir el evento para no da error al cancelar el form
     setModifyModal(false)
