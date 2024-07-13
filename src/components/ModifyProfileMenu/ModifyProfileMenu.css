@@ -1,0 +1,35 @@
+.Modify-menu{
+    position: absolute;
+    top: 5.5938rem;
+    right: 2.5rem;
+    background-color: var(--bg-c-submenu);
+    padding: 2.5rem 2rem;
+    z-index: 1;
+    border-radius: .5rem;
+    overflow: hidden;
+    transform: translateX(150%);
+    transition: transform .5s ease , opacity 1s ease;
+    opacity: 0;
+    pointer-events: none;
+    
+}
+.Modify-menu.isOpen{
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+}
+.BtnModify-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.Modify-submit{
+    background-color: var(--bg-c-tertiary);
+    color: var(--f-c-primary);
+    padding: .5rem .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}

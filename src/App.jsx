@@ -5,7 +5,7 @@ import { SignUp } from '@pages/SignUp/SignUp'
 import { Kudi } from '@pages/Kudi/Kudi'
 import { KudiContext } from '@context/Context'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter , Routes , Route } from 'react-router-dom'
 
 function App() {
@@ -22,7 +22,11 @@ function App() {
   const [ type , setType ] = useState('all')
   const [ isMenuOpen, setIsMenuOpen ] = useState(false)
   const [ deleteAlert , setDeleteAlert ] = useState(false)
-  
+  const [ modifyModal , setModifyModal ] = useState(false)
+  const [ error , setError] = useState(true)
+  const [userError , setUserError] = useState('') 
+
+
 
   // Variables de entorno
   const { VITE_API} = import.meta.env
@@ -108,8 +112,18 @@ function App() {
     setIsMenuOpen(false)
   }
 
+  const openModify = ()=>{
+    setModifyModal(true)
+    setUserError(false)
+  }
+  const closeModify = (e)=>{                    // Utilizo el evento porque al tener el botón en el formulario, ejecuta un evento y da error en los inputs vacios
+    e.preventDefault()                          // Prevenir el evento para no da error al cancelar el form
+    setModifyModal(false)
+    setUserError(false)
+  }
+
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen , closeMenu , openAlert }}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, setIsMenuOpen , closeMenu , openAlert , modifyModal , setModifyModal , openModify , closeModify , error , setError , userError , setUserError}}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>
     <>
     <Routes>

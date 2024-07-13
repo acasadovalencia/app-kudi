@@ -1,89 +1,85 @@
-//Importaciones
-import './SignUp.css'
+// Importaciones
+import './ModifyProfileMenu.css'
 
 import { KudiContext } from '@context/Context'
 
 import { useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export const SignUp = ()=>{
+
+export const ModifyProfileMenu = ()=>{
+
     // Contexto
-    const { VITE_API , setLogin } = useContext( KudiContext )
+    const { VITE_API , setLogin , user , setUser , getUser , users , getUsers , closeModify , modifyModal , setModifyModal , error, setError , userError , setUserError} = useContext( KudiContext )
 
     // Variables al uso
-    const navigate = useNavigate()                                   // Asociar a una variable al no poderse declarar dentro un Hook.
+    const navigate = useNavigate()
 
-    // States
-    const [ user , setUser] = useState()
-    const [ error , setError] = useState(true)
-    const [userError , setUserError] = useState('') 
-    
+
     // Refs
     const form = useRef()
 
-    // Effects
-    useEffect(()=>{
-        if( user ){                                                // Condicional que si usuario es true, vaya a la ruta / para acceder con ese usuario.                      
-            navigate('/')
-        }
-    }, [user])                                                     // El effect se ejecutará cada vez que usuario cambie                                 
-
-    useEffect(()=>{
-        setLogin()                                                 // Setear el login vacío (como en el inicio) para que al volver a la pagina de Login, el error en el formulario no aparezca
-    })
-
-    // Funciones
+    
     const handleSubmit = (e) => {                                           // Funcion para controlar la creación del usuario sólo si las contraseñas coinciden.
         e.preventDefault()
 
         const {current: formData} = form
 
-        if (formData['pass'].value === formData['pass-repeat'].value  ) {   // Si las contraseñas coinciden entra en el condicional
-            setError(true)                                                  // Si entra en el condicional, cambia el estado de error para que no exista
-            sendUser()                                                      // Se hace el Fetch
+        if (formData['pass'].value === formData['pass-repeat'].value ) {   // Si las contraseñas coinciden entra en el condicional
+            setError(true)                                                  // Si entra en el condicional, cambia el estado de error para que no aparezca
+            sendUser()                                                      // Se hace el Fetch                                                             
         }
         else{                                                               
             return setError(false)                                          // Si no se cumple el condicional, setea el error en false para mostrarlo.
         }
     }
 
-    const sendUser = async ()=>{                                            // Funcion asíncrona ya que conectará a MongoDB
-
+    const sendUser = async ()=>{  
+        getUsers()      
+        let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
+        const userLogged = users.find(eachUser => eachUser.username === username)           // Buscar el usuario logueado entre los usuarios de la bbdd   
+    
         const {current: formData} = form
-
-        const newUser = {                                          // Datos del usuario introducidos en el form
+        const modifiedUser = {  
+            id: userLogged._id,                                                 // Datos del usuario introducidos en el form
             username : formData['user'].value,
             password: formData['pass'].value
         }
 
-        let controller = new AbortController()                      // Se usará para cerrar la conexión a Mongo.             
+        let controller = new AbortController()                                                  // Se usará para cerrar la conexión a Mongo.             
         let options = {
-            method: 'post',                                         // Método POST para enviar los datos
-            signal: controller.signal,                              // Asociar señal a controller
-            headers: {"Content-type" : "application/json "},        // Tipo de dato enviado por el body         
-            body: JSON.stringify(newUser)                           // Enviar por el body los nuevos datos de usuario convertidos a JSON.
+            method: 'put',                                                                      // Método POST para enviar los datos
+            signal: controller.signal,                                                          // Asociar señal a controller
+            headers: {"Content-type" : "application/json "},                                    // Tipo de dato enviado por el body         
+            body: JSON.stringify(modifiedUser)                                                  // Enviar por el body los nuevos datos de usuario convertidos a JSON.
         }
-        await fetch(`${VITE_API}/signup` , options)                  // Petición mediante fetch a la API para añadir el usuario en el endpoint sing up, donde el post se ejecuta diferente a login.
+        await fetch(`${VITE_API}/users` , options)                                              // Petición mediante fetch a la API para añadir el usuario en el endpoint sing up, donde el post se ejecuta diferente a login.
             .then(res => res.json())
             .then(data =>{
-                if(data.error){                                      // Condicional para impedir usuarios duplicados. (Está configurado en la API, en el controller de postUser)
-                    setUserError(data.error)                         // Setear a Error en el caso de que la petición devuelva el error de doble usuario y estilar el form
+                if(data.error){                                                                 // Condicional para impedir usuarios duplicados. (Está configurado en la API, en el controller de postUser)
+                    setUserError(data.error)                                                    // Setear a Error en el caso de que la petición devuelva el error de doble usuario y estilar el form
                 } else {
-                    setUserError('')                                 // Reiniciar variable de error de usuario
-                    setUser(data)                                    // Setear a User con el nuevo usuario creado para añadirlo a la bbdd porque las contraseñas coinciden
+                    setUserError('')                                                            // Reiniciar variable de error de usuario
+                    setUser(data)                                                               // Setear a User con el nuevo usuario creado para añadirlo a la bbdd porque las contraseñas coinciden
+                    localStorage.setItem('username' , JSON.stringify(modifiedUser.username))    // Guardar el nombre del usuario que se loguea para mostrarlo en la APP.
+                    setModifyModal(false)                                                       // Cerrar el modal al hacer fetch
+                    setError(true)                                                              // Limpiar el error del form
+                    navigate('/')                                                              
                 }
             })                           
             .catch(err => console.log(err.message))
             .finally(()=> controller.abort())                       // Desconexión de la API
-        
+            formData['user'].value = ''
+            formData['pass'].value = ''
+            formData['pass-repeat'].value = ''
+            
     }
 
     return(
         <>
-        <div className="Login">
-            <div className="Form-wrapper">
-                <h2 className="Form-h2 H2">Crear usuario</h2>
-                <form ref={form} onSubmit={handleSubmit} className="Signup-form">
+        <div className={`Modify-menu ${modifyModal && `isOpen`}`}>
+                <h2 className="Profile-h2 H2">Modificar usuario</h2>
+                <form ref={form} onSubmit={handleSubmit} className="Modify-form">
                     <label htmlFor="user" className="Signup-label">Nombre de usuario</label>
                     <input type="text" name='user' id='user' className={`Signup-input`} required />
                     <div className={`Signup-error ${userError && `isActive`}`}>
@@ -108,15 +104,12 @@ export const SignUp = ()=>{
                         </svg>
                         <span className={`Signup-span--error`}>Las contraseñas no coinciden</span>
                     </div>
-                    <input type="submit" value="Crear usuario" className="Signup-submit" />
+                    <div className="BtnModify-wrapper">
+                        <input type="submit" value="Modificar usuario" className="Modify-submit" />
+                        <button onClick={closeModify} className="Delete-btn Delete-btn--cancel">Cancelar</button>
+                    </div>
                 </form>
-                <button onClick={()=>navigate('/')} className="Back-btn">Volver</button>
             </div>
-            <picture className="Login-picture">
-                <source srcSet='/assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
-                <img src="/assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
-            </picture>
-        </div>
         </>
     )
 }

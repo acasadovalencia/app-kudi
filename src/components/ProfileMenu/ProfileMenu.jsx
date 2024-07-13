@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 export const ProfileMenu = ()=>{
 
     // Contexto
-    const { isMenuOpen , closeMenu , openAlert  } = useContext( KudiContext )
+    const { isMenuOpen , closeMenu , openAlert , openModify , setUserError} = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()
@@ -23,13 +23,19 @@ export const ProfileMenu = ()=>{
     navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
 
+    const closeAndModify = ()=>{                                                // Funcion para cerrar el menu y abrir el siguiente
+        closeMenu()
+        openModify()
+        setUserError(false)                                                              // Limpiar el error del form
+    }
+
     return(
         <>
         <div className={`Profile-menu ${isMenuOpen && `isOpen`}` }>
             <h2 className='Profile-h2 H2'>Mi cuenta</h2>
             <ul className="Profile-ul">
             <li className="Profile-li">
-                    <button onClick={closeMenu} className='Profile-btn'>Modificar usuario</button>
+                    <button onClick={closeAndModify} className='Profile-btn'>Modificar usuario</button>
                 </li>
                 <li className="Profile-li">
                     <button onClick={logout} className='Profile-btn'>Cerrar sesión</button>

@@ -13,6 +13,9 @@ export const ModalAlert = ()=>{
 
     // Variables al uso
     const navigate = useNavigate()
+    let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
+    const userLogged = users.find(eachUser => eachUser.username === username)           // Buscar el usuario logueado entre los usuarios de la bbdd    
+
 
     // Funciones
     const logout = ()=>{                                                          // Funcion para salir de la APP y eliminar el localStorage.                        
@@ -20,11 +23,6 @@ export const ModalAlert = ()=>{
     localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
     navigate('/')                                                               // Vuelve a la página inicial para hacer el login
     }
-
-    // States
-    let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado
-    const userLogged = users.find(eachUser => eachUser.username === username)           // Buscar el usuario logueado entre los usuarios de la bbdd    
-    
     
     const closeAlert = () =>{
         setDeleteAlert(false)

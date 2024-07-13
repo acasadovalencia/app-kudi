@@ -7,6 +7,7 @@ import { ModalAlert } from '@components/ModalAlert/ModalAlert'
 import { useContext } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { ProfileMenu } from '../ProfileMenu/ProfileMenu'
+import { ModifyProfileMenu } from '../ModifyProfileMenu/ModifyProfileMenu'
 
 
 export const Header = ()=>{
@@ -18,11 +19,12 @@ export const Header = ()=>{
     const currentPage = useLocation()                                               // Guardamos en que punto del Router donde está la página para usar en estilos de CSS
 
     // Contexto
-    const { isMenuOpen, setIsMenuOpen } = useContext( KudiContext )
+    const { isMenuOpen, setIsMenuOpen , setModifyModal } = useContext( KudiContext )
 
     // Funciones
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
+        setModifyModal(false)
     }
 
     return(
@@ -59,6 +61,7 @@ export const Header = ()=>{
                 </div>
             </div>
             <ProfileMenu/>
+            <ModifyProfileMenu/>
             <ModalAlert/>
         </header>
         </>
