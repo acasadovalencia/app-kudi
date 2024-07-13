@@ -21,6 +21,7 @@ export const Header = ()=>{
 
     const navigate = useNavigate()
 
+
     // Contexto
     const { isMenuOpen, setIsMenuOpen , setModifyModal , modifyModal , isSearchOpen, setIsSearchOpen , searchForm} = useContext( KudiContext )
 
@@ -32,6 +33,7 @@ export const Header = ()=>{
 
     const toggleSearch = () =>{
         setIsSearchOpen(!isSearchOpen)
+
     }
     
     const searchElements = (e) =>{

@@ -1,0 +1,31 @@
+.Search-ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+.Search-span{
+    text-transform: capitalize;
+}
+.Type-wrapper{
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+.Type-btn{
+    color: var(--f-c-primary);
+    font-weight: 600;
+    background-color: var(--bg-c-cuaternary);
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color .5 ease;
+}
+.Type-btn.isActive{
+    background-color: var(--bg-c-tertiary-h);
+}
+.Type-btn:hover{
+    background-color: var(--bg-c-tertiary-h);
+}
