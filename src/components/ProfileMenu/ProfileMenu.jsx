@@ -26,12 +26,12 @@ export const ProfileMenu = ()=>{
     const closeAndModify = ()=>{                                                // Funcion para cerrar el menu y abrir el siguiente
         closeMenu()
         openModify()
-        setUserError(false)                                                              // Limpiar el error del form
+        setUserError(false)                                                     // Limpiar el error del form
     }
 
     return(
         <>
-        <div className={`Profile-menu ${isMenuOpen && `isOpen`}` }>
+        <div className={`Profile-menu ${isMenuOpen ? `isOpen` : ``}` }>
             <h2 className='Profile-h2 H2'>Mi cuenta</h2>
             <ul className="Profile-ul">
             <li className="Profile-li">

@@ -59,7 +59,7 @@ html{
 }
 body{
   font-family: "Open Sans", sans-serif;
-  color: var(--f-c-primary)
+  color: var(--f-c-primary);
 }
 .H2{
   font-weight: 600;

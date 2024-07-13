@@ -1,17 +1,20 @@
-.Modify-menu{
+.Modify-wrapper{
     position: absolute;
     top: 5.5938rem;
     right: 2.5rem;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+.Modify-menu{
     background-color: var(--bg-c-submenu);
     padding: 2.5rem 2rem;
-    z-index: 1;
     border-radius: .5rem;
-    overflow: hidden;
     transform: translateX(150%);
     transition: transform .5s ease , opacity 1s ease;
     opacity: 0;
     pointer-events: none;
-    
+    overflow: hidden;
 }
 .Modify-menu.isOpen{
     transform: translateX(0);

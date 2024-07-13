@@ -1,6 +1,7 @@
 .Header{
     width: 100%;
     background-color: var(--bg-c-primary);
+    position: relative;
 }
 .Header-wrapper{
     display: flex;
@@ -8,7 +9,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.625rem 2.5rem;
-    position: relative;
     z-index: 3;
     background-color: var(--bg-c-primary);
 }

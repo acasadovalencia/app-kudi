@@ -6,7 +6,6 @@
     padding: 2.5rem 2rem;
     z-index: 1;
     border-radius: .5rem;
-    overflow: hidden;
     transform: translateY(-100%);
     transition: transform .5s ease , opacity 1s ease;
     opacity: 0;
