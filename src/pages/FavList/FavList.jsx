@@ -31,7 +31,7 @@
                     getUser(loggedUser._id)                                                           // Pasar a la función del fetch por parámetros el id del usuario logueado
                 }
             }
-        }, [users , setCurrentUser , navigate , user])                                                       // Renovar cuando cualquiera de estos elementos cambie
+        }, [users , setCurrentUser , navigate , user])                                                // Renovar cuando cualquiera de estos elementos cambie
         
         return(
             <>

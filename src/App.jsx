@@ -30,12 +30,10 @@ function App() {
   const [ error , setError] = useState(true)
   const [userError , setUserError] = useState('') 
 
-
-
   // Variables de entorno
   const { VITE_API} = import.meta.env
-  
 
+  
   // Fetchs
   const getUsers = async ()=>{
           let controller = new AbortController()

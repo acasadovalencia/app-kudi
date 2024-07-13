@@ -2,6 +2,7 @@
 import './Movies.css'
 
 import { MoviesLi } from '@components/MoviesLi/MoviesLi'
+import { Loader } from '@components/Loader/Loader'
 import { KudiContext } from '@context/Context'
 
 import { useNavigate } from 'react-router-dom'
@@ -33,7 +34,10 @@ export const Movies = ()=>{
             <section className="Section Movies">
                 <h2 className="Section-h2 H2">Peliculas</h2>
                 <ul className="Section-ul Movies-ul">
-                    {movies.length == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                    {movies.length == 0 &&
+                    <Loader/>
+                    }                
+                    {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
                     {movies.length != 1 && movies.map( eachMovie =>                 
                         <MoviesLi key={eachMovie._id} {...eachMovie}/>                             
                     )}

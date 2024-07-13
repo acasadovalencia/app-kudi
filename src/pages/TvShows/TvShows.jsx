@@ -2,6 +2,7 @@
 import './TvShows.css'
 
 import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
+import { Loader } from '@components/Loader/Loader'
 import { KudiContext } from '@context/Context'
 
 import { useNavigate } from 'react-router-dom'
@@ -32,7 +33,9 @@ export const TvShows = ()=>{
             <section className="Section Tvshows">
                 <h2 className="Section-h2 H2">Series</h2>
                 <ul className="Section-ul Tvshows-ul">
-                    {tvshows.length == 0 && <li>Cargando...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                    {tvshows.length == 0 && 
+                    <Loader/>
+                    }                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
                     {tvshows.length != 1 && tvshows.map( eachTvshow =>                 
                         <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>                             
                     )}

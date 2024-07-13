@@ -17,8 +17,8 @@
         const [ moviesFiltered , setMoviesFiltered] = useState([])
         const [ tvShowsFiltered , setTvShowsFiltered] = useState([])
 
-
-        const { category } = useParams()
+        // Params
+        const { category } = useParams()                    // Se utiliza la categoria en la url para la búsqueda
 
         //Effects
         useEffect(()=>{                                         
@@ -48,7 +48,8 @@
             <section className="Section Category">
                 <h2 className="Section-h2 H2">Género <span className="Category-span">{category}</span></h2>
                 <ul className="Section-ul Category-ul">
-                    {moviesFiltered.length != 0 && moviesFiltered.map( eachMovie => 
+                    {/* Sin loader porque sin no hay, no se muestra nada */}
+                    {moviesFiltered.length != 0 && moviesFiltered.map( eachMovie =>                                 
                         <MoviesLi key={eachMovie._id} {...eachMovie}/>
                     )}
                     {tvShowsFiltered.length != 0 && tvShowsFiltered.map( eachTvshows => 

@@ -6,6 +6,8 @@ import { MoviesLi } from '@components/MoviesLi/MoviesLi'
 import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
 import { MoviesLiLarge } from '@components/MoviesLiLarge/MoviesLiLarge'
 import { TvShowsLiLarge } from '@components/TvShowsLiLarge/TvShowsLiLarge'
+import { Loader } from '@components/Loader/Loader'
+
 
 import { useContext , useState , useEffect } from 'react'
 
@@ -101,9 +103,15 @@ export const Main = ()=>{
             <h2 className="Section-h2 H2">Novedades</h2>
             <div className="Carrousel-container">
                 <ul className="Section-ul Carrousel-ul" style={{transform: `translateX(-${ slide * (100/6)}%)`}}>
+                    {moviesLatest.length == 0 && 
+                     <Loader/>
+                    }
                     {moviesLatest.length != 0 && moviesLatest.map( eachMovie => 
                         <MoviesLiLarge key={eachMovie._id} {...eachMovie}/>
                     )}
+                    {tvShowsLatest.length == 0 && 
+                     <Loader/>
+                    }
                     {tvShowsLatest.length != 0 && tvShowsLatest.map( eachTvshow => 
                         <TvShowsLiLarge key={eachTvshow._id} {...eachTvshow}/>
                     )}
@@ -126,6 +134,9 @@ export const Main = ()=>{
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Peliculas</h2>
                 <ul className="Section-ul Initials-ul">
+                    {moviesInitials.length == 0 && 
+                    <Loader/>
+                    }
                     {moviesInitials.length != 0 && moviesInitials.map( eachMovie => 
                         <MoviesLi key={eachMovie._id} {...eachMovie}/>
                     )}
@@ -145,6 +156,9 @@ export const Main = ()=>{
         <section className="Section Initials">
             <h2 className="Section-h2 H2">Series</h2>
             <ul className="Section-ul Initials-ul">
+                {tvShowsInitials.length == 0 && 
+                    <Loader/>
+                }
                 {tvShowsInitials.length != 0 && tvShowsInitials.map( eachTvshow => 
                     <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>
                 )}
