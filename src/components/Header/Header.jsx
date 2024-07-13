@@ -3,11 +3,12 @@ import './Header.css'
 
 import { KudiContext } from '@context/Context'
 import { ModalAlert } from '@components/ModalAlert/ModalAlert'
+import { ProfileMenu } from '@components/ProfileMenu/ProfileMenu'
+import { ModifyProfileMenu } from '@components/ModifyProfileMenu/ModifyProfileMenu'
 
-import { useContext, useRef } from 'react'
-import { NavLink, useLocation, useNavigate , Route , Routes } from 'react-router-dom'
-import { ProfileMenu } from '../ProfileMenu/ProfileMenu'
-import { ModifyProfileMenu } from '../ModifyProfileMenu/ModifyProfileMenu'
+
+import { useContext } from 'react'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 
 export const Header = ()=>{
