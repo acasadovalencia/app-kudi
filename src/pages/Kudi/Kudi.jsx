@@ -11,6 +11,7 @@ import { Play } from '@pages/Play/Play'
 import { FavList } from '@pages/FavList/FavList'
 import { Categories } from '@pages/Categories/Categories'
 import { Category } from '@pages/Category/Category'
+import { Search } from '@pages/Search/Search'
 import { KudiContext } from '@context/Context'
 
 import { useContext, useEffect } from 'react'
@@ -19,7 +20,7 @@ import { Route, Routes , useNavigate } from 'react-router-dom'
 
 export const Kudi = () =>{
     // Contexto
-    const { getUsers , users } = useContext( KudiContext )
+    const { getUsers } = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()                                     // Hook pasado por variable para liberar su uso en otros Hooks
@@ -50,7 +51,8 @@ export const Kudi = () =>{
             <Route path='tvshows/:_id/play' element={<Play/>}/>
             <Route path='favlist/*' element={<FavList/>}/>
             <Route path='categories/*' element={<Categories/>}/>    
-            <Route path='categories/:category' element={<Category/>}/>              
+            <Route path='categories/:category' element={<Category/>}/>           
+            <Route path='search/' element={<Search/>}/>     
         </Routes>
 
         </>

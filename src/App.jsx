@@ -5,10 +5,13 @@ import { SignUp } from '@pages/SignUp/SignUp'
 import { Kudi } from '@pages/Kudi/Kudi'
 import { KudiContext } from '@context/Context'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useRef} from 'react'
 import { BrowserRouter , Routes , Route } from 'react-router-dom'
 
 function App() {
+  //Refs
+  const searchForm = useRef()
+
   // States
   const [ login , setLogin ] = useState()
   const [ movies , setMovies ] = useState([])
@@ -122,9 +125,10 @@ function App() {
     setModifyModal(false)
     setUserError(false)
   }
+  
 
   return (
-    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, isSearchOpen, setIsSearchOpen , setIsMenuOpen , closeMenu , openAlert , modifyModal , setModifyModal , openModify , closeModify , error , setError , userError , setUserError}}>          {/* // Contexto para compartir con el resto de la APP */}
+    <KudiContext.Provider value={{ VITE_API , login , setLogin , movies , setMovies , getMovies , movie , setMovie , users , setUsers , getUsers , user , setUser , getUser , currentUser , setCurrentUser , tvshow , setTvshow , getTvshows , tvshows , setTvshows , categories , setCategories , getCategories , type , setType , deleteAlert , setDeleteAlert , isMenuOpen, isSearchOpen, setIsSearchOpen , setIsMenuOpen , closeMenu , openAlert , modifyModal , setModifyModal , openModify , closeModify , error , setError , userError , setUserError , searchForm}}>          {/* // Contexto para compartir con el resto de la APP */}
     <BrowserRouter>
     <>
     <Routes>

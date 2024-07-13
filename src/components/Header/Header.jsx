@@ -4,8 +4,8 @@ import './Header.css'
 import { KudiContext } from '@context/Context'
 import { ModalAlert } from '@components/ModalAlert/ModalAlert'
 
-import { useContext } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { useContext, useRef } from 'react'
+import { NavLink, useLocation, useNavigate , Route , Routes } from 'react-router-dom'
 import { ProfileMenu } from '../ProfileMenu/ProfileMenu'
 import { ModifyProfileMenu } from '../ModifyProfileMenu/ModifyProfileMenu'
 
@@ -18,8 +18,10 @@ export const Header = ()=>{
 
     const currentPage = useLocation()                                               // Guardamos en que punto del Router donde está la página para usar en estilos de CSS
 
+    const navigate = useNavigate()
+
     // Contexto
-    const { isMenuOpen, setIsMenuOpen , setModifyModal , modifyModal , isSearchOpen, setIsSearchOpen} = useContext( KudiContext )
+    const { isMenuOpen, setIsMenuOpen , setModifyModal , modifyModal , isSearchOpen, setIsSearchOpen , searchForm} = useContext( KudiContext )
 
     // Funciones
     const toggleMenu = () => {
@@ -30,7 +32,12 @@ export const Header = ()=>{
     const toggleSearch = () =>{
         setIsSearchOpen(!isSearchOpen)
     }
-
+    
+    const searchElements = (e) =>{
+        e.preventDefault()
+        navigate('/kudi/search')
+    }
+    
     return(
         <>
         <header className="Header">
@@ -63,7 +70,7 @@ export const Header = ()=>{
                         </button>
                         </li>
                         <li className={`Nav-li ${isSearchOpen ? `isOpen` : ``}`}>
-                            <form className='Nav-form'>
+                            <form ref={searchForm} onSubmit={searchElements} className='Nav-form'>
                                 <label className='Nav-label' htmlFor="search"></label>
                                 <input className='Nav-input' type="text" name='search' id='search' placeholder='Busca una película o serie' />
                             </form>
