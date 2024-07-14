@@ -6,3 +6,14 @@
     min-height: calc(100vh - 5.75rem);
     background-color: var(--bg-c-primary);
 }
+
+@media(max-width:530px){
+    .Section{
+        padding: 1.625rem 1.25rem;
+    }
+}  
+@media(max-width:360px){
+    .Section{
+        padding: 1.625rem .5rem;
+    }
+}

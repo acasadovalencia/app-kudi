@@ -54,7 +54,6 @@ export const Kudi = () =>{
             <Route path='categories/:category' element={<Category/>}/>           
             <Route path='search/' element={<Search/>}/>     
         </Routes>
-
         </>
     )
 }
