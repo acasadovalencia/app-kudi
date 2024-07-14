@@ -51,7 +51,40 @@
 .Type-btn:hover{
     background-color: var(--bg-c-tertiary-h);
 }
-
+.DeleteFav-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease , background-color .5s ease;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: .2rem;
+    cursor: pointer;
+}
+.DeleteFav-btn:hover{
+    background-color: var(--f-c-error);
+}
+.DeleteFav-svg{
+    width: 1rem;
+}
+@media(max-width:685px){
+    .DeleteFav-btn{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+@media(max-width:615px){
+    .DeleteFav-btn{
+        top: .5rem;
+        right: .5rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        
+    }
+}
 @media(max-width:530px){
     .Type-wrapper{
         padding: 1.625rem 1.25rem;

@@ -75,8 +75,7 @@
     text-overflow: ellipsis;
     font-size: .875rem;
 }
-
-@media(max-width:475px){
+@media(max-width:685px){
     .Movies-li:hover .Movies-picture{
         filter: none;
     }
