@@ -2,12 +2,8 @@
 import './MoviesLiLarge.css'
 
 import { PlayBtn } from '@components/PlayBtn/PlayBtn'
-import { StartBtn } from '@components/StartBtn/StartBtn'
-import { FavMovieBtn } from '@components/FavMovieBtn/FavMovieBtn'
-import { KudiContext } from '@context/Context'
 
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useEffect , useContext } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const MoviesLiLarge = (props)=>{
 

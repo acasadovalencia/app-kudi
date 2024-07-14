@@ -22,9 +22,10 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: flex-start;}
+    align-items: flex-start;
+}
 .MoviesLarge-h3{
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 600;
     margin: .5rem 0;
 }
@@ -48,5 +49,43 @@
 .MoviesLarge-paragraph{
     margin: .5rem 0 2rem;
     font-size: .875rem;
-    width: 50%;
+    width: 60%;
+}
+@media(max-width:976px){
+    .MoviesLarge-paragraph{
+        font-size: .75rem;
+        width: 65%;
+    }
+   .MoviesLarge-h3{
+        font-size: 2rem;
+        font-weight: 600;
+        margin: .5rem 0;
+    }
+}
+@media(max-width:850px){
+    .MoviesLarge-paragraph{
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media(max-width:685px){
+    .MoviesLarge-paragraph{
+        display: none;
+    }
+    .MoviesLarge-h3{
+        width: 100%;
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media(max-width:470px){
+    .MoviesLarge-h3{
+        font-size: 1.5rem;
+     }
+    .Imdb-wrapper{
+        display: none;
+    }
+   
 }

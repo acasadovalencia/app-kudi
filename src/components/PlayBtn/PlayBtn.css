@@ -11,3 +11,20 @@
 .Play-span{
     font-size: 1.125rem;
 }
+@media(max-width:595px){
+    .Play-svg{
+        width: 2rem;
+    }
+    .Play-span{
+        font-size: 1rem;
+    }
+}
+@media(max-width:470px){
+    .Play-svg{
+        width: 1.5rem;
+    }
+    .Play-span{
+        font-size: .8rem;
+    }
+   
+}
