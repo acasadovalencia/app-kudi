@@ -75,3 +75,12 @@
     text-overflow: ellipsis;
     font-size: .875rem;
 }
+@media(max-width:475px){
+    .Movies-li:hover .Movies-picture{
+        filter: none;
+    }
+    .Movies-li:hover .Description-wrapper{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
