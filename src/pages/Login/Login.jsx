@@ -65,7 +65,7 @@ export const Login = ()=>{
         <div className="Login">
             <div className="Form-wrapper">
                 <h2 className="Form-h2 H2">Iniciar sesión</h2>
-                <form ref={form} onSubmit={sendLogin} className="Login-form">
+                <form method='POST' ref={form} onSubmit={sendLogin} className="Login-form">
                     <label htmlFor="user" className="Login-label">Nombre de usuario</label>
                     <input type="text" name='user' id='user' className={`Login-input ${login === false ? `Login-input--error` : ``}`} required />
                     <div className="Error">
