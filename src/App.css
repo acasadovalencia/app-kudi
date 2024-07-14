@@ -24,7 +24,41 @@
 }
 .Fav-btn .Fav-svg > path:last-child{
     opacity: 0;
-    pointer-events: none;}
+    pointer-events: none;
+}
 .Disabled-btn > .Fav-svg > path:last-child{
     opacity: 1;
-    pointer-events: all;}
+    pointer-events: all;
+}
+.Type-wrapper{
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+.Type-btn{
+    color: var(--f-c-primary);
+    font-weight: 600;
+    background-color: var(--bg-c-cuaternary);
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color .5 ease;
+}
+.Type-btn.isActive{
+    background-color: var(--bg-c-tertiary-h);
+}
+.Type-btn:hover{
+    background-color: var(--bg-c-tertiary-h);
+}
+
+@media(max-width:530px){
+    .Type-wrapper{
+        padding: 1.625rem 1.25rem;
+    }
+    .Type-btn{
+        padding: .5rem .75rem;
+        font-size: .8rem;
+    }
+}
+
