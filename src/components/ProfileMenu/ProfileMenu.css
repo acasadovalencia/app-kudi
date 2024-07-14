@@ -20,7 +20,7 @@
     background-color:var(--bg-c-submenu);
 }
 .Profile-h2.H2{
-    font-size: 19.2px;
+    font-size: 1.2rem;
 }
 .Profile-ul{
     display: flex;
@@ -36,4 +36,18 @@
 .Profile-li:last-child .Profile-btn{
     color: var(--f-c-error);
     font-weight: 500;
+}
+@media(max-width:530px){
+    .Profile-menu{
+        top: 7.1875rem;
+        right: 1.25rem;
+        padding: 1.5rem;
+    }
+    .Profile-h2.H2{
+        font-size: 1rem;
+    }
+    .Profile-ul{
+        font-size: .75rem;
+    }
+    
 }

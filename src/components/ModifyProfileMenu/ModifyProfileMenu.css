@@ -27,7 +27,6 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    
 }
 .Modify-submit{
     background-color: var(--bg-c-tertiary);
@@ -35,4 +34,23 @@
     padding: .5rem .5rem;
     border-radius: .5rem;
     cursor: pointer;
+}
+@media(max-width:530px){
+    .Modify-wrapper{
+        top: 7.1875rem;
+        right: 1.25rem;
+    }
+    .Modify-menu{
+        padding: 1.5rem;
+    }
+    .Signup-label{
+        font-size: .75rem;
+        margin: .5rem 0 .3125rem;
+    }
+    .Signup-error{
+        font-size: .75rem;
+    }
+    .BtnModify-wrapper{
+        font-size: .75rem;
+    }
 }

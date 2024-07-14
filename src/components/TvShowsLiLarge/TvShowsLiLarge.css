@@ -42,7 +42,6 @@
 }
 .Imdb-icon{
     width: 2rem;
-    z-index: 2;
     color: var(--f-c-secondary);
 }
 .TvshowsLarge-span{
