@@ -15,7 +15,7 @@
     z-index: 3;
 }
 .Logo-h1{
-    font-size: 32px;
+    font-size: 2rem;
     font-family:"Back to Black Bold Demo";
     color: var(--f-c-tertiary);
 }

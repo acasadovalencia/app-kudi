@@ -2,6 +2,7 @@
 import './Kudi.css'
 
 import { Header } from '@components/Header/Header'
+import { Footer } from '@components/Footer/Footer'
 import { Movies } from '@pages/Movies/Movies'
 import { Movie } from '@pages/Movie/Movie'
 import { TvShows } from '@pages/TvShows/TvShows'
@@ -54,6 +55,7 @@ export const Kudi = () =>{
             <Route path='categories/:category' element={<Category/>}/>           
             <Route path='search/' element={<Search/>}/>     
         </Routes>
+        <Footer/>
         </>
     )
 }
