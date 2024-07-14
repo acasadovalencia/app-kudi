@@ -1,5 +1,5 @@
 .three-body {
-    --uib-size: 35px;
+    --uib-size: 2.1875rem;
     --uib-speed: 0.8s;
     position: relative;
     display: inline-block;

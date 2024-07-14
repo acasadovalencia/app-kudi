@@ -74,7 +74,7 @@
     color: var(--f-c-cuaternary);
 }
 .Login-btn{
-    margin: 8px 0 0;
+    margin: .5rem 0 0;
     color: var(--f-c-primary);
     cursor: pointer;
 }

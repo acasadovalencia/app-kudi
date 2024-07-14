@@ -110,11 +110,11 @@ export const SignUp = ()=>{
                     </div>
                     <input type="submit" value="Crear usuario" className="Signup-submit" />
                 </form>
-                <button onClick={()=>navigate('/')} className="Back-btn">Volver</button>
+                <button onClick={()=>navigate('/')} className="Back-btn" title='Volver'>Volver</button>
             </div>
             <picture className="Login-picture">
                 <source srcSet='/assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
-                <img src="/assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
+                <img src="/assets/images/login-bg-1360x768.jpg" loading='lazy' alt="Movies mosaic" className="Login-img" />
             </picture>
         </div>
         </>

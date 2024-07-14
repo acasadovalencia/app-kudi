@@ -27,7 +27,7 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 16px;
+    gap: 1rem;
 }
 .Profile-btn{
     cursor: pointer;

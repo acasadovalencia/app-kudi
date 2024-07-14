@@ -51,7 +51,7 @@
                                 <NavLink to={`/kudi/categories/${eachCategory}`}> 
                                 <picture className="Categories-picture">
                                     <source srcSet="/assets/images/category-bg-280x153.webp" type='image/webp' />
-                                    <img src="/assets/images/category-bg-280x153.jpg" alt="Background image mosaic" className="Categories-img" width={250} height={153} />
+                                    <img src="/assets/images/category-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
                                 </picture>
                                 <div className="Span-wrapper--categories">
                                     <span className="Categories-span">{eachCategory}</span>

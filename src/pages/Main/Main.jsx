@@ -119,12 +119,12 @@ export const Main = ()=>{
                 <ul className="Carrousel-btns">
                 {moviesLatest.length != 0 && moviesLatest.map( (eachMovie , index ) => 
                     <li key={eachMovie._id} className="Carrousel-li">
-                        <button onClick={()=>selectSlide(index)} className={`Carrousel-btn ${slide == index ? `isActive` : ``}`}></button>                        {/* Se utiliza el index para hacer el translate*/}
+                        <button onClick={()=>selectSlide(index)} className={`Carrousel-btn ${slide == index ? `isActive` : ``}`} title='Seleccionar película'></button>                        {/* Se utiliza el index para hacer el translate*/}
                     </li>
                     )}
                 {tvShowsLatest.length != 0 && tvShowsLatest.map( (eachTvshow , index) => 
                     <li key={eachTvshow._id} className="Carrousel-li">
-                        <button onClick={()=>selectSlide(index + moviesLatest.length)} className={`Carrousel-btn ${slide == index + moviesLatest.length ? `isActive` : ``}`}></button>  {/* Al ser 2 maps diferentes y repetirse los index, se suma a index las posiciones que pueda tener el map anterior para continuar la numeracion */}
+                        <button onClick={()=>selectSlide(index + moviesLatest.length)} className={`Carrousel-btn ${slide == index + moviesLatest.length ? `isActive` : ``}`} title='Seleccionar serie'></button>  {/* Al ser 2 maps diferentes y repetirse los index, se suma a index las posiciones que pueda tener el map anterior para continuar la numeracion */}
                     </li>
                     )}   
                 </ul>
@@ -144,7 +144,7 @@ export const Main = ()=>{
                         <NavLink to={`/kudi/movies`}> 
                         <picture className="Initials-picture">
                             <source srcSet="/assets/images/more-bg-280x153.webp" type='image/webp' />
-                            <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Initials-img" width={250} height={153} />
+                            <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Initials-img" width='250' height='153' />
                         </picture>
                         <div className="Span-wrapper--initials">
                             <span className="Initials-span">Ver más</span>
@@ -166,7 +166,7 @@ export const Main = ()=>{
                     <NavLink to={`/kudi/tvshows`}> 
                     <picture className="Initials-picture">
                         <source srcSet="/assets/images/more-bg-280x153.webp" type='image/webp' />
-                        <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" className="Initials-img" width={250} height={153} />
+                        <img src="/assets/images/more-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Initials-img" width={250} height={153} />
                     </picture>
                     <div className="Span-wrapper--initials">
                         <span className="Initials-span">Ver más</span>

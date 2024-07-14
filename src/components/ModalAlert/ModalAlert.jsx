@@ -54,8 +54,8 @@ export const ModalAlert = ()=>{
                     <span className="Delete-span">Perderá todas sus listas de favoritos</span>
                 </div>
                 <div className="BtnDelete-wrapper">
-                    <button onClick={deleteUser} className="Delete-btn Delete-btn--delete">Eliminar usuario</button>
-                    <button onClick={closeAlert} className="Delete-btn Delete-btn--cancel">Cancelar</button>
+                    <button onClick={deleteUser} className="Delete-btn Delete-btn--delete" title='Eliminar usuario'>Eliminar usuario</button>
+                    <button onClick={closeAlert} className="Delete-btn Delete-btn--cancel" title='Cancelar'>Cancelar</button>
                 </div>
             </div>
         </div>

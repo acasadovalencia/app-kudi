@@ -85,10 +85,10 @@ export const Login = ()=>{
                     <input type="submit" value="Iniciar sesión" className="Login-submit" />
                 </form>
                 <span className="Login-span">¿No tienes cuenta?</span>
-                <button onClick={()=>navigate('/signup')} className="Login-btn">Crear usuario</button>                 
+                <button onClick={()=>navigate('/signup')} className="Login-btn" title='Crear usuario'>Crear usuario</button>                 
             </div>
             <picture className="Login-picture">
-                <source srcSet='assets/images/login-bg-1360x768.webp' type='webp' width={1360} height={768} />
+                <source srcSet='assets/images/login-bg-1360x768.webp' type='webp' width='1360' height='768' />
                 <img src="assets/images/login-bg-1360x768.jpg" alt="Movies mosaic" className="Login-img" />
             </picture>
         </div>

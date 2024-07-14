@@ -37,9 +37,9 @@
             <>
             <main className="Main">
             <div className="Type-wrapper">
-                <button className={`Type-btn ${type == `all` ? `isActive` : ``}`} onClick={() => setType(`all`)}>Todo</button>
-                <button className={`Type-btn ${type == `movies` ? `isActive` : ``}`} onClick={() => setType(`movies`)}>Películas</button>
-                <button className={`Type-btn ${type == `tvshows` ? `isActive` : ``}`} onClick={() => setType(`tvshows`)}>Series</button>
+                <button className={`Type-btn ${type == `all` ? `isActive` : ``}`} onClick={() => setType(`all`)} title='Mostrar todo'>Todo</button>
+                <button className={`Type-btn ${type == `movies` ? `isActive` : ``}`} onClick={() => setType(`movies`)} title='Mostrar películas'>Películas</button>
+                <button className={`Type-btn ${type == `tvshows` ? `isActive` : ``}`} onClick={() => setType(`tvshows`)} title='Mostrar serie'>Series</button>
             </div>
             <section className={`Section Favs ${type == `movies` ? `isActive` : `` || type == `all` ? `isActive` : ``}`}>
                 <h2 className="Section-h2 H2">Peliculas en mi lista</h2>

@@ -81,7 +81,7 @@ export const TvShow = ()=>{
             </div>
             <picture className="Article-picture Movie-picture">
                 <source srcSet={`./../../assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.webp`} alt={tvshow.title} type='image/webp' />
-                <img src={`./../../assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.jpg`} alt={tvshow.title} className="Article-img Movie-img" width='1360' height='766' />
+                <img src={`./../../assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.jpg`} loading='lazy' alt={tvshow.title} className="Article-img Movie-img" width='1360' height='766' />
             </picture>
             <div className="Info-chevron">
                 <svg className='Chevron-svg' onClick={scrollToInfo} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

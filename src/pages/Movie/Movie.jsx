@@ -79,7 +79,7 @@ export const Movie = ()=>{
             </div>
             <picture className="Article-picture Movie-picture">
                 <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.webp`} alt={movie.title} type='image/webp' />
-                <img src={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.jpg`} alt={movie.title} className="Article-img Movie-img" width='1360' height='766' />
+                <img src={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.jpg`} loading='lazy' alt={movie.title} className="Article-img Movie-img" width='1360' height='766' />
             </picture>
             <div className="Info-chevron">
                 <svg className='Chevron-svg' onClick={scrollToInfo} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

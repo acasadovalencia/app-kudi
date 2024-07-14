@@ -107,7 +107,7 @@ export const ModifyProfileMenu = ()=>{
                     </div>
                     <div className="BtnModify-wrapper">
                         <input type="submit" value="Modificar usuario" className="Modify-submit" />
-                        <button onClick={closeModify} className="Delete-btn Delete-btn--cancel">Cancelar</button>
+                        <button onClick={closeModify} className="Delete-btn Delete-btn--cancel" title='Cancelar'>Cancelar</button>
                     </div>
                 </form>
             </div>

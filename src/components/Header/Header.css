@@ -24,8 +24,8 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    font-size: 17px;
+    gap: 1.5rem;
+    font-size: 1.0625rem;
     position: relative;
 }
 .Nav-li{
@@ -38,7 +38,7 @@
 .Nav-li:last-child{
     width: 100%;
     position: absolute;
-    top: 30px;
+    top: 1.875rem;
     left: 0;
 }
 .CurrentPage{

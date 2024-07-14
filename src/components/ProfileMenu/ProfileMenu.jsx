@@ -35,13 +35,13 @@ export const ProfileMenu = ()=>{
             <h2 className='Profile-h2 H2'>Mi cuenta</h2>
             <ul className="Profile-ul">
             <li className="Profile-li">
-                    <button onClick={closeAndModify} className='Profile-btn'>Modificar usuario</button>
+                    <button onClick={closeAndModify} className='Profile-btn' title='Modificar usuario'>Modificar usuario</button>
                 </li>
                 <li className="Profile-li">
-                    <button onClick={logout} className='Profile-btn'>Cerrar sesión</button>
+                    <button onClick={logout} className='Profile-btn' title='Cerrar sesión'>Cerrar sesión</button>
                 </li>
                 <li className="Profile-li">
-                    <button onClick={openAlert} className='Profile-btn'>Eliminar usuario</button>
+                    <button onClick={openAlert} className='Profile-btn' title='Eliminar usuario'>Eliminar usuario</button>
                 </li>
             </ul>
         </div>
