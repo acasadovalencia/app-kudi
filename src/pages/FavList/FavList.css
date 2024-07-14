@@ -4,11 +4,6 @@
 .Favs.isActive{
     display: block;
 }
-.Favs-ul{
-    display: grid;
-    grid-template-columns: repeat( auto-fit , minmax(280px , max-content));
-    gap: 2rem;
-}
 .Favs-li{
     border-radius: .25rem;
     cursor: pointer;

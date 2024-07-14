@@ -6,8 +6,23 @@
     min-height: calc(100vh - 5.75rem);
     background-color: var(--bg-c-primary);
 }
-
-
+.Section-ul{
+    display: grid;
+    grid-template-columns: repeat( auto-fit , minmax(280px , 1fr));
+    gap: 2rem;
+}
+@media(max-width:985px){
+    .Section-ul{
+        display: grid;
+        grid-template-columns: repeat( auto-fit , minmax(220px , 1fr));
+        gap: 2rem;
+    }
+}
+@media(max-width:552px){
+    .Section-ul{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
 @media(max-width:530px){
     .Section{
         padding: 1.625rem 1.25rem;

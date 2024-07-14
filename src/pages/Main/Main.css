@@ -30,11 +30,6 @@
 .Carrousel-btn.isActive{
     background-color: var(--f-c-primary);
 }
-.Initials-ul{
-    display: grid;
-    grid-template-columns: repeat( auto-fit , minmax(280px , 1fr));
-    gap: 2rem;
-}
 .Initials-li{
     border-radius: .5rem;
     position: relative;

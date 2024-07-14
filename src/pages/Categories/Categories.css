@@ -39,4 +39,18 @@
     font-weight: 600;
     width: 100%;
 }
-
+@media(max-width:985px){
+    .Categories-ul{
+        display: grid;
+        grid-template-columns: repeat( auto-fit , minmax(220px , 1fr));
+        gap: 2rem;
+    }
+}
+@media(max-width:552px){
+    .Categories-ul{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+    .Categories-span{
+        font-size: 1.2rem;
+    }
+}
