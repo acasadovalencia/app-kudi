@@ -8,6 +8,9 @@ import { KudiContext } from '@context/Context'
 import { useEffect, useState , useRef} from 'react'
 import { BrowserRouter , Routes , Route } from 'react-router-dom'
 
+// Variables de entorno
+const { VITE_API} = import.meta.env
+
 function App() {
   //Refs
   const searchForm = useRef()
@@ -30,8 +33,7 @@ function App() {
   const [ error , setError] = useState(true)
   const [userError , setUserError] = useState('') 
 
-  // Variables de entorno
-  const { VITE_API} = import.meta.env
+  
 
 
   // Fetchs
