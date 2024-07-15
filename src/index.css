@@ -1,6 +1,6 @@
 @font-face {
   font-family:"Back to Black Bold Demo";
-  src: url("./fonts/Back_to_Black_Bold_Demo.eot?") format("eot"), url("./fonts/Back_to_Black_Bold_Demo.woff") format("woff"), url("./fonts/Back_to_Black_Bold_Demo.ttf") format("truetype"), url("./fonts/Back_to_Black_Bold_Demo.svg#BacktoBlackBoldDemo") format("svg");
+  src: url("/fonts/Back_to_Black_Bold_Demo.eot?") format("eot"), url("./fonts/Back_to_Black_Bold_Demo.woff") format("woff"), url("./fonts/Back_to_Black_Bold_Demo.ttf") format("truetype"), url("./fonts/Back_to_Black_Bold_Demo.svg#BacktoBlackBoldDemo") format("svg");
   font-weight:normal;
   font-style:normal;
 }
@@ -61,7 +61,6 @@ html{
 body{
   font-family: "Open Sans", sans-serif;
   color: var(--f-c-primary);
-  background-color: var(--bg-c-primary);
 }
 .H2{
   font-weight: 600;
