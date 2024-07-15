@@ -1,26 +1,26 @@
 .Login{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-}
-.Form-wrapper:first-child{
-    position: static;
 }
 .Form-wrapper{
     background-color: var(--bg-c-primary);
     padding: 2rem;
-    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 .Form-h2{
     font-size: 1.5rem;
     font-weight: 600;
 }
 .Login-form{
+    width: 100%;
     padding: 2rem 0;
-    min-width: 15vw;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -51,6 +51,7 @@
     font-style: italic;
     color: var(--f-c-error);
     opacity: 0;
+    width: 100%;
 }
 .Login-input--error+.Error{
     opacity: 1;
@@ -62,7 +63,7 @@
     background-color: var(--bg-c-tertiary);
     color: var(--f-c-primary);
     width: 100%;
-    padding: .5rem 5rem;
+    padding: .5rem .5rem;
     border-radius: .5rem;
     cursor: pointer;
     transition: background-color .5s ease;
@@ -81,12 +82,40 @@
 
 .Login-picture{
     height: 100%;
-}
-.Login-img{
-    object-fit: cover;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+}
+.Login-img{
+    object-fit: cover;
+    height: 100%;
+}
+@media(max-width:440px){
+    .Login-form{
+        padding: 1rem 0;
+    }
+    .Login-label{
+        font-size: .9rem;
+    }
+    .Login-submit{
+        font-size: .9rem;
+    }
+    .Login-span{
+        font-size: .9rem;
+    }
+    .Login-btn{
+        font-size: .9rem;
+    }
+    .Error{
+        font-size: .9rem;
+    }
+}
+@media(max-width:375px){
+    .Form-wrapper{
+        width: 100%;
+    }
+    .Error{
+        font-size: .8rem;
+    }
 }
