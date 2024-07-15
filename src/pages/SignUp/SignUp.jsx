@@ -80,7 +80,7 @@ export const SignUp = ()=>{
 
     return(
         <>
-        <div className="Login">
+        <div className="Signup">
             <div className="Form-wrapper">
                 <h2 className="Form-h2 H2">Crear usuario</h2>
                 <form ref={form} onSubmit={handleSubmit} className="Signup-form">

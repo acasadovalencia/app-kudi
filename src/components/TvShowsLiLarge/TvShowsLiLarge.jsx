@@ -15,7 +15,7 @@ export const TvShowsLiLarge = (props)=>{
             <NavLink to={`/kudi/tvshows/${_id}`}>                           {/* Para que aparezca el id de cada pelicula como url*/}                                 
             <picture className="Section-picture TvshowsLarge-picture">
                 <source srcSet={`/assets/images/${poster.large}.webp`} alt={title} type='image/webp' />
-                <img src={`/assets/images/${poster.large}.jpg`} alt={title} className="Section-img TvshowsLarge-img" loading='lazy' />
+                <img src={`/assets/images/${poster.large}.jpg`} alt={title} className="Section-img TvshowsLarge-img" /> {/* Sin loading lazy para que no aparezcan vacias al pasar slide*/}
             </picture>
             <div className="DescriptionLatest-wrapper">
                 <div className="TitleLarge-wrapper">
