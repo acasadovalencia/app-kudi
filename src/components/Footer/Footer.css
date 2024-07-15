@@ -15,5 +15,11 @@
     color: var(--f-c-tertiary);
 }
 .Footer-span{
-    color: var(--f-c-cuaternary) ;
+    color: var(--f-c-cuaternary);
+    text-align: center;
+}
+@media(max-width:475px){
+    .Footer-span{
+        font-size: .8rem;
+    }
 }
