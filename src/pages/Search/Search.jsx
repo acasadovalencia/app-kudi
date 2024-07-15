@@ -50,7 +50,7 @@ export const Search = ()=>{
         <>
         <main className="Main">
         <section className="Section Search">
-            <h2 className="Section-h2 H2">Buscando por... <span className="Search-span">"{searchTerms}"</span></h2>
+            <h2 className="Section-h2 H2">Buscando por... <span className="Search-span">&quot;{searchTerms}&quot;</span></h2>
             <ul className="Section-ul Search-ul">
                 {moviesFound.length == 0 && tvShowsFound.length == 0 && <li>No hay resultados</li>}
                 {moviesFound.length != 0 && moviesFound.map( eachMovie => 
