@@ -75,6 +75,9 @@
     font-size: .875rem;
 }
 @media(max-width:685px){
+    .Tvshows-li:hover{
+        transform: scale(1);
+    }
     .Tvshows-li:hover .Tvshows-picture{
         filter: none;
     }

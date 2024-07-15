@@ -8,3 +8,9 @@
 .Category-span{
     text-transform: capitalize;
 }
+@media(max-width:500px){
+    .Category-ul{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

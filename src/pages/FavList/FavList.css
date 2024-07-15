@@ -16,6 +16,7 @@
     transition: transform .3s ease;
     position: relative;
 }
+
 @media(max-width:675px){
     .Favs-ul{
         display: grid;

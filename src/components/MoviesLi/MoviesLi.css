@@ -75,6 +75,10 @@
     font-size: .875rem;
 }
 @media(max-width:685px){
+    .Movies-li:hover{
+        transform: scale(1);
+    }
+
     .Movies-li:hover .Movies-picture{
         filter: none;
     }
