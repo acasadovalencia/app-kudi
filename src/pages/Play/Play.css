@@ -1,12 +1,12 @@
 .Play-page{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #000;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
-    padding: 1.5rem 2.5rem 0;
+    padding: 1.5rem 0 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -50,6 +50,23 @@
     box-shadow: 0 0 1.25rem .125rem var(--bg-c-tertiary);
     border-radius: 50%;
   }
+
+
+@media(max-width:720px){
+  .Play-page--span{
+    font-size: 1.5rem;
+  }
+}
+@media(max-width:552px){
+  .Play-page--span{
+    font-size: 1.2rem;
+  }
+}
+@media(max-width:480px){
+  .Play-page--span{
+    font-size: 1rem;
+  }
+}
   
   @keyframes orbit7456 {
     0% {

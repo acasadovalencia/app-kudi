@@ -110,6 +110,11 @@
         font-size: .8rem;
     }
 }
+@media(max-width:335px){
+    .Info-chevron{
+        display: none;
+    }
+}
 
 @keyframes bounce {
     0%,

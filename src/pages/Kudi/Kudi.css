@@ -60,7 +60,7 @@
 }
 .Genre-ul{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
     margin: 0 0 1.5rem;
@@ -121,6 +121,12 @@
         font-size: 3rem;
     }
     .Article-paragraph{
+        font-size: .8rem;
+    }
+    .Article-span{
+        font-size: .8rem;
+    }
+    .Genre-li{
         font-size: .8rem;
     }
 }
