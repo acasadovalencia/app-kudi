@@ -139,15 +139,21 @@
     .Article-wrapper{
         padding: 1.25rem;
     }
+    .Section{
+        padding: 1.5rem;
+    }
 }
 @media(max-width:500px){
     .H2.Article-h2{
         font-size: 2rem;
     }
+    .Section-ul{
+        grid-template-columns: 1fr;
+    }
 } 
 @media(max-width:360px){
     .Section{
-        padding: 1.625rem .5rem;
+        padding: 1.5rem .5rem;
     }
 }
 @media(max-width:360px){

@@ -43,14 +43,12 @@
             </div>
             <section className={`Section Favs ${type == `movies` ? `isActive` : `` || type == `all` ? `isActive` : ``}`}>
                 <h2 className="Section-h2 H2">Peliculas en mi lista</h2>
-                <div className="Favs-carrousel">
-                    <ul className="Section-ul Favs-ul">
-                        {user && user.movies_favs && user.movies_favs.length  == 0 && <li>Agrega películas a tu lista</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
-                        {user && user.movies_favs && user.movies_favs.length != 0 && user.movies_favs.map( eachMovie =>                 
-                            <MoviesLi key={eachMovie._id} {...eachMovie}/>                             
-                        )}
-                    </ul>
-                </div>
+                <ul className="Section-ul Favs-ul">
+                    {user && user.movies_favs && user.movies_favs.length  == 0 && <li>Agrega películas a tu lista</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                    {user && user.movies_favs && user.movies_favs.length != 0 && user.movies_favs.map( eachMovie =>                 
+                        <MoviesLi key={eachMovie._id} {...eachMovie}/>                             
+                    )}
+                </ul>
             </section>
             <section className={`Section Favs ${type == `tvshows` ? `isActive` : `` || type == `all` ? `isActive` : ``}`}>
                 <h2 className="Section-h2 H2">Series en mi lista</h2>
