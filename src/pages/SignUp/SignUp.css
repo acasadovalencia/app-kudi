@@ -5,8 +5,8 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
-
 .Form-wrapper{
     background-color: var(--bg-c-primary);
     padding: 2rem;
@@ -14,6 +14,10 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
 }
 .Form-h2{
     font-size: 1.5rem;
@@ -87,15 +91,16 @@
 
 }
 .Login-picture{
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    height: 100vh;
 }
 .Login-img{
     object-fit: cover;
     height: 100%;
+}
+@media(max-width:630px){
+    .Error{
+        font-size: .8rem;
+    }
 }
 @media(max-width:530px){
     .Signup-form{
@@ -121,7 +126,5 @@
     .Form-wrapper{
         width: 100%;
     }
-    .Error{
-        font-size: .8rem;
-    }
+    
 }
