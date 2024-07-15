@@ -10,7 +10,7 @@ export const DeleteFavTvshowBtn = (props)=>{
     const {_id} = props                                                                 // Id del Li donde está el botón
 
     // Contexto
-    const { VITE_API , users , setUsers , movie } = useContext(KudiContext)
+    const { VITE_API , users , setUsers } = useContext(KudiContext)
 
     // States
     let username = JSON.parse(localStorage.getItem('username'))                         // Obtener el usuario logueado

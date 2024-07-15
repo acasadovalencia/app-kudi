@@ -8,7 +8,7 @@ import { KudiContext } from '@context/Context'
 export const TvShowInfo = ()=>{
 
     // Contexto 
-    const { tvshow , setTvshow} = useContext(KudiContext)
+    const { tvshow } = useContext(KudiContext)
 
     return(
         <>

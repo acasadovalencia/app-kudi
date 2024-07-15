@@ -3,14 +3,14 @@ import './ModifyProfileMenu.css'
 
 import { KudiContext } from '@context/Context'
 
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
 export const ModifyProfileMenu = ()=>{
 
     // Contexto
-    const { VITE_API , setLogin , user , setUser , getUser , users , getUsers , closeModify , modifyModal , setModifyModal , error, setError , userError , setUserError} = useContext( KudiContext )
+    const { VITE_API , setUser , users , getUsers , closeModify , modifyModal , setModifyModal , error, setError , userError , setUserError} = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()
