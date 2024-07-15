@@ -3,7 +3,8 @@
 }
 .Favs.isActive{
     display: block;
-}.Favs-ul{
+}
+.Favs-ul{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -14,4 +15,15 @@
     cursor: pointer;
     transition: transform .3s ease;
     position: relative;
+}
+@media(max-width:675px){
+    .Favs-ul{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+@media(max-width:500px){
+    .Favs-ul{
+        grid-template-columns: 1fr;
+    }
 }
