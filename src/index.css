@@ -62,6 +62,9 @@ body{
   font-family: "Open Sans", sans-serif;
   color: var(--f-c-primary);
 }
+main{
+  background-color: var(--bg-c-primary);
+}
 .H2{
   font-weight: 600;
   font-size: 1.5rem;

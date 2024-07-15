@@ -80,8 +80,12 @@ export const TvShow = ()=>{
                 </div>
             </div>
             <picture className="Article-picture Movie-picture">
-                <source srcSet={`./../../assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.webp`} alt={tvshow.title} type='image/webp' />
-                <img src={`./../../assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.jpg`} loading='lazy' alt={tvshow.title} className="Article-img Movie-img" width='1360' height='766' />
+                <source srcSet={`/assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}-resize-435x496.jpg`} media="(max-width: 435px)" />
+                <source srcSet={`/assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}-resize-435x496.webp`} media="(max-width: 435px)" />
+                <source srcSet={`/assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}-resize-768x547.jpg`} media="(max-width: 768px)" />
+                <source srcSet={`/assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}-resize-768x547.webp`} media="(max-width: 768px)" />
+                <source srcSet={`/assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.webp`} />
+                <img src={`/assets/images/${tvshow && tvshow.length != 0 && tvshow.poster.medium}.jpg`} loading='lazy' alt={tvshow.title} className="Article-img Movie-img" width='1360' height='766' />
             </picture>
             <div className="Info-chevron">
                 <svg className='Chevron-svg' onClick={scrollToInfo} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

@@ -78,7 +78,11 @@ export const Movie = ()=>{
                 </div>
             </div>
             <picture className="Article-picture Movie-picture">
-                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.webp`} alt={movie.title} type='image/webp' />
+                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}-resize-435x496.jpg`} media="(max-width: 435px)" />
+                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}-resize-435x496.webp`} media="(max-width: 435px)" />
+                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}-resize-768x547.jpg`} media="(max-width: 768px)" />
+                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}-resize-768x547.webp`} media="(max-width: 768px)" />
+                <source srcSet={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.webp`} />
                 <img src={`/assets/images/${movie && movie.length != 0 && movie.poster.medium}.jpg`} loading='lazy' alt={movie.title} className="Article-img Movie-img" width='1360' height='766' />
             </picture>
             <div className="Info-chevron">
