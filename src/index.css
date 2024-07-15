@@ -61,8 +61,6 @@ html{
 body{
   font-family: "Open Sans", sans-serif;
   color: var(--f-c-primary);
-}
-main{
   background-color: var(--bg-c-primary);
 }
 .H2{
