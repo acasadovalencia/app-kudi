@@ -11,7 +11,6 @@
 }
 .Categories-li:hover{
     transform: scale(1.1);
-
 }
 .Categories-img{
     border-radius: .5rem;
@@ -44,6 +43,11 @@
         display: grid;
         grid-template-columns: repeat( auto-fit , minmax(220px , 1fr));
         gap: 2rem;
+    }
+}
+@media(max-width:685px){
+    .Categories-li:hover{
+        transform: scale(1);
     }
 }
 @media(max-width:552px){
