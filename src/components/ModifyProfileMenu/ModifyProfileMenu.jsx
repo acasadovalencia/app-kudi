@@ -3,7 +3,7 @@ import './ModifyProfileMenu.css'
 
 import { KudiContext } from '@context/Context'
 
-import { useContext, useRef } from 'react'
+import { useContext, useRef , useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -17,11 +17,18 @@ export const ModifyProfileMenu = ()=>{
 
 
     // Refs
-    const form = useRef()
+    const form = useRef()                           
 
-    
+    const modifyContainer = useRef()                                        // Referenciar la etiqueta contenedora para detectarla
+    const {current: modify} = modifyContainer
+
+     // Effects
+       useEffect(()=>{
+         document.addEventListener('mousedown' , clickOutModify)             // Listener al documento para que al hacer click, ejecute la funcion
+    }, [modifyModal])
+
+    // Funciones
     const handleSubmit = (e) => {                                           // Funcion para controlar la creación del usuario sólo si las contraseñas coinciden.
-        e.preventDefault()
 
         const {current: formData} = form
 
@@ -75,9 +82,16 @@ export const ModifyProfileMenu = ()=>{
             
     }
 
+    const clickOutModify = (e)=>{                                           // Funcion a la que se le pasa el evento
+        if(modify && !modify.contains(e.target)){                           // Condicional para que si el containerModify no contiene el evento (el click) cambie el modal a false y cse cierre
+            setModifyModal(false)
+        }
+    }
+
+
     return(
         <>
-        <div className={`Modify-wrapper`}>
+        <div ref={modifyContainer} className={`Modify-wrapper`}>
             <div className={`Modify-menu ${modifyModal ? `isOpen` : ``}`}>
                 <h2 className="Profile-h2 H2">Modificar usuario</h2>
                 <form ref={form} onSubmit={handleSubmit} className="Modify-form">

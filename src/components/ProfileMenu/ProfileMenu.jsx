@@ -3,20 +3,24 @@ import './ProfileMenu.css'
 
 import { KudiContext } from '@context/Context'
 
-import { useContext } from 'react'
+import { useContext , useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
 export const ProfileMenu = ()=>{
 
     // Contexto
-    const { isMenuOpen , closeMenu , openAlert , openModify , setUserError} = useContext( KudiContext )
+    const { isMenuOpen , closeMenu , openAlert , openModify , setUserError , setIsMenuOpen} = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()
 
+    const profileContainer = useRef()                                           // Referenciar la etiqueta para detectarla
+    const {current: profile} = profileContainer                                 // Se deconstruye
+    
+
     // Funciones
-    const logout = ()=>{                                                          // Funcion para salir de la APP y eliminar el localStorage.                        
+    const logout = ()=>{                                                        // Funcion para salir de la APP y eliminar el localStorage.                        
     localStorage.removeItem('username')                                         // Eliminar el nombre de usuario de localStorage para borarr el nombre
     localStorage.removeItem('user')                                             // Eliminar el estado del login de localStorage para no redireccionar de nuevo
     closeMenu()
@@ -29,9 +33,20 @@ export const ProfileMenu = ()=>{
         setUserError(false)                                                     // Limpiar el error del form
     }
 
+    const clickOutProfile = (e)=>{                                              // Funcion con evento
+        if(profile && !profile.contains(e.target)){                             // Condicional para que si la etiqueta profile no contiene el target, ejecute el cierre de menú
+            closeMenu()
+        }
+    }
+
+    useEffect(()=>{
+        document.addEventListener('mousedown' , clickOutProfile)                // Agregar un listener que al hacer click, ejecute la funcion (cuando se haga click fuera de profile)
+    }, [isMenuOpen])
+    
+
     return(
         <>
-        <div className={`Profile-menu ${isMenuOpen ? `isOpen` : ``}` }>
+        <div ref={profileContainer} className={`Profile-menu ${isMenuOpen ? `isOpen` : ``}` }>
             <h2 className='Profile-h2 H2'>Mi cuenta</h2>
             <ul className="Profile-ul">
             <li className="Profile-li">
