@@ -15,9 +15,16 @@ export const ProfileMenu = ()=>{
     // Variables al uso
     const navigate = useNavigate()
 
+    // Refs
     const profileContainer = useRef()                                           // Referenciar la etiqueta para detectarla
     const {current: profile} = profileContainer                                 // Se deconstruye
     
+    // Effects
+    useEffect(()=>{
+        document.addEventListener('mousedown' , clickOutProfile)                // Agregar un listener que al hacer click, ejecute la funcion (cuando se haga click fuera de profile)
+        document.addEventListener('touchstart' , clickOutProfile)                // Agregar un listener que al pulsar en movil, ejecute la funcion (cuando se haga click fuera de profile)
+
+    }, [isMenuOpen])
 
     // Funciones
     const logout = ()=>{                                                        // Funcion para salir de la APP y eliminar el localStorage.                        
@@ -38,10 +45,6 @@ export const ProfileMenu = ()=>{
             closeMenu()
         }
     }
-
-    useEffect(()=>{
-        document.addEventListener('mousedown' , clickOutProfile)                // Agregar un listener que al hacer click, ejecute la funcion (cuando se haga click fuera de profile)
-    }, [isMenuOpen])
     
 
     return(

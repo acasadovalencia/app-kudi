@@ -25,6 +25,8 @@ export const ModifyProfileMenu = ()=>{
      // Effects
        useEffect(()=>{
          document.addEventListener('mousedown' , clickOutModify)             // Listener al documento para que al hacer click, ejecute la funcion
+         document.addEventListener('touchstart' , clickOutModify)            // Listener al documento para que al pulsar en movil, ejecute la funcion
+
     }, [modifyModal])
 
     // Funciones
