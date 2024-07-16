@@ -61,6 +61,7 @@ html{
 body{
   font-family: "Open Sans", sans-serif;
   color: var(--f-c-primary);
+  background-color: var(--bg-c-primary);
 }
 .H2{
   font-weight: 600;
