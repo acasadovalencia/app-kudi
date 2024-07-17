@@ -43,7 +43,7 @@
     padding: 1rem 1.5rem;
     border-radius: .5rem;
     cursor: pointer;
-    transition: background-color .5 ease;
+    transition: background-color .5s ease;
 }
 .Type-btn.isActive{
     background-color: var(--bg-c-tertiary-h);
