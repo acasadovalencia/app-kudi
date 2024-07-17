@@ -6,7 +6,7 @@
     import { TvShowsLi } from '@components/TvShowsLi/TvShowsLi'
 
     import { useContext , useEffect } from 'react'
-    import { useNavigate } from 'react-router-dom'
+    import { useNavigate , NavLink} from 'react-router-dom'
 
 
     export const FavList = ()=>{
@@ -44,7 +44,18 @@
             <section className={`Section Favs ${type == `movies` ? `isActive` : `` || type == `all` ? `isActive` : ``}`}>
                 <h2 className="Section-h2 H2">Peliculas en mi lista</h2>
                 <ul className="Section-ul Favs-ul">
-                    {user && user.movies_favs && user.movies_favs.length  == 0 && <li>Agrega películas a tu lista</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                    {user && user.movies_favs && user.movies_favs.length  == 0 && 
+                    <li className='Categories-li'>
+                    <NavLink to={`/kudi/movies`}> 
+                    <picture className="Categories-picture">
+                        <source srcSet="/assets/images/category-bg-280x153.webp" type='image/webp' />
+                        <img src="/assets/images/category-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
+                    </picture>
+                    <div className="Span-wrapper--categories">
+                        <span className="Categories-span">Añade películas</span>
+                    </div>
+                    </NavLink>
+                </li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
                     {user && user.movies_favs && user.movies_favs.length != 0 && user.movies_favs.map( eachMovie =>                 
                         <MoviesLi key={eachMovie._id} {...eachMovie}/>                             
                     )}
@@ -53,7 +64,18 @@
             <section className={`Section Favs ${type == `tvshows` ? `isActive` : `` || type == `all` ? `isActive` : ``}`}>
                 <h2 className="Section-h2 H2">Series en mi lista</h2>
                 <ul className="Section-ul Favs-ul">
-                    {user && user.tvshows_favs && user.tvshows_favs.length  == 0 && <li>Agrega series a tu lista...</li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
+                    {user && user.tvshows_favs && user.tvshows_favs.length  == 0 && 
+                        <li className='Categories-li'>
+                        <NavLink to={`/kudi/tvshows`}> 
+                        <picture className="Categories-picture">
+                            <source srcSet="/assets/images/category-bg-280x153.webp" type='image/webp' />
+                            <img src="/assets/images/category-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
+                        </picture>
+                        <div className="Span-wrapper--categories">
+                            <span className="Categories-span">Añade series</span>
+                        </div>
+                        </NavLink>
+                    </li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
                     {user && user.tvshows_favs && user.tvshows_favs.length != 0 && user.tvshows_favs.map( eachTvshow =>                 
                         <TvShowsLi key={eachTvshow._id} {...eachTvshow}/>                             
                     )}
