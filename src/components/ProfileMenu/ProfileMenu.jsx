@@ -3,28 +3,17 @@ import './ProfileMenu.css'
 
 import { KudiContext } from '@context/Context'
 
-import { useContext , useEffect, useRef } from 'react'
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
 export const ProfileMenu = ()=>{
 
     // Contexto
-    const { isMenuOpen , closeMenu , openAlert , openModify , setUserError , setIsMenuOpen} = useContext( KudiContext )
+    const { isMenuOpen , closeMenu , openAlert , openModify , setUserError } = useContext( KudiContext )
 
     // Variables al uso
     const navigate = useNavigate()
-
-    // Refs
-    const profileContainer = useRef()                                           // Referenciar la etiqueta para detectarla
-    const {current: profile} = profileContainer                                 // Se deconstruye
-    
-    // Effects
-    useEffect(()=>{
-        document.addEventListener('mousedown' , clickOutProfile)                // Agregar un listener que al hacer click, ejecute la funcion (cuando se haga click fuera de profile)
-        document.addEventListener('touchstart' , clickOutProfile)                // Agregar un listener que al pulsar en movil, ejecute la funcion (cuando se haga click fuera de profile)
-
-    }, [isMenuOpen])
 
     // Funciones
     const logout = ()=>{                                                        // Funcion para salir de la APP y eliminar el localStorage.                        
@@ -39,17 +28,10 @@ export const ProfileMenu = ()=>{
         openModify()
         setUserError(false)                                                     // Limpiar el error del form
     }
-
-    const clickOutProfile = (e)=>{                                              // Funcion con evento
-        if(profile && !profile.contains(e.target)){                             // Condicional para que si la etiqueta profile no contiene el target, ejecute el cierre de menú
-            closeMenu()
-        }
-    }
     
-
     return(
         <>
-        <div ref={profileContainer} className={`Profile-menu ${isMenuOpen ? `isOpen` : ``}` }>
+        <div className={`Profile-menu ${isMenuOpen ? `isOpen` : ``}` }>
             <h2 className='Profile-h2 H2'>Mi cuenta</h2>
             <ul className="Profile-ul">
             <li className="Profile-li">

@@ -33,7 +33,7 @@ function App() {
 
   
   // Variables de entorno
-  const { VITE_API} = import.meta.env
+  const { VITE_API } = import.meta.env
 
 
   // Fetchs
