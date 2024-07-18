@@ -15,10 +15,10 @@
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="80" height="80"/> 
     </a>
     <a href="https://es.react.dev/" target="_blank" rel="noreferrer"> 
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AReact-icon.svg&psig=AOvVaw3O40xYnNaFwHaFUp0TFcCm&ust=1721415900791000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMC27ouksYcDFQAAAAAdAAAAABAE" alt="react" width="80" height="80"/> 
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-react-1-282599.png?f=webp&w=256" alt="react" width="80" height="80"/> 
     </a>
     <a href="https://nodejs.org/en" target="_blank" rel="noreferrer"> 
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40aarnlpezsosa%2Fintroducci%25C3%25B3n-a-express-js-a1ebe16dbcf4&psig=AOvVaw1dTIMsqgrXR-qFnQl1QG6N&ust=1721415944123000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDK-KOksYcDFQAAAAAdAAAAABAE" alt="express/node" width="80" height="80"/> 
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*9oOlDJKiLq1KhGoOivv51A.png" alt="express/node" width="80" height="80"/> 
     </a>
     <a href="https://www.mongodb.com/es" target="_blank" rel="noreferrer"> 
         <img src="https://static-00.iconduck.com/assets.00/mongodb-icon-1024x1024-jyklwn1x.png" alt="mongo" width="80" height="80"/> 
