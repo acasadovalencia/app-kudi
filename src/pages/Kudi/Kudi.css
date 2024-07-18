@@ -1,6 +1,8 @@
 .Section{
     background-color: var( --bg-c-primary);
     padding: 1.5rem 2.5rem;
+    max-width: 2620px;
+    margin: 0 auto;
 }
 .Main{
     min-height: calc(100vh - 5.75rem);

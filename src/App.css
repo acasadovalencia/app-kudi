@@ -35,6 +35,8 @@
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
+    max-width: 2620px;
+    margin: 0 auto;
 }
 .Type-btn{
     color: var(--f-c-primary);
