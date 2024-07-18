@@ -18,9 +18,12 @@
         <img src="https://cdn.iconscout.com/icon/free/png-256/free-react-1-282599.png?f=webp&w=256" alt="react" width="80" height="80"/> 
     </a>
     <a href="https://nodejs.org/en" target="_blank" rel="noreferrer"> 
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*9oOlDJKiLq1KhGoOivv51A.png" alt="express/node" width="80" height="80"/> 
+        <img src="https://static-00.iconduck.com/assets.00/nodejs-icon-2048x2048-rueyo8fw.png" alt="express/node" width="80" height="80"/> 
     </a>
-    <a href="https://www.mongodb.com/es" target="_blank" rel="noreferrer"> 
+    <a href="https://nodejs.org/en" target="_blank" rel="noreferrer"> 
+        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169185.png" alt="express/node" width="80" height="80"/> 
+    </a>
+    <a href="https://expressjs.com/" target="_blank" rel="noreferrer"> 
         <img src="https://static-00.iconduck.com/assets.00/mongodb-icon-1024x1024-jyklwn1x.png" alt="mongo" width="80" height="80"/> 
     </a>
 
