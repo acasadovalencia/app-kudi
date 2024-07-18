@@ -91,6 +91,9 @@
         opacity: 1;
         pointer-events: all;
     }
+    .Small-btn:hover{
+        background-color: var(--bg-c-secondary);
+    }
 }
 @media(max-width:615px){
     .DeleteFav-btn{

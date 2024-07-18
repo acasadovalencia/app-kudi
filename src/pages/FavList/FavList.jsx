@@ -48,11 +48,11 @@
                     <li className='Categories-li'>
                     <NavLink to={`/kudi/movies`}> 
                     <picture className="Categories-picture">
-                        <source srcSet="/assets/images/category-bg-280x153.webp" type='image/webp' />
-                        <img src="/assets/images/category-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
+                        <source srcSet="/assets/images/fav-bg-280x153.webp" type='image/webp' />
+                        <img src="/assets/images/fav-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
                     </picture>
                     <div className="Span-wrapper--categories">
-                        <span className="Categories-span">Añade películas</span>
+                        <span className="Categories-span">+ películas</span>
                     </div>
                     </NavLink>
                 </li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
@@ -68,11 +68,11 @@
                         <li className='Categories-li'>
                         <NavLink to={`/kudi/tvshows`}> 
                         <picture className="Categories-picture">
-                            <source srcSet="/assets/images/category-bg-280x153.webp" type='image/webp' />
-                            <img src="/assets/images/category-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
+                            <source srcSet="/assets/images/fav-bg-280x153.webp" type='image/webp' />
+                            <img src="/assets/images/fav-bg-280x153.jpg" alt="Background image mosaic" loading='lazy' className="Categories-img" width='250' height='153' />
                         </picture>
                         <div className="Span-wrapper--categories">
-                            <span className="Categories-span">Añade series</span>
+                            <span className="Categories-span">+ series</span>
                         </div>
                         </NavLink>
                     </li>}                {/* Map para recorrer el array de películas y mostrar cada una como componente */}           
