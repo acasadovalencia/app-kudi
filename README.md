@@ -2,7 +2,7 @@
 <h1>Kudi website project</h1>
 <h2>Esta web ha sido creada como proyecto final para el módulo Fullstack desarrollo web en la escuela CEI.</h2>
 
-<img src="/assets/images/meta-logo.png" alt="Kudi logo" width="424" height="209"/>
+<img src="public/assets/images/meta-logo.png" alt="Kudi logo" width="424" height="209"/>
 
 <h3>Tecnologías utilizadas</h3>
     <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
@@ -21,7 +21,7 @@
         <img src="https://static-00.iconduck.com/assets.00/nodejs-icon-2048x2048-rueyo8fw.png" alt="express/node" width="80" height="80"/> 
     </a>
     <a href="https://expressjs.com/" target="_blank" rel="noreferrer"> 
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*i2fRBk3GsYLeUk_Rh7AzHw.png" alt="express/node" width="80" height="80"/> 
+        <img src="https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png" alt="express/node" width="80" height="80"/> 
     </a>
     <a href="https://www.mongodb.com/es" target="_blank" rel="noreferrer"> 
         <img src="https://static-00.iconduck.com/assets.00/mongodb-icon-1024x1024-jyklwn1x.png" alt="mongo" width="80" height="80"/> 
