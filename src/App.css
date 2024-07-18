@@ -85,6 +85,9 @@
         right: 1rem;
         left: initial
     }
+    .DeleteFav-btn:hover{
+        background-color: var(--bg-c-secondary);
+    }
 }
 @media(max-width:685px){
     .DeleteFav-btn{
@@ -98,13 +101,14 @@
 @media(max-width:615px){
     .DeleteFav-btn{
         top: .5rem;
-        right: .5rem;
-        width: 1.2rem;
-        height: 1.2rem;
-        
+        right: .5rem;  
     }
 }
 @media(max-width:530px){
+    .DeleteFav-btn{
+        width: 1.7rem;
+        height: 1.7rem; 
+    }
     .Type-wrapper{
         padding: 1.625rem 1.25rem;
     }
