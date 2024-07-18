@@ -102,7 +102,7 @@
 @media(max-width:985px){
     .Section-ul{
         display: grid;
-        grid-template-columns: repeat( auto-fit , minmax(220px , 1fr));
+        grid-template-columns: repeat( auto-fit , minmax(250px , 1fr));
         gap: 2rem;
     }
     .H2.Article-h2{
@@ -128,6 +128,9 @@
     }
     .Genre-li{
         font-size: .8rem;
+    }
+    .Section-ul{
+        grid-template-columns: repeat( auto-fit , minmax(220px , 1fr));
     }
 }
 @media(max-width:552px){
