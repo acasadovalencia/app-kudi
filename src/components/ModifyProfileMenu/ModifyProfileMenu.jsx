@@ -31,7 +31,7 @@ export const ModifyProfileMenu = ()=>{
 
     // Funciones
     const handleSubmit = (e) => {                                           // Funcion para controlar la creación del usuario sólo si las contraseñas coinciden.
-
+        e.preventDefault()
         const {current: formData} = form
 
         if (formData['pass'].value === formData['pass-repeat'].value ) {   // Si las contraseñas coinciden entra en el condicional
