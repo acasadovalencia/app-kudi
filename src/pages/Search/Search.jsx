@@ -25,7 +25,12 @@ export const Search = ()=>{
 
 
     //Effects
-    useEffect(()=>{                                         
+    useEffect(()=>{    
+        let login = JSON.parse(localStorage.getItem('user'))           // Obtener del localStorage el resultado del login
+
+        if(!login){                                                    // Si login no existe o falso, navega a la página de inicio para impedir acceder
+            navigate('/')
+        }                                     
         getMovies()                                     // Obtener las peliculas en un effect sin depedenccias para guardarlas cuando se cree el componente
         getTvshows()
     }, [])
@@ -33,6 +38,7 @@ export const Search = ()=>{
     useEffect(()=>{
         getMoviesFound()                             // Obtener el array de peliculas y series encontradas en un effect que se ejecutará cuando movies cambie, esperando a ejecutarse a que movies tenga contenido, igual con tvshows y cuando los  terminos de búsqueda cambien para mostrar de nuevo
         getTvshowsFound()
+        window.scrollTo(0, 0)                                          // Para comenzar siempre desde el principio al cargar el componente
     }, [movies , tvshows , searchTerms])
 
     // Funciones
