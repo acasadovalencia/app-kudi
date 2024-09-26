@@ -1,6 +1,9 @@
-<div align="center">
-<h1>Kudi website project</h1>
-<h2>Esta web ha sido creada como proyecto final para el módulo Fullstack desarrollo web en la escuela CEI.</h2>
+# KUDI APP
+
+Website made with HTML, CSS & JavaScript using React, ExpressJS & MongoDB.
+
+[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=0ABF53&style=for-the-badge)](https://app-flickr.vercel.app/)
+[![Github Repository](https://img.shields.io/static/v1?label=&message=Github%20Repository&color=0ABF53&style=for-the-badge&logo=github&logoColor=white)](https://github.com/acasadovalencia/app-kudi.git)
 
 <img src="public/assets/images/meta-logo.png" alt="Kudi logo" width="424" height="209"/>
 
@@ -26,7 +29,5 @@
     <a href="https://www.mongodb.com/es" target="_blank" rel="noreferrer"> 
         <img src="https://static-00.iconduck.com/assets.00/mongodb-icon-1024x1024-jyklwn1x.png" alt="mongo" width="80" height="80"/> 
     </a>
-
-
     
 </div>
